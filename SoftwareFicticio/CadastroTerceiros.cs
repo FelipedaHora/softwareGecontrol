@@ -16,24 +16,23 @@ namespace SoftwareFicticio
         {
             InitializeComponent();
 
-            
+            btnSelecionar.Visible = false;
+
         }
         public string cadastroTerceiros { get; set; }
         private void rbCPF_CheckedChanged(object sender, EventArgs e)
         {
-        
+
         }
 
         private void btnSalvarCadastroTerc_Click(object sender, EventArgs e)
         {
-            RegistroTerceiros registroTerceiros = new RegistroTerceiros();
-            registroTerceiros.ShowDialog();
 
         }
 
         private void rbCNPJ_CheckedChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -46,38 +45,46 @@ namespace SoftwareFicticio
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = int.Parse(dgvCadastroTerceiros.SelectedRows[0].Cells[0].Value.ToString());
-                DataSet1TableAdapters.terceirosTableAdapter deleteTerceiros = new DataSet1TableAdapters.terceirosTableAdapter();
-                deleteTerceiros.DeleteQuery(id);
 
-                MessageBox.Show("Cadastro deletado com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
 
         }
-        int i;
-        private void dgvCadastroTerceiros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        public void dgvCadastroTerceiros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            i = e.RowIndex;
-            DataGridViewRow row = dgvCadastroTerceiros.Rows[i];
-            Venda venda = new Venda();
-            venda.txbCliente.Text = row.Cells[1].Value.ToString();
+            /*
+            int id = int.Parse(dgvCadastroTerceiros.SelectedRows[0].Cells[0].Value.ToString());
+            string nome = dgvCadastroTerceiros.SelectedRows[0].Cells[1].Value.ToString();
+            string cpfORcnpj = dgvCadastroTerceiros.SelectedRows[0].Cells[2].Value.ToString();
+            string email = dgvCadastroTerceiros.SelectedRows[0].Cells[3].Value.ToString();
+            string telefone = dgvCadastroTerceiros.SelectedRows[0].Cells[4].Value.ToString();
+            DateTime dataCadastro = DateTime.Parse(dgvCadastroTerceiros.SelectedRows[0].Cells[5].Value.ToString());
+            DateTime dataAtualizacao = DateTime.Parse(dgvCadastroTerceiros.SelectedRows[0].Cells[6].Value.ToString()); */
         }
 
         private void CadastroTerceiros_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
         }
-        
+
         private void dgvCadastroTerceiros_Click(object sender, EventArgs e)
         {
-            
-            
+
+
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RegistroTerceiros registroTerceiros = new RegistroTerceiros();
+                registroTerceiros.Owner = this;
+                registroTerceiros.getData();
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

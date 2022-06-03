@@ -66,5 +66,55 @@ namespace SoftwareFicticio
         {
             this.Dispose();
         }
+
+        public void getData()
+        {
+            CadastroTerceiros cadastroTerceiros = new CadastroTerceiros();
+            
+            txbNome.Text = cadastroTerceiros.dgvCadastroTerceiros.SelectedRows[0].Cells[1].Value.ToString();
+            txbEmail.Text = cadastroTerceiros.dgvCadastroTerceiros.SelectedRows[0].Cells[3].Value.ToString();
+            /*
+            if (rbCNPJ.Checked == true)
+            {
+                mtbCNPJ.Text = cadastroTerceiros.dgvCadastroTerceiros.SelectedRows[0].Cells[2].Value.ToString();
+            }
+            else if(rbCPF.Checked == true)
+            {
+                mtbCPF.Text = cadastroTerceiros.dgvCadastroTerceiros.SelectedRows[0].Cells[2].Value.ToString();
+            }*/
+        }
+
+        private void RegistroTerceiros_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'dataSet1.terceiros'. Você pode movê-la ou removê-la conforme necessário.
+            this.terceirosTableAdapter.Fill(this.dataSet1.terceiros);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*try
+            {
+                int idTerceiros = int.Parse(dgvCadastroTerceiros.SelectedRows[0].Cells[0].Value.ToString());
+                DataSet1TableAdapters.terceirosTableAdapter deleteTerceiros = new DataSet1TableAdapters.terceirosTableAdapter();
+                deleteTerceiros.DeleteQuery(idTerceiros);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            CadastroTerceiros cadastroTerceiros = new CadastroTerceiros();
+
+        }
     }
 }

@@ -29,8 +29,10 @@ namespace SoftwareFicticio
         private void button2_Click(object sender, EventArgs e)
         {
             CadastroTerceiros cadastroTerc = new CadastroTerceiros();// { Owner = this };
+            cadastroTerc.btnSelecionar.Visible = true;
             cadastroTerc.ShowDialog();
-           
+            
+
         }
 
         public void textBox1_TextChanged(object sender, EventArgs e)
@@ -55,12 +57,17 @@ namespace SoftwareFicticio
 
         public void txbCliente_TextChanged(object sender, EventArgs e)
         {
-
+            
+            
         }
 
         private void mtbData_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-           DateTime dataCadastro = DateTime.Now;
+            DateTime datacadastro = new DateTime();
+            datacadastro = DateTime.Now;
+
+            mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
+            mtbData.Show();
         }
     }
 }

@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSalvarCadastroTerc = new System.Windows.Forms.Button();
             this.dgvCadastroTerceiros = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +43,7 @@
             this.terceirosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new SoftwareFicticio.DataSet1();
             this.terceirosTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.terceirosTableAdapter();
-            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroTerceiros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.terceirosBindingSource)).BeginInit();
@@ -79,26 +78,12 @@
             this.panel2.Size = new System.Drawing.Size(218, 673);
             this.panel2.TabIndex = 5;
             // 
-            // btnSalvarCadastroTerc
-            // 
-            this.btnSalvarCadastroTerc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
-            this.btnSalvarCadastroTerc.FlatAppearance.BorderSize = 0;
-            this.btnSalvarCadastroTerc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnSalvarCadastroTerc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnSalvarCadastroTerc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarCadastroTerc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarCadastroTerc.ForeColor = System.Drawing.Color.White;
-            this.btnSalvarCadastroTerc.Location = new System.Drawing.Point(905, 598);
-            this.btnSalvarCadastroTerc.Name = "btnSalvarCadastroTerc";
-            this.btnSalvarCadastroTerc.Size = new System.Drawing.Size(128, 48);
-            this.btnSalvarCadastroTerc.TabIndex = 16;
-            this.btnSalvarCadastroTerc.Text = "Novo";
-            this.btnSalvarCadastroTerc.UseVisualStyleBackColor = false;
-            this.btnSalvarCadastroTerc.Click += new System.EventHandler(this.btnSalvarCadastroTerc_Click);
-            // 
             // dgvCadastroTerceiros
             // 
+            this.dgvCadastroTerceiros.AllowUserToAddRows = false;
+            this.dgvCadastroTerceiros.AllowUserToDeleteRows = false;
             this.dgvCadastroTerceiros.AutoGenerateColumns = false;
+            this.dgvCadastroTerceiros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCadastroTerceiros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCadastroTerceiros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -127,7 +112,6 @@
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -136,7 +120,6 @@
             this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 125;
             // 
             // cpfcnpjDataGridViewTextBoxColumn
             // 
@@ -145,7 +128,6 @@
             this.cpfcnpjDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cpfcnpjDataGridViewTextBoxColumn.Name = "cpfcnpjDataGridViewTextBoxColumn";
             this.cpfcnpjDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cpfcnpjDataGridViewTextBoxColumn.Width = 125;
             // 
             // emailDataGridViewTextBoxColumn
             // 
@@ -154,7 +136,6 @@
             this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 125;
             // 
             // telefoneDataGridViewTextBoxColumn
             // 
@@ -163,7 +144,6 @@
             this.telefoneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
             this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn.Width = 125;
             // 
             // datacadastroDataGridViewTextBoxColumn
             // 
@@ -172,7 +152,6 @@
             this.datacadastroDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.datacadastroDataGridViewTextBoxColumn.Name = "datacadastroDataGridViewTextBoxColumn";
             this.datacadastroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datacadastroDataGridViewTextBoxColumn.Width = 125;
             // 
             // dataatualizacaoDataGridViewTextBoxColumn
             // 
@@ -181,7 +160,6 @@
             this.dataatualizacaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dataatualizacaoDataGridViewTextBoxColumn.Name = "dataatualizacaoDataGridViewTextBoxColumn";
             this.dataatualizacaoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataatualizacaoDataGridViewTextBoxColumn.Width = 125;
             // 
             // terceirosBindingSource
             // 
@@ -197,35 +175,34 @@
             // 
             this.terceirosTableAdapter.ClearBeforeFill = true;
             // 
-            // btnExcluir
+            // btnSelecionar
             // 
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(756, 598);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(128, 48);
-            this.btnExcluir.TabIndex = 18;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnSelecionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnSelecionar.FlatAppearance.BorderSize = 0;
+            this.btnSelecionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnSelecionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelecionar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar.ForeColor = System.Drawing.Color.White;
+            this.btnSelecionar.Location = new System.Drawing.Point(905, 603);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(128, 48);
+            this.btnSelecionar.TabIndex = 19;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = false;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // CadastroTerceiros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 673);
-            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.dgvCadastroTerceiros);
-            this.Controls.Add(this.btnSalvarCadastroTerc);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "CadastroTerceiros";
-            this.Text = "CadastroTerceiros";
+            this.Text = "Cadastro de Terceiros";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CadastroTerceiros_FormClosing);
             this.Load += new System.EventHandler(this.CadastroTerceiros_Load);
             this.panel1.ResumeLayout(false);
@@ -242,8 +219,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnSalvarCadastroTerc;
-        private System.Windows.Forms.DataGridView dgvCadastroTerceiros;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource terceirosBindingSource;
         private DataSet1TableAdapters.terceirosTableAdapter terceirosTableAdapter;
@@ -254,6 +229,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datacadastroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataatualizacaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnExcluir;
+        public System.Windows.Forms.Button btnSelecionar;
+        public System.Windows.Forms.DataGridView dgvCadastroTerceiros;
     }
 }

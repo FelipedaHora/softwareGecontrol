@@ -211,10 +211,10 @@
             // mtbData
             // 
             this.mtbData.Location = new System.Drawing.Point(870, 155);
-            this.mtbData.Mask = "00/00/0000 90:00";
+            this.mtbData.Mask = "00/00/0000";
             this.mtbData.Name = "mtbData";
             this.mtbData.ReadOnly = true;
-            this.mtbData.Size = new System.Drawing.Size(128, 22);
+            this.mtbData.Size = new System.Drawing.Size(59, 22);
             this.mtbData.TabIndex = 28;
             this.mtbData.ValidatingType = typeof(System.DateTime);
             this.mtbData.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbData_MaskInputRejected);
@@ -250,7 +250,6 @@
             // 
             this.txbCliente.Location = new System.Drawing.Point(284, 155);
             this.txbCliente.Name = "txbCliente";
-            this.txbCliente.ReadOnly = true;
             this.txbCliente.Size = new System.Drawing.Size(482, 22);
             this.txbCliente.TabIndex = 31;
             this.txbCliente.TextChanged += new System.EventHandler(this.txbCliente_TextChanged);

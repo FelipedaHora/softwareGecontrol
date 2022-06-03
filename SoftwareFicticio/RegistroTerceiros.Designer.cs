@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,8 +44,16 @@
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnSalvarCadastroTerc = new System.Windows.Forms.Button();
+            this.dataSet1 = new SoftwareFicticio.DataSet1();
+            this.terceirosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.terceirosTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.terceirosTableAdapter();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.terceirosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,7 +81,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.panel2.Location = new System.Drawing.Point(1, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(218, 391);
+            this.panel2.Size = new System.Drawing.Size(218, 463);
             this.panel2.TabIndex = 6;
             // 
             // groupBox1
@@ -82,7 +91,7 @@
             this.groupBox1.Controls.Add(this.rbCNPJ);
             this.groupBox1.Controls.Add(this.rbCPF);
             this.groupBox1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(745, 124);
+            this.groupBox1.Location = new System.Drawing.Point(745, 190);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(315, 113);
             this.groupBox1.TabIndex = 21;
@@ -131,7 +140,7 @@
             // 
             // mtbTelefone
             // 
-            this.mtbTelefone.Location = new System.Drawing.Point(574, 151);
+            this.mtbTelefone.Location = new System.Drawing.Point(564, 220);
             this.mtbTelefone.Mask = "(99) 00000-0000";
             this.mtbTelefone.Name = "mtbTelefone";
             this.mtbTelefone.Size = new System.Drawing.Size(101, 22);
@@ -141,7 +150,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(570, 121);
+            this.label2.Location = new System.Drawing.Point(560, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 24);
             this.label2.TabIndex = 19;
@@ -151,7 +160,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(263, 188);
+            this.label1.Location = new System.Drawing.Point(253, 257);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 24);
             this.label1.TabIndex = 18;
@@ -159,14 +168,14 @@
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(267, 215);
+            this.txbEmail.Location = new System.Drawing.Point(257, 284);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(244, 22);
             this.txbEmail.TabIndex = 17;
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(267, 151);
+            this.txbNome.Location = new System.Drawing.Point(257, 220);
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(244, 22);
             this.txbNome.TabIndex = 16;
@@ -175,7 +184,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(263, 124);
+            this.lblNome.Location = new System.Drawing.Point(253, 193);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(68, 24);
             this.lblNome.TabIndex = 15;
@@ -190,7 +199,7 @@
             this.btnSalvarCadastroTerc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarCadastroTerc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarCadastroTerc.ForeColor = System.Drawing.Color.White;
-            this.btnSalvarCadastroTerc.Location = new System.Drawing.Point(922, 317);
+            this.btnSalvarCadastroTerc.Location = new System.Drawing.Point(922, 404);
             this.btnSalvarCadastroTerc.Name = "btnSalvarCadastroTerc";
             this.btnSalvarCadastroTerc.Size = new System.Drawing.Size(128, 48);
             this.btnSalvarCadastroTerc.TabIndex = 22;
@@ -198,11 +207,79 @@
             this.btnSalvarCadastroTerc.UseVisualStyleBackColor = false;
             this.btnSalvarCadastroTerc.Click += new System.EventHandler(this.btnSalvarCadastroTerc_Click);
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // terceirosBindingSource
+            // 
+            this.terceirosBindingSource.DataMember = "terceiros";
+            this.terceirosBindingSource.DataSource = this.dataSet1;
+            // 
+            // terceirosTableAdapter
+            // 
+            this.terceirosTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Location = new System.Drawing.Point(775, 404);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(128, 48);
+            this.btnExcluir.TabIndex = 24;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.Color.White;
+            this.btnAlterar.Location = new System.Drawing.Point(624, 404);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(128, 48);
+            this.btnAlterar.TabIndex = 25;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisar.Location = new System.Drawing.Point(921, 134);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(117, 31);
+            this.btnPesquisar.TabIndex = 26;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // RegistroTerceiros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 392);
+            this.ClientSize = new System.Drawing.Size(1101, 464);
+            this.Controls.Add(this.btnPesquisar);
+            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvarCadastroTerc);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mtbTelefone);
@@ -214,12 +291,15 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "RegistroTerceiros";
-            this.Text = "RegistroTerceiros";
+            this.Text = "Registro de Terceiros";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistroTerceiros_FormClosing);
+            this.Load += new System.EventHandler(this.RegistroTerceiros_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.terceirosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +322,11 @@
         private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnSalvarCadastroTerc;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource terceirosBindingSource;
+        private DataSet1TableAdapters.terceirosTableAdapter terceirosTableAdapter;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

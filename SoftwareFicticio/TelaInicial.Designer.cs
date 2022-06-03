@@ -162,6 +162,7 @@
             this.Controls.Add(this.btnChoiceFuncionarios);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlLeft);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmTelaInicial";
             this.Text = "Home";
