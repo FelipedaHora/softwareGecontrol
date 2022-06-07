@@ -67,21 +67,12 @@ namespace SoftwareFicticio
             this.Dispose();
         }
 
-        public void getData()
+        public void getData(string nome, string email, string telefone)
         {
-            CadastroTerceiros cadastroTerceiros = new CadastroTerceiros();
-            
-            txbNome.Text = cadastroTerceiros.dgvCadastroTerceiros.SelectedRows[0].Cells[1].Value.ToString();
-            txbEmail.Text = cadastroTerceiros.dgvCadastroTerceiros.SelectedRows[0].Cells[3].Value.ToString();
-            /*
-            if (rbCNPJ.Checked == true)
-            {
-                mtbCNPJ.Text = cadastroTerceiros.dgvCadastroTerceiros.SelectedRows[0].Cells[2].Value.ToString();
-            }
-            else if(rbCPF.Checked == true)
-            {
-                mtbCPF.Text = cadastroTerceiros.dgvCadastroTerceiros.SelectedRows[0].Cells[2].Value.ToString();
-            }*/
+            txbNome.Text += nome.ToString();
+            MessageBox.Show(nome);
+            txbEmail.Text += email;
+            mtbTelefone.Text += telefone;
         }
 
         private void RegistroTerceiros_Load(object sender, EventArgs e)
@@ -98,23 +89,26 @@ namespace SoftwareFicticio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
-                int idTerceiros = int.Parse(dgvCadastroTerceiros.SelectedRows[0].Cells[0].Value.ToString());
-                DataSet1TableAdapters.terceirosTableAdapter deleteTerceiros = new DataSet1TableAdapters.terceirosTableAdapter();
-                deleteTerceiros.DeleteQuery(idTerceiros);
+                /*DataSet1TableAdapters.funcionarioTableAdapter dropEmployee = new DataSet1TableAdapters.funcionarioTableAdapter();
+                dropEmployee.DeleteQuery(id);
+                MessageBox.Show("Funcionario excluído com sucesso!");*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+
+            }
 
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             CadastroTerceiros cadastroTerceiros = new CadastroTerceiros();
+            cadastroTerceiros.ShowDialog();
 
         }
+        
     }
 }

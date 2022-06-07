@@ -110,6 +110,8 @@
             // 
             // dgvConsultaFuncionario
             // 
+            this.dgvConsultaFuncionario.AllowUserToAddRows = false;
+            this.dgvConsultaFuncionario.AllowUserToDeleteRows = false;
             this.dgvConsultaFuncionario.AutoGenerateColumns = false;
             this.dgvConsultaFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConsultaFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -128,6 +130,7 @@
             this.dgvConsultaFuncionario.ReadOnly = true;
             this.dgvConsultaFuncionario.RowHeadersWidth = 51;
             this.dgvConsultaFuncionario.RowTemplate.Height = 24;
+            this.dgvConsultaFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultaFuncionario.Size = new System.Drawing.Size(811, 341);
             this.dgvConsultaFuncionario.TabIndex = 15;
             this.dgvConsultaFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaFuncionario_CellContentClick);

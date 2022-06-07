@@ -31,14 +31,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSalvarCadastroTerc = new System.Windows.Forms.Button();
+            this.dataSet1 = new SoftwareFicticio.DataSet1();
             this.cbxUnidadeVenda = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txbPreco = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.txbPreco = new System.Windows.Forms.TextBox();
             this.txbDescProduto = new System.Windows.Forms.TextBox();
-            this.btnSalvarCadastroTerc = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,6 +75,28 @@
             this.panel2.Size = new System.Drawing.Size(221, 391);
             this.panel2.TabIndex = 7;
             // 
+            // btnSalvarCadastroTerc
+            // 
+            this.btnSalvarCadastroTerc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnSalvarCadastroTerc.FlatAppearance.BorderSize = 0;
+            this.btnSalvarCadastroTerc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnSalvarCadastroTerc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnSalvarCadastroTerc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarCadastroTerc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarCadastroTerc.ForeColor = System.Drawing.Color.White;
+            this.btnSalvarCadastroTerc.Location = new System.Drawing.Point(899, 311);
+            this.btnSalvarCadastroTerc.Name = "btnSalvarCadastroTerc";
+            this.btnSalvarCadastroTerc.Size = new System.Drawing.Size(128, 48);
+            this.btnSalvarCadastroTerc.TabIndex = 23;
+            this.btnSalvarCadastroTerc.Text = "Salvar";
+            this.btnSalvarCadastroTerc.UseVisualStyleBackColor = false;
+            this.btnSalvarCadastroTerc.Click += new System.EventHandler(this.btnSalvarCadastroTerc_Click);
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cbxUnidadeVenda
             // 
             this.cbxUnidadeVenda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -78,7 +105,7 @@
             "UN",
             "FD",
             "CX"});
-            this.cbxUnidadeVenda.Location = new System.Drawing.Point(839, 154);
+            this.cbxUnidadeVenda.Location = new System.Drawing.Point(839, 230);
             this.cbxUnidadeVenda.Name = "cbxUnidadeVenda";
             this.cbxUnidadeVenda.Size = new System.Drawing.Size(188, 24);
             this.cbxUnidadeVenda.TabIndex = 16;
@@ -87,11 +114,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(835, 127);
+            this.label2.Location = new System.Drawing.Point(835, 205);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 24);
             this.label2.TabIndex = 15;
             this.label2.Text = "Unidade de venda:";
+            // 
+            // txbPreco
+            // 
+            this.txbPreco.Location = new System.Drawing.Point(259, 232);
+            this.txbPreco.Name = "txbPreco";
+            this.txbPreco.Size = new System.Drawing.Size(204, 22);
+            this.txbPreco.TabIndex = 12;
             // 
             // label1
             // 
@@ -113,13 +147,6 @@
             this.lblNome.TabIndex = 13;
             this.lblNome.Text = "Descrição do produto:";
             // 
-            // txbPreco
-            // 
-            this.txbPreco.Location = new System.Drawing.Point(259, 232);
-            this.txbPreco.Name = "txbPreco";
-            this.txbPreco.Size = new System.Drawing.Size(204, 22);
-            this.txbPreco.TabIndex = 12;
-            // 
             // txbDescProduto
             // 
             this.txbDescProduto.Location = new System.Drawing.Point(259, 154);
@@ -127,28 +154,65 @@
             this.txbDescProduto.Size = new System.Drawing.Size(351, 22);
             this.txbDescProduto.TabIndex = 11;
             // 
-            // btnSalvarCadastroTerc
+            // btnExcluir
             // 
-            this.btnSalvarCadastroTerc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
-            this.btnSalvarCadastroTerc.FlatAppearance.BorderSize = 0;
-            this.btnSalvarCadastroTerc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnSalvarCadastroTerc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnSalvarCadastroTerc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarCadastroTerc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarCadastroTerc.ForeColor = System.Drawing.Color.White;
-            this.btnSalvarCadastroTerc.Location = new System.Drawing.Point(899, 311);
-            this.btnSalvarCadastroTerc.Name = "btnSalvarCadastroTerc";
-            this.btnSalvarCadastroTerc.Size = new System.Drawing.Size(128, 48);
-            this.btnSalvarCadastroTerc.TabIndex = 23;
-            this.btnSalvarCadastroTerc.Text = "Salvar";
-            this.btnSalvarCadastroTerc.UseVisualStyleBackColor = false;
-            this.btnSalvarCadastroTerc.Click += new System.EventHandler(this.btnSalvarCadastroTerc_Click);
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Location = new System.Drawing.Point(749, 311);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(128, 48);
+            this.btnExcluir.TabIndex = 24;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.Color.White;
+            this.btnAlterar.Location = new System.Drawing.Point(599, 311);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(128, 48);
+            this.btnAlterar.TabIndex = 25;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(899, 127);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 36);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Pesquisar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RegistroProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 392);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvarCadastroTerc);
             this.Controls.Add(this.cbxUnidadeVenda);
             this.Controls.Add(this.label2);
@@ -163,6 +227,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistroProdutos_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,12 +238,16 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnSalvarCadastroTerc;
+        private DataSet1 dataSet1;
         private System.Windows.Forms.ComboBox cbxUnidadeVenda;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txbPreco;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox txbPreco;
         private System.Windows.Forms.TextBox txbDescProduto;
-        private System.Windows.Forms.Button btnSalvarCadastroTerc;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button button1;
     }
 }

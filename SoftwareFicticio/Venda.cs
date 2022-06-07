@@ -16,7 +16,7 @@ namespace SoftwareFicticio
         {
             InitializeComponent();
         }
-
+        
         private void Venda_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.terceiros'. Você pode movê-la ou removê-la conforme necessário.
@@ -25,14 +25,25 @@ namespace SoftwareFicticio
             this.produtosTableAdapter.Fill(this.dataSet1.produtos);
 
         }
+        
+        public void getDataSell(string nome)
+        {
+           txbCliente.Text = nome;
+           DateTime datacadastro = DateTime.Now;
+           mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
+           
+        }
+        public void getDataProduto(string produto,double preco)
+        {
+            txbProduto.Text = produto;
+            txbPreco.Text = preco.ToString();
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CadastroTerceiros cadastroTerc = new CadastroTerceiros();// { Owner = this };
-            cadastroTerc.btnSelecionar.Visible = true;
+            CadastroTerceiros cadastroTerc = new CadastroTerceiros();
+            cadastroTerc.Owner = this;
             cadastroTerc.ShowDialog();
-            
-
         }
 
         public void textBox1_TextChanged(object sender, EventArgs e)
@@ -63,11 +74,14 @@ namespace SoftwareFicticio
 
         private void mtbData_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            DateTime datacadastro = new DateTime();
-            datacadastro = DateTime.Now;
+           
+        }
 
-            mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
-            mtbData.Show();
+        private void btnPesquisarProduto_Click(object sender, EventArgs e)
+        {
+            CadastroProdutos cadastroProdutos = new CadastroProdutos();
+            cadastroProdutos.Owner = this;
+            cadastroProdutos.ShowDialog();
         }
     }
 }

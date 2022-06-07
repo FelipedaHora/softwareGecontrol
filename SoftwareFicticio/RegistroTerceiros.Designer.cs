@@ -311,15 +311,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox mtbCNPJ;
-        private System.Windows.Forms.MaskedTextBox mtbCPF;
         private System.Windows.Forms.RadioButton rbCNPJ;
         private System.Windows.Forms.RadioButton rbCPF;
-        private System.Windows.Forms.MaskedTextBox mtbTelefone;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbEmail;
-        private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnSalvarCadastroTerc;
         private DataSet1 dataSet1;
@@ -328,5 +323,10 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnPesquisar;
+        public System.Windows.Forms.TextBox txbNome;
+        public System.Windows.Forms.MaskedTextBox mtbTelefone;
+        public System.Windows.Forms.TextBox txbEmail;
+        public System.Windows.Forms.MaskedTextBox mtbCPF;
+        public System.Windows.Forms.MaskedTextBox mtbCNPJ;
     }
 }

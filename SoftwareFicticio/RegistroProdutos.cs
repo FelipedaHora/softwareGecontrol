@@ -58,5 +58,46 @@ namespace SoftwareFicticio
         {
             this.Dispose();
         }
+
+        private void txbDescProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        int i;
+        string nome;
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            i = e.RowIndex;
+            DataGridViewRow row = new DataGridViewRow();
+            nome = row.Cells[1].Value.ToString();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+           /* try
+            {
+                DataSet1TableAdapters.produtosTableAdapter dropProduct = new DataSet1TableAdapters.produtosTableAdapter();
+                dropProduct.DeleteQuery(id);
+
+                MessageBox.Show("Produto excluído com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CadastroProdutos cadastroProdutos = new CadastroProdutos();
+            cadastroProdutos.ShowDialog();
+        }
     }
 }

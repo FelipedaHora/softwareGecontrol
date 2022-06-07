@@ -39,14 +39,15 @@ namespace SoftwareFicticio
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
-            CadastroProdutos cadastroProdutos = new CadastroProdutos();
-            cadastroProdutos.ShowDialog();
+            RegistroProdutos registroFuncionarios = new RegistroProdutos();
+            registroFuncionarios.ShowDialog();
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            CadastroTerceiros cadastroTerceiros = new CadastroTerceiros();
-            cadastroTerceiros.ShowDialog();
+            RegistroTerceiros registroTerceiros = new RegistroTerceiros();
+            registroTerceiros.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -81,7 +81,7 @@
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.pnlLeft.Location = new System.Drawing.Point(1, 0);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(200, 484);
+            this.pnlLeft.Size = new System.Drawing.Size(200, 593);
             this.pnlLeft.TabIndex = 3;
             // 
             // btnSalvarCadastroFunc
@@ -93,7 +93,7 @@
             this.btnSalvarCadastroFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarCadastroFunc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarCadastroFunc.ForeColor = System.Drawing.Color.White;
-            this.btnSalvarCadastroFunc.Location = new System.Drawing.Point(870, 390);
+            this.btnSalvarCadastroFunc.Location = new System.Drawing.Point(870, 533);
             this.btnSalvarCadastroFunc.Name = "btnSalvarCadastroFunc";
             this.btnSalvarCadastroFunc.Size = new System.Drawing.Size(128, 48);
             this.btnSalvarCadastroFunc.TabIndex = 16;
@@ -196,6 +196,7 @@
             this.btnPesquisarProduto.TabIndex = 27;
             this.btnPesquisarProduto.Text = "Pesquisar";
             this.btnPesquisarProduto.UseVisualStyleBackColor = false;
+            this.btnPesquisarProduto.Click += new System.EventHandler(this.btnPesquisarProduto_Click);
             // 
             // label1
             // 
@@ -214,7 +215,7 @@
             this.mtbData.Mask = "00/00/0000";
             this.mtbData.Name = "mtbData";
             this.mtbData.ReadOnly = true;
-            this.mtbData.Size = new System.Drawing.Size(59, 22);
+            this.mtbData.Size = new System.Drawing.Size(95, 22);
             this.mtbData.TabIndex = 28;
             this.mtbData.ValidatingType = typeof(System.DateTime);
             this.mtbData.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbData_MaskInputRejected);
@@ -250,6 +251,7 @@
             // 
             this.txbCliente.Location = new System.Drawing.Point(284, 155);
             this.txbCliente.Name = "txbCliente";
+            this.txbCliente.ReadOnly = true;
             this.txbCliente.Size = new System.Drawing.Size(482, 22);
             this.txbCliente.TabIndex = 31;
             this.txbCliente.TextChanged += new System.EventHandler(this.txbCliente_TextChanged);
@@ -258,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 483);
+            this.ClientSize = new System.Drawing.Size(1101, 593);
             this.Controls.Add(this.btnPesquisarCliente);
             this.Controls.Add(this.txbCliente);
             this.Controls.Add(this.pnlLeft);

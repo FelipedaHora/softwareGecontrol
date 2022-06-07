@@ -24,8 +24,7 @@ namespace SoftwareFicticio
 
         private void btnSalvarCadastroFunc_Click(object sender, EventArgs e)
         {
-            RegistroProdutos registroProdutos = new RegistroProdutos();
-            registroProdutos.ShowDialog();
+          
         }
 
         private void CadastroProdutos_Load(object sender, EventArgs e)
@@ -34,37 +33,61 @@ namespace SoftwareFicticio
             this.produtosTableAdapter.Fill(this.dataSet1.produtos);
 
         }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int id = int.Parse(dgvCadastroProd.SelectedRows[0].Cells[0].Value.ToString());
-                DataSet1TableAdapters.funcionarioTableAdapter dropEmployee = new DataSet1TableAdapters.funcionarioTableAdapter();
-                dropEmployee.DeleteQuery(id);
-
-                MessageBox.Show("Funcionario excluído com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void CadastroProdutos_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
         }
-
+        int id;
+        string descricaoProduto;
+        string unidadeVenda;
+        double preco;
+        DateTime dataCadastro;
+        DateTime dataatualizacao;
         private void dgvCadastroProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Venda venda = new Venda();
-            venda.txbProduto.Text = dgvCadastroProd.Rows[0].Cells[1].Value.ToString();
+            id = Convert.ToInt32(dgvCadastroProd.Rows[e.RowIndex].Cells[0].Value);
+            descricaoProduto = Convert.ToString(dgvCadastroProd.Rows[e.RowIndex].Cells[1].Value);
+            unidadeVenda = Convert.ToString(dgvCadastroProd.Rows[e.RowIndex].Cells[2].Value);
+            preco = Convert.ToDouble(dgvCadastroProd.Rows[e.RowIndex].Cells[3].Value);
+
+            if (this.Owner.Name == "Venda")
+            {
+                try
+                {
+                    ((Venda)this.Owner).getDataProduto(descricaoProduto,preco);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
         }
 
         private void dgvCadastroProd_Click(object sender, EventArgs e)
         {
+            
+        }
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            if (this.Owner.Name == "Venda")
+            {
+                try
+                {
+                    ((Venda)this.Owner).getDataProduto(descricaoProduto,preco);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
             
         }
     }

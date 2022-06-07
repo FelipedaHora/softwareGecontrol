@@ -14,12 +14,10 @@ namespace SoftwareFicticio
     {
         public CadastroTerceiros()
         {
+
             InitializeComponent();
-
-            btnSelecionar.Visible = false;
-
         }
-        public string cadastroTerceiros { get; set; }
+
         private void rbCPF_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -45,22 +43,41 @@ namespace SoftwareFicticio
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
-
+            try
+            {
+                DataSet1TableAdapters.terceirosTableAdapter dropTerceiros = new DataSet1TableAdapters.terceirosTableAdapter();
+                dropTerceiros.DeleteQuery(id);
+                MessageBox.Show("Terceiro excluído com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        int id;
+        string nome;
+        string email;
+        string telefone;
         public void dgvCadastroTerceiros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
-            int id = int.Parse(dgvCadastroTerceiros.SelectedRows[0].Cells[0].Value.ToString());
-            string nome = dgvCadastroTerceiros.SelectedRows[0].Cells[1].Value.ToString();
-            string cpfORcnpj = dgvCadastroTerceiros.SelectedRows[0].Cells[2].Value.ToString();
-            string email = dgvCadastroTerceiros.SelectedRows[0].Cells[3].Value.ToString();
-            string telefone = dgvCadastroTerceiros.SelectedRows[0].Cells[4].Value.ToString();
-            DateTime dataCadastro = DateTime.Parse(dgvCadastroTerceiros.SelectedRows[0].Cells[5].Value.ToString());
-            DateTime dataAtualizacao = DateTime.Parse(dgvCadastroTerceiros.SelectedRows[0].Cells[6].Value.ToString()); */
-        }
+            nome = this.dgvCadastroTerceiros.CurrentRow.Cells[1].Value.ToString();
 
+            if (this.Owner.Name == "Venda")
+            {
+                try
+                {
+                    ((Venda)this.Owner).getDataSell(nome);
+                    Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else { }
+        }
         private void CadastroTerceiros_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
@@ -68,23 +85,24 @@ namespace SoftwareFicticio
 
         private void dgvCadastroTerceiros_Click(object sender, EventArgs e)
         {
-
-
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            try
+            if (this.Owner.Name == "Venda")
             {
-                RegistroTerceiros registroTerceiros = new RegistroTerceiros();
-                registroTerceiros.Owner = this;
-                registroTerceiros.getData();
-                Close();
+                try
+                {
+                    ((Venda)this.Owner).getDataSell(nome);
+                    Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            else { }
         }
     }
 }

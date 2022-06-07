@@ -29,26 +29,24 @@ namespace SoftwareFicticio
             this.funcionarioTableAdapter.Fill(this.dataSet1.funcionario);
 
         }
-
+        int i;
+        int id;
         private void dgvConsultaFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
         {
             try
             {
-                int id = int.Parse(dgvConsultaFuncionario.SelectedRows[0].Cells[0].Value.ToString());
-                DataSet1TableAdapters.funcionarioTableAdapter dropEmployee = new DataSet1TableAdapters.funcionarioTableAdapter();
-                dropEmployee.DeleteQuery(id);
-
-                MessageBox.Show("Funcionario excluído com sucesso!");
+                id = Convert.ToInt32(dgvConsultaFuncionario.Rows[e.RowIndex].Cells[0].Value);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+           
+        }
 
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
