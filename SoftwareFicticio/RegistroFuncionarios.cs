@@ -42,8 +42,8 @@ namespace SoftwareFicticio
 
                 DateTime dataCadastro = DateTime.Now;
 
-                DataSet1TableAdapters.funcionarioTableAdapter insertFuncDataSet = new DataSet1TableAdapters.funcionarioTableAdapter();
-                insertFuncDataSet.InsertQuery(txbNome.Text, txbEmail.Text, decimal.Parse(txbSalario.Text), sexo, tipoContrato, dataCadastro);
+                DataSet2TableAdapters.funcionarioTableAdapter insertFuncDataSet = new DataSet2TableAdapters.funcionarioTableAdapter();
+                insertFuncDataSet.InsertQuery(txbNome.Text, txbEmail.Text, sexo, tipoContrato, dataCadastro,decimal.Parse(txbSalario.Text));
 
                 MessageBox.Show("Cadastro criado com sucesso!");
                 Application.Exit();

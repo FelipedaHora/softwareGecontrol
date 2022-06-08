@@ -50,10 +50,18 @@
             this.terceirosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.terceirosTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.terceirosTableAdapter();
             this.txbCliente = new System.Windows.Forms.TextBox();
+            this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
+            this.btnLancarProduto = new System.Windows.Forms.Button();
+            this.Produtos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.terceirosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -81,7 +89,7 @@
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.pnlLeft.Location = new System.Drawing.Point(1, 0);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(200, 593);
+            this.pnlLeft.Size = new System.Drawing.Size(200, 722);
             this.pnlLeft.TabIndex = 3;
             // 
             // btnSalvarCadastroFunc
@@ -93,7 +101,7 @@
             this.btnSalvarCadastroFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarCadastroFunc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarCadastroFunc.ForeColor = System.Drawing.Color.White;
-            this.btnSalvarCadastroFunc.Location = new System.Drawing.Point(870, 533);
+            this.btnSalvarCadastroFunc.Location = new System.Drawing.Point(870, 651);
             this.btnSalvarCadastroFunc.Name = "btnSalvarCadastroFunc";
             this.btnSalvarCadastroFunc.Size = new System.Drawing.Size(128, 48);
             this.btnSalvarCadastroFunc.TabIndex = 16;
@@ -256,11 +264,91 @@
             this.txbCliente.TabIndex = 31;
             this.txbCliente.TextChanged += new System.EventHandler(this.txbCliente_TextChanged);
             // 
+            // dgvProdutosVenda
+            // 
+            this.dgvProdutosVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProdutosVenda.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProdutosVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutosVenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Produtos,
+            this.Quantidade,
+            this.PrecoUnitario,
+            this.valorTotal});
+            this.dgvProdutosVenda.GridColor = System.Drawing.SystemColors.WindowText;
+            this.dgvProdutosVenda.Location = new System.Drawing.Point(284, 367);
+            this.dgvProdutosVenda.Name = "dgvProdutosVenda";
+            this.dgvProdutosVenda.RowHeadersWidth = 51;
+            this.dgvProdutosVenda.RowTemplate.Height = 24;
+            this.dgvProdutosVenda.Size = new System.Drawing.Size(714, 261);
+            this.dgvProdutosVenda.TabIndex = 32;
+            this.dgvProdutosVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // btnLancarProduto
+            // 
+            this.btnLancarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnLancarProduto.FlatAppearance.BorderSize = 0;
+            this.btnLancarProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnLancarProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnLancarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLancarProduto.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLancarProduto.ForeColor = System.Drawing.Color.White;
+            this.btnLancarProduto.Location = new System.Drawing.Point(870, 300);
+            this.btnLancarProduto.Name = "btnLancarProduto";
+            this.btnLancarProduto.Size = new System.Drawing.Size(128, 30);
+            this.btnLancarProduto.TabIndex = 33;
+            this.btnLancarProduto.Text = "Lançar";
+            this.btnLancarProduto.UseVisualStyleBackColor = false;
+            this.btnLancarProduto.Click += new System.EventHandler(this.btnLancarProduto_Click);
+            // 
+            // Produtos
+            // 
+            this.Produtos.HeaderText = "Produtos";
+            this.Produtos.MinimumWidth = 6;
+            this.Produtos.Name = "Produtos";
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.MinimumWidth = 6;
+            this.Quantidade.Name = "Quantidade";
+            // 
+            // PrecoUnitario
+            // 
+            this.PrecoUnitario.HeaderText = "Preço Unitário";
+            this.PrecoUnitario.MinimumWidth = 6;
+            this.PrecoUnitario.Name = "PrecoUnitario";
+            // 
+            // valorTotal
+            // 
+            this.valorTotal.HeaderText = "Valor Total";
+            this.valorTotal.MinimumWidth = 6;
+            this.valorTotal.Name = "valorTotal";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(724, 651);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 48);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Limpar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 593);
+            this.ClientSize = new System.Drawing.Size(1101, 720);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLancarProduto);
+            this.Controls.Add(this.dgvProdutosVenda);
             this.Controls.Add(this.btnPesquisarCliente);
             this.Controls.Add(this.txbCliente);
             this.Controls.Add(this.pnlLeft);
@@ -276,6 +364,7 @@
             this.Controls.Add(this.txbProduto);
             this.Controls.Add(this.btnSalvarCadastroFunc);
             this.Controls.Add(this.pnlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Venda";
             this.Text = "Venda";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Venda_FormClosing);
@@ -285,6 +374,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.terceirosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,5 +403,12 @@
         private DataSet1TableAdapters.terceirosTableAdapter terceirosTableAdapter;
         public System.Windows.Forms.TextBox txbCliente;
         public System.Windows.Forms.TextBox txbProduto;
+        private System.Windows.Forms.DataGridView dgvProdutosVenda;
+        private System.Windows.Forms.Button btnLancarProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Produtos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecoUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorTotal;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -59,10 +59,13 @@ namespace SoftwareFicticio
         string nome;
         string email;
         string telefone;
+        string registro;
         public void dgvCadastroTerceiros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             nome = this.dgvCadastroTerceiros.CurrentRow.Cells[1].Value.ToString();
-
+            email = this.dgvCadastroTerceiros.CurrentRow.Cells[3].Value.ToString();
+            telefone = this.dgvCadastroTerceiros.CurrentRow.Cells[4].Value.ToString();
+            registro = this.dgvCadastroTerceiros.CurrentRow.Cells[2].Value.ToString();
             if (this.Owner.Name == "Venda")
             {
                 try
@@ -76,7 +79,18 @@ namespace SoftwareFicticio
                     MessageBox.Show(ex.Message);
                 }
             }
-            else { }
+            else if(this.Owner.Name == "RegistroTerceiros")
+            {
+                try
+                {
+                    ((RegistroTerceiros)this.Owner).getData(nome,email,telefone,registro);
+                    Close();
+                }
+                catch(Exception ex)
+                {
+
+                }
+            }
         }
         private void CadastroTerceiros_FormClosing(object sender, FormClosingEventArgs e)
         {

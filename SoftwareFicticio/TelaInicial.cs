@@ -39,9 +39,8 @@ namespace SoftwareFicticio
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
-            RegistroProdutos registroFuncionarios = new RegistroProdutos();
-            registroFuncionarios.ShowDialog();
-
+            CadastroProdutos cadastroProdutos = new CadastroProdutos();
+            cadastroProdutos.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -67,8 +66,8 @@ namespace SoftwareFicticio
 
         private void btnVenda_Click(object sender, EventArgs e)
         {
-            Venda venda = new Venda();
-            venda.ShowDialog();
+            ConsultaVenda consultaVenda = new ConsultaVenda();
+            consultaVenda.ShowDialog();
         }
     }
 }

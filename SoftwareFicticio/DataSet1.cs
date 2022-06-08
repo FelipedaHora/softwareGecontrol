@@ -4,6 +4,10 @@
 
     partial class DataSet1
     {
+        partial class vendaDataTable
+        {
+        }
+
         partial class funcionarioDataTable
         {
         }
@@ -16,6 +20,7 @@ namespace SoftwareFicticio.DataSet1TableAdapters
     {
     }
 
-    public partial class funcionarioTableAdapter {
+    public partial class funcionarioTableAdapter
+    {
     }
 }

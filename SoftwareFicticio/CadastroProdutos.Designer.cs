@@ -33,7 +33,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCadastroProd = new System.Windows.Forms.DataGridView();
-            this.btnSelecionar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.txbNome = new System.Windows.Forms.TextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.txbPreco = new System.Windows.Forms.TextBox();
+            this.lblPreco = new System.Windows.Forms.Label();
+            this.cbxUnidadeVenda = new System.Windows.Forms.ComboBox();
+            this.lblUnidadeVenda = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadevendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +62,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.panel2.Location = new System.Drawing.Point(1, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(218, 535);
+            this.panel2.Size = new System.Drawing.Size(177, 639);
             this.panel2.TabIndex = 4;
             // 
             // label5
@@ -62,7 +70,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(631, 9);
+            this.label5.Location = new System.Drawing.Point(704, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(161, 36);
             this.label5.TabIndex = 0;
@@ -72,9 +80,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(216, 0);
+            this.panel1.Location = new System.Drawing.Point(175, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(886, 60);
+            this.panel1.Size = new System.Drawing.Size(927, 60);
             this.panel1.TabIndex = 3;
             // 
             // dgvCadastroProd
@@ -92,33 +100,124 @@
             this.datacadastroDataGridViewTextBoxColumn,
             this.dataatualizacaoDataGridViewTextBoxColumn});
             this.dgvCadastroProd.DataSource = this.produtosBindingSource;
-            this.dgvCadastroProd.Location = new System.Drawing.Point(240, 83);
+            this.dgvCadastroProd.Location = new System.Drawing.Point(229, 213);
             this.dgvCadastroProd.Name = "dgvCadastroProd";
             this.dgvCadastroProd.ReadOnly = true;
             this.dgvCadastroProd.RowHeadersWidth = 51;
             this.dgvCadastroProd.RowTemplate.Height = 24;
             this.dgvCadastroProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCadastroProd.Size = new System.Drawing.Size(768, 346);
+            this.dgvCadastroProd.Size = new System.Drawing.Size(811, 341);
             this.dgvCadastroProd.TabIndex = 16;
             this.dgvCadastroProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCadastroProd_CellContentClick);
             this.dgvCadastroProd.Click += new System.EventHandler(this.dgvCadastroProd_Click);
             // 
-            // btnSelecionar
+            // btnNovo
             // 
-            this.btnSelecionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
-            this.btnSelecionar.FlatAppearance.BorderSize = 0;
-            this.btnSelecionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnSelecionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecionar.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionar.Location = new System.Drawing.Point(880, 453);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(128, 48);
-            this.btnSelecionar.TabIndex = 18;
-            this.btnSelecionar.Text = "Selecionar";
-            this.btnSelecionar.UseVisualStyleBackColor = false;
-            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.ForeColor = System.Drawing.Color.White;
+            this.btnNovo.Location = new System.Drawing.Point(912, 577);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(128, 48);
+            this.btnNovo.TabIndex = 18;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
+            // txbNome
+            // 
+            this.txbNome.Location = new System.Drawing.Point(227, 103);
+            this.txbNome.Name = "txbNome";
+            this.txbNome.Size = new System.Drawing.Size(304, 22);
+            this.txbNome.TabIndex = 19;
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.Location = new System.Drawing.Point(223, 76);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(203, 24);
+            this.lblDescricao.TabIndex = 20;
+            this.lblDescricao.Text = "Descrição do produto";
+            // 
+            // txbPreco
+            // 
+            this.txbPreco.Location = new System.Drawing.Point(227, 173);
+            this.txbPreco.Name = "txbPreco";
+            this.txbPreco.Size = new System.Drawing.Size(304, 22);
+            this.txbPreco.TabIndex = 21;
+            // 
+            // lblPreco
+            // 
+            this.lblPreco.AutoSize = true;
+            this.lblPreco.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreco.Location = new System.Drawing.Point(225, 146);
+            this.lblPreco.Name = "lblPreco";
+            this.lblPreco.Size = new System.Drawing.Size(68, 24);
+            this.lblPreco.TabIndex = 22;
+            this.lblPreco.Text = "Preco:";
+            // 
+            // cbxUnidadeVenda
+            // 
+            this.cbxUnidadeVenda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxUnidadeVenda.FormattingEnabled = true;
+            this.cbxUnidadeVenda.Items.AddRange(new object[] {
+            "UN",
+            "FD",
+            "CX"});
+            this.cbxUnidadeVenda.Location = new System.Drawing.Point(870, 103);
+            this.cbxUnidadeVenda.Name = "cbxUnidadeVenda";
+            this.cbxUnidadeVenda.Size = new System.Drawing.Size(170, 24);
+            this.cbxUnidadeVenda.TabIndex = 23;
+            // 
+            // lblUnidadeVenda
+            // 
+            this.lblUnidadeVenda.AutoSize = true;
+            this.lblUnidadeVenda.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnidadeVenda.Location = new System.Drawing.Point(866, 76);
+            this.lblUnidadeVenda.Name = "lblUnidadeVenda";
+            this.lblUnidadeVenda.Size = new System.Drawing.Size(174, 24);
+            this.lblUnidadeVenda.TabIndex = 24;
+            this.lblUnidadeVenda.Text = "Unidade de venda:";
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Location = new System.Drawing.Point(767, 577);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(128, 48);
+            this.btnExcluir.TabIndex = 25;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.Color.White;
+            this.btnAlterar.Location = new System.Drawing.Point(622, 577);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(128, 48);
+            this.btnAlterar.TabIndex = 26;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -186,8 +285,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 523);
-            this.Controls.Add(this.btnSelecionar);
+            this.ClientSize = new System.Drawing.Size(1101, 637);
+            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.lblUnidadeVenda);
+            this.Controls.Add(this.cbxUnidadeVenda);
+            this.Controls.Add(this.lblPreco);
+            this.Controls.Add(this.txbPreco);
+            this.Controls.Add(this.lblDescricao);
+            this.Controls.Add(this.txbNome);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvCadastroProd);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -201,6 +308,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -218,6 +326,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datacadastroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataatualizacaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnSelecionar;
+        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.TextBox txbNome;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.TextBox txbPreco;
+        private System.Windows.Forms.Label lblPreco;
+        private System.Windows.Forms.ComboBox cbxUnidadeVenda;
+        private System.Windows.Forms.Label lblUnidadeVenda;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

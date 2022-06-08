@@ -32,7 +32,7 @@ namespace SoftwareFicticio
             }
             DateTime dataCadastro = DateTime.Now;
 
-            DataSet1TableAdapters.terceirosTableAdapter insertTerceiros = new DataSet1TableAdapters.terceirosTableAdapter();
+            DataSet2TableAdapters.terceirosTableAdapter insertTerceiros = new DataSet2TableAdapters.terceirosTableAdapter();
             insertTerceiros.InsertQuery(txbNome.Text, document, txbEmail.Text, mtbTelefone.Text, dataCadastro);
 
             MessageBox.Show("Cadastro criado com sucesso!");
@@ -66,13 +66,25 @@ namespace SoftwareFicticio
         {
             this.Dispose();
         }
-
-        public void getData(string nome, string email, string telefone)
+        string registro;
+        public void getData(string nome, string email, string telefone,string documento)
         {
-            txbNome.Text += nome.ToString();
-            MessageBox.Show(nome);
-            txbEmail.Text += email;
-            mtbTelefone.Text += telefone;
+            txbNome.Text = nome;
+            txbEmail.Text = email;
+            mtbTelefone.Text = telefone;
+            if(documento.Length == 14)
+            {
+                rbCPF.Checked = true;
+                mtbCPF.Text = documento;
+            }
+            else if(documento.Length == 18)
+            {
+                rbCNPJ.Checked = true;
+                mtbCNPJ.Text = documento;
+            }
+            
+            
+            registro = documento;
         }
 
         private void RegistroTerceiros_Load(object sender, EventArgs e)
@@ -106,6 +118,7 @@ namespace SoftwareFicticio
         private void button2_Click_1(object sender, EventArgs e)
         {
             CadastroTerceiros cadastroTerceiros = new CadastroTerceiros();
+            cadastroTerceiros.Owner= this;
             cadastroTerceiros.ShowDialog();
 
         }

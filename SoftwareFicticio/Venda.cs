@@ -28,19 +28,26 @@ namespace SoftwareFicticio
         
         public void getDataSell(string nome)
         {
+           //Metodo para ser instanciado na tela de Terceiros e coletar NOME para preencher o textbox
            txbCliente.Text = nome;
            DateTime datacadastro = DateTime.Now;
            mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
            
         }
-        public void getDataProduto(string produto,double preco)
+        decimal precoProduto;
+        public void getDataProduto(string produto,decimal preco)
         {
+            //Metodo para ser instanciado na tela de Produtos e coletar a DESCRIÇÃO e o preço do produto
+            //Para preencher o textbox
             txbProduto.Text = produto;
             txbPreco.Text = preco.ToString();
+            precoProduto = preco;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Instanciando a tela de cadastros de TERCEIROS e já informando que o Owner é esta tela aqui
+            //Para que seja possível trazer as informações e preencher os textbox
             CadastroTerceiros cadastroTerc = new CadastroTerceiros();
             cadastroTerc.Owner = this;
             cadastroTerc.ShowDialog();
@@ -79,9 +86,36 @@ namespace SoftwareFicticio
 
         private void btnPesquisarProduto_Click(object sender, EventArgs e)
         {
+            //Instanciando a tela de cadastros de produtos e já informando que o Owner é esta tela aqui
+            //Para que seja possível trazer as informações e preencher os textbox
             CadastroProdutos cadastroProdutos = new CadastroProdutos();
             cadastroProdutos.Owner = this;
             cadastroProdutos.ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        
+        private void btnLancarProduto_Click(object sender, EventArgs e)
+        {
+            //Lança o produto no DataGridView, e limpa os campos já preenchidos para que seja possível lançar outro produto
+            double precoTotal = ((double)precoProduto * int.Parse(txbQuantidade.Text));
+            dgvProdutosVenda.Rows.Add(txbProduto.Text,txbQuantidade.Text,txbPreco.Text,precoTotal);
+            txbProduto.Clear();
+            txbQuantidade.Clear();
+            txbPreco.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Limpar todos os campos e refazer a venda
+            txbProduto.Clear();
+            txbQuantidade.Clear();
+            txbPreco.Clear();
+            txbCliente.Clear();
+            dgvProdutosVenda.Rows.Clear();
         }
     }
 }

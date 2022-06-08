@@ -85,14 +85,12 @@ namespace SoftwareFicticio
 
                 // Preenchendo o DataSet para atualizar os cadastros, os parametros que estão um AO LADO DO OUTRO são os novos a serem inseridos
                 // Os que estão um acima do outro, sao os antigos que foram selecionados do DataGridView
-             DataSet1TableAdapters.funcionarioTableAdapter funcionarioTableAdapter = new DataSet1TableAdapters.funcionarioTableAdapter();
-             funcionarioTableAdapter.UpdateQuery(txbNome.Text, txbEmail.Text, decimal.Parse(txbSalario.Text), sexoAlteracao, tipoContratoAlteracao, dataAtualizacao,
+             DataSet2TableAdapters.funcionarioTableAdapter funcionarioTableAdapter = new DataSet2TableAdapters.funcionarioTableAdapter();
+             funcionarioTableAdapter.UpdateQuery(txbNome.Text, txbEmail.Text, tipoContratoAlteracao, dataAtualizacao, decimal.Parse(txbSalario.Text),
                     nome,
                     email,
-                    salario,
-                    sexo,
                     tipo_contrato,
-                    data_cadastro
+                    salario
                     );
 
                 MessageBox.Show("Cadastro atualizado com sucesso!");

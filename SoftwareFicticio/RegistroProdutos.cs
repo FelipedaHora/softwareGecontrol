@@ -21,7 +21,26 @@ namespace SoftwareFicticio
         {
 
         }
+        int idAuxiliar;
+        public void getProdutos(string descricao, decimal preco, string unVenda,int id)
+        {
+            if (unVenda == "UN")
+            {
+                cbxUnidadeVenda.SelectedIndex = 0;
+            }
+            else if (unVenda == "FD")
+            {
+                cbxUnidadeVenda.SelectedIndex = 1;
+            }
+            else if (unVenda == "CX")
+            {
+                cbxUnidadeVenda.SelectedIndex = 2;
+            }
 
+            txbDescProduto.Text = descricao;
+            txbPreco.Text = preco.ToString();
+            idAuxiliar = id;
+        }
         private void btnSalvarCadastroTerc_Click(object sender, EventArgs e)
         {
             try
@@ -42,7 +61,7 @@ namespace SoftwareFicticio
 
                 DateTime dataCadastro = DateTime.Now;
 
-                DataSet1TableAdapters.produtosTableAdapter productInsertData = new DataSet1TableAdapters.produtosTableAdapter();
+                DataSet2TableAdapters.produtosTableAdapter productInsertData = new DataSet2TableAdapters.produtosTableAdapter();
                 productInsertData.InsertQuery(txbDescProduto.Text, unVenda, decimal.Parse(txbPreco.Text), dataCadastro);
 
                 MessageBox.Show("Cadastro criado com sucesso!");
@@ -76,17 +95,17 @@ namespace SoftwareFicticio
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-           /* try
+            try
             {
-                DataSet1TableAdapters.produtosTableAdapter dropProduct = new DataSet1TableAdapters.produtosTableAdapter();
-                dropProduct.DeleteQuery(id);
-
+                DataSet2TableAdapters.produtosTableAdapter dropProduct = new DataSet2TableAdapters.produtosTableAdapter();
+                dropProduct.DeleteQuery(idAuxiliar);
                 MessageBox.Show("Produto excluído com sucesso!");
+                Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -97,6 +116,7 @@ namespace SoftwareFicticio
         private void button1_Click(object sender, EventArgs e)
         {
             CadastroProdutos cadastroProdutos = new CadastroProdutos();
+            cadastroProdutos.Owner = this;
             cadastroProdutos.ShowDialog();
         }
     }

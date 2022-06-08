@@ -40,7 +40,7 @@ namespace SoftwareFicticio
         int id;
         string descricaoProduto;
         string unidadeVenda;
-        double preco;
+        decimal preco;
         DateTime dataCadastro;
         DateTime dataatualizacao;
         private void dgvCadastroProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,7 +48,7 @@ namespace SoftwareFicticio
             id = Convert.ToInt32(dgvCadastroProd.Rows[e.RowIndex].Cells[0].Value);
             descricaoProduto = Convert.ToString(dgvCadastroProd.Rows[e.RowIndex].Cells[1].Value);
             unidadeVenda = Convert.ToString(dgvCadastroProd.Rows[e.RowIndex].Cells[2].Value);
-            preco = Convert.ToDouble(dgvCadastroProd.Rows[e.RowIndex].Cells[3].Value);
+            preco = Convert.ToDecimal(dgvCadastroProd.Rows[e.RowIndex].Cells[3].Value);
 
             if (this.Owner.Name == "Venda")
             {
@@ -62,7 +62,19 @@ namespace SoftwareFicticio
                     MessageBox.Show(ex.Message);
                 }
             }
-
+            else if(this.Owner.Name == "RegistroProdutos")
+            {
+                try
+                {
+                    ((RegistroProdutos)this.Owner).getProdutos(descricaoProduto, preco, unidadeVenda,id);
+                    Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            
         }
 
         private void dgvCadastroProd_Click(object sender, EventArgs e)
@@ -76,19 +88,46 @@ namespace SoftwareFicticio
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            if (this.Owner.Name == "Venda")
+            RegistroProdutos registroProdutos = new RegistroProdutos();
+            registroProdutos.ShowDialog();
+        }
+
+        private void btnExcluir_Click_1(object sender, EventArgs e)
+        {
+            try
             {
-                try
-                {
-                    ((Venda)this.Owner).getDataProduto(descricaoProduto,preco);
-                    Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                DataSet2TableAdapters.produtosTableAdapter produtosTableAdapter = new DataSet2TableAdapters.produtosTableAdapter();
+                produtosTableAdapter.DeleteQuery(id);
+
+                MessageBox.Show("Produto excluído com sucesso!");
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        string choiceUnidadeVenda;
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if(cbxUnidadeVenda.SelectedIndex == 0)
+            {
+                choiceUnidadeVenda = "UN";
+            }
+            else if(cbxUnidadeVenda.SelectedIndex == 1)
+            {
+                choiceUnidadeVenda = "FD";
+            }
+            else
+            {
+                choiceUnidadeVenda = "CX";
+            }
+            dataatualizacao = DateTime.Now;
+            DataSet2TableAdapters.produtosTableAdapter produtosTableAdapter = new DataSet2TableAdapters.produtosTableAdapter();
+            produtosTableAdapter.UpdateQuery(txbNome.Text, choiceUnidadeVenda, decimal.Parse(txbPreco.Text),
+                descricaoProduto,
+                unidadeVenda,
+                preco,
+                dataatualizacao);
         }
     }
 }

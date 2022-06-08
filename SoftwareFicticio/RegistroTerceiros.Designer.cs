@@ -100,10 +100,10 @@
             // 
             // mtbCNPJ
             // 
-            this.mtbCNPJ.Location = new System.Drawing.Point(176, 75);
+            this.mtbCNPJ.Location = new System.Drawing.Point(158, 75);
             this.mtbCNPJ.Mask = "00.000.000/0000-00";
             this.mtbCNPJ.Name = "mtbCNPJ";
-            this.mtbCNPJ.Size = new System.Drawing.Size(129, 32);
+            this.mtbCNPJ.Size = new System.Drawing.Size(147, 32);
             this.mtbCNPJ.TabIndex = 3;
             // 
             // mtbCPF
@@ -111,7 +111,7 @@
             this.mtbCPF.Location = new System.Drawing.Point(16, 75);
             this.mtbCPF.Mask = "000.000.000-00";
             this.mtbCPF.Name = "mtbCPF";
-            this.mtbCPF.Size = new System.Drawing.Size(129, 32);
+            this.mtbCPF.Size = new System.Drawing.Size(142, 32);
             this.mtbCPF.TabIndex = 2;
             // 
             // rbCNPJ
@@ -143,7 +143,7 @@
             this.mtbTelefone.Location = new System.Drawing.Point(564, 220);
             this.mtbTelefone.Mask = "(99) 00000-0000";
             this.mtbTelefone.Name = "mtbTelefone";
-            this.mtbTelefone.Size = new System.Drawing.Size(101, 22);
+            this.mtbTelefone.Size = new System.Drawing.Size(117, 22);
             this.mtbTelefone.TabIndex = 20;
             // 
             // label2
