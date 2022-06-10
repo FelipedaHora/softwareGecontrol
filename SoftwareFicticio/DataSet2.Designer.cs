@@ -5307,7 +5307,7 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[3];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT \"id\", \"id_terceiros\", \"numero_nf\", \"data_pedido\", \"data_emissao\", \"data_en" +
@@ -5318,6 +5318,16 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
             this._commandCollection[1].CommandText = "DELETE FROM \"banco_teste\".\"public\".\"venda\" WHERE (\"id\" = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id", global::System.Data.Odbc.OdbcType.Int, 19, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[2] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO \"banco_teste\".\"public\".\"venda\" (\"id_terceiros\", \"data_pedido\", \"data_" +
+                "emissao\", \"data_entregar\", \"valor_total\") VALUES (?, ?, ?, ?, ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_terceiros", global::System.Data.Odbc.OdbcType.Int, 19, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_terceiros", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_pedido", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_pedido", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_emissao", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_emissao", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_entregar", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_entregar", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("valor_total", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(10)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5491,6 +5501,59 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
         public virtual int DeleteQuery(int id) {
             global::System.Data.Odbc.OdbcCommand command = this.CommandCollection[1];
             command.Parameters[0].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(global::System.Nullable<int> id_terceiros, global::System.Nullable<global::System.DateTime> data_pedido, global::System.Nullable<global::System.DateTime> data_emissao, global::System.Nullable<global::System.DateTime> data_entregar, global::System.Nullable<decimal> valor_total) {
+            global::System.Data.Odbc.OdbcCommand command = this.CommandCollection[2];
+            if ((id_terceiros.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(id_terceiros.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((data_pedido.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(data_pedido.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((data_emissao.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(data_emissao.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((data_entregar.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(data_entregar.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((valor_total.HasValue == true)) {
+                command.Parameters[4].Value = ((decimal)(valor_total.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5696,12 +5759,22 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT \"id\", \"id_venda\", \"id_produto\", \"quantidade\", \"valor_unit\", \"valor_total\" " +
                 "FROM \"public\".\"vendas_itens\"";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO \"banco_teste\".\"public\".\"vendas_itens\" (\"id_venda\", \"id_produto\", \"qua" +
+                "ntidade\", \"valor_unit\", \"valor_total\") VALUES (?, ?, ?, ?, ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_venda", global::System.Data.Odbc.OdbcType.Int, 19, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_venda", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_produto", global::System.Data.Odbc.OdbcType.Int, 19, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_produto", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("quantidade", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quantidade", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("valor_unit", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(10)), ((byte)(0)), "valor_unit", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("valor_total", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(10)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5860,6 +5933,59 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(long id_venda, long id_produto, int quantidade, double valor_unit, double valor_total, long Original_id, long Original_id_venda, long Original_id_produto, int Original_quantidade, double Original_valor_unit, double Original_valor_total) {
             return this.Update(Original_id, id_venda, id_produto, quantidade, valor_unit, valor_total, Original_id, Original_id_venda, Original_id_produto, Original_quantidade, Original_valor_unit, Original_valor_total);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(global::System.Nullable<int> id_venda, global::System.Nullable<int> id_produto, global::System.Nullable<int> quantidade, global::System.Nullable<decimal> valor_unit, global::System.Nullable<decimal> valor_total) {
+            global::System.Data.Odbc.OdbcCommand command = this.CommandCollection[1];
+            if ((id_venda.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(id_venda.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_produto.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(id_produto.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((quantidade.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(quantidade.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((valor_unit.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(valor_unit.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((valor_total.HasValue == true)) {
+                command.Parameters[4].Value = ((decimal)(valor_total.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

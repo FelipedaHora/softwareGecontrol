@@ -25,14 +25,15 @@ namespace SoftwareFicticio
             this.produtosTableAdapter.Fill(this.dataSet1.produtos);
 
         }
-        
-        public void getDataSell(string nome)
+        int getId;
+        public void getDataSell(string nome,int id)
         {
            //Metodo para ser instanciado na tela de Terceiros e coletar NOME para preencher o textbox
            txbCliente.Text = nome;
-           DateTime datacadastro = DateTime.Now;
-           mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
-           
+          // DateTime datacadastro = DateTime.Now;
+           //mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
+           id = Convert.ToInt32(id);
+           getId = Convert.ToInt32(id);
         }
         decimal precoProduto;
         public void getDataProduto(string produto,decimal preco)
@@ -97,25 +98,75 @@ namespace SoftwareFicticio
         {
 
         }
-        
+
+        //Lança o produto no DataGridView, e limpa os campos já preenchidos para que seja possível lançar outro produto
         private void btnLancarProduto_Click(object sender, EventArgs e)
         {
-            //Lança o produto no DataGridView, e limpa os campos já preenchidos para que seja possível lançar outro produto
-            double precoTotal = ((double)precoProduto * int.Parse(txbQuantidade.Text));
-            dgvProdutosVenda.Rows.Add(txbProduto.Text,txbQuantidade.Text,txbPreco.Text,precoTotal);
-            txbProduto.Clear();
-            txbQuantidade.Clear();
-            txbPreco.Clear();
-        }
+            try
+            {
+                double precoUnitario = ((double)precoProduto * int.Parse(txbQuantidade.Text));
+                dgvProdutosVenda.Rows.Add(txbProduto.Text, txbQuantidade.Text, txbPreco.Text, precoUnitario);
 
-        private void button1_Click(object sender, EventArgs e)
+                txbProduto.Clear();
+                txbQuantidade.Clear();
+                txbPreco.Clear();
+                totalMethod();
+                
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+        private void totalMethod()
         {
-            //Limpar todos os campos e refazer a venda
+            try
+            {
+                txbValorTotal.Text = "0";
+                foreach (DataGridViewRow item in dgvProdutosVenda.Rows)
+                {
+                    int n = item.Index;
+                    txbValorTotal.Text = (Double.Parse(txbValorTotal.Text.ToString())
+                                        + Double.Parse(dgvProdutosVenda.Rows[n].Cells[3].Value.ToString())).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {//Limpar todos os campos e refazer a venda
             txbProduto.Clear();
             txbQuantidade.Clear();
             txbPreco.Clear();
             txbCliente.Clear();
             dgvProdutosVenda.Rows.Clear();
+            mtbDataEntrega.Clear();
+            txbValorTotal.Clear();
+        }
+    
+        private void btnSalvarCadastroFunc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dataPedido = DateTime.Now;
+                DateTime dataEmissao = DateTime.Now;
+                DataSet2TableAdapters.vendaTableAdapter vendaTableAdapter = new DataSet2TableAdapters.vendaTableAdapter();
+                vendaTableAdapter.InsertQuery(Convert.ToInt32(getId), dataPedido, dataEmissao, DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void txbValorTotal_TextChanged(object sender, EventArgs e)
+        {
+         
         }
     }
 }

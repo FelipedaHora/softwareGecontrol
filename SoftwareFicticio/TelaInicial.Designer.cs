@@ -156,15 +156,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SoftwareFicticio.Properties.Resources.wallpaperSoftware;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1139, 558);
             this.Controls.Add(this.btnChoiceTerceiros);
             this.Controls.Add(this.btnChoiceProdutos);
             this.Controls.Add(this.btnChoiceFuncionarios);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlLeft);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmTelaInicial";
+            this.ShowInTaskbar = false;
             this.Text = "Home";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTelaInicial_FormClosing);
             this.pnlLeft.ResumeLayout(false);

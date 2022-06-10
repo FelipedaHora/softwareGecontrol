@@ -66,11 +66,12 @@ namespace SoftwareFicticio
             email = this.dgvCadastroTerceiros.CurrentRow.Cells[3].Value.ToString();
             telefone = this.dgvCadastroTerceiros.CurrentRow.Cells[4].Value.ToString();
             registro = this.dgvCadastroTerceiros.CurrentRow.Cells[2].Value.ToString();
+            id = int.Parse(this.dgvCadastroTerceiros.CurrentRow.Cells[0].Value.ToString());
             if (this.Owner.Name == "Venda")
             {
                 try
                 {
-                    ((Venda)this.Owner).getDataSell(nome);
+                    ((Venda)this.Owner).getDataSell(nome,id);
                     Close();
 
                 }
@@ -88,7 +89,7 @@ namespace SoftwareFicticio
                 }
                 catch(Exception ex)
                 {
-
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -107,7 +108,7 @@ namespace SoftwareFicticio
             {
                 try
                 {
-                    ((Venda)this.Owner).getDataSell(nome);
+                    ((Venda)this.Owner).getDataSell(nome,id);
                     Close();
 
                 }

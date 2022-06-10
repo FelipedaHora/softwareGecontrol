@@ -51,12 +51,16 @@
             this.terceirosTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.terceirosTableAdapter();
             this.txbCliente = new System.Windows.Forms.TextBox();
             this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
-            this.btnLancarProduto = new System.Windows.Forms.Button();
             this.Produtos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorTotalFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLancarProduto = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.mtbDataEntrega = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txbValorTotal = new System.Windows.Forms.TextBox();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
@@ -89,7 +93,7 @@
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.pnlLeft.Location = new System.Drawing.Point(1, 0);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(200, 722);
+            this.pnlLeft.Size = new System.Drawing.Size(200, 782);
             this.pnlLeft.TabIndex = 3;
             // 
             // btnSalvarCadastroFunc
@@ -101,12 +105,13 @@
             this.btnSalvarCadastroFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarCadastroFunc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarCadastroFunc.ForeColor = System.Drawing.Color.White;
-            this.btnSalvarCadastroFunc.Location = new System.Drawing.Point(870, 651);
+            this.btnSalvarCadastroFunc.Location = new System.Drawing.Point(870, 723);
             this.btnSalvarCadastroFunc.Name = "btnSalvarCadastroFunc";
             this.btnSalvarCadastroFunc.Size = new System.Drawing.Size(128, 48);
             this.btnSalvarCadastroFunc.TabIndex = 16;
             this.btnSalvarCadastroFunc.Text = "Salvar";
             this.btnSalvarCadastroFunc.UseVisualStyleBackColor = false;
+            this.btnSalvarCadastroFunc.Click += new System.EventHandler(this.btnSalvarCadastroFunc_Click);
             // 
             // dataSet1
             // 
@@ -273,7 +278,8 @@
             this.Produtos,
             this.Quantidade,
             this.PrecoUnitario,
-            this.valorTotal});
+            this.valorUnit,
+            this.valorTotalFinal});
             this.dgvProdutosVenda.GridColor = System.Drawing.SystemColors.WindowText;
             this.dgvProdutosVenda.Location = new System.Drawing.Point(284, 367);
             this.dgvProdutosVenda.Name = "dgvProdutosVenda";
@@ -282,23 +288,6 @@
             this.dgvProdutosVenda.Size = new System.Drawing.Size(714, 261);
             this.dgvProdutosVenda.TabIndex = 32;
             this.dgvProdutosVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // btnLancarProduto
-            // 
-            this.btnLancarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
-            this.btnLancarProduto.FlatAppearance.BorderSize = 0;
-            this.btnLancarProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnLancarProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnLancarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLancarProduto.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLancarProduto.ForeColor = System.Drawing.Color.White;
-            this.btnLancarProduto.Location = new System.Drawing.Point(870, 300);
-            this.btnLancarProduto.Name = "btnLancarProduto";
-            this.btnLancarProduto.Size = new System.Drawing.Size(128, 30);
-            this.btnLancarProduto.TabIndex = 33;
-            this.btnLancarProduto.Text = "Lançar";
-            this.btnLancarProduto.UseVisualStyleBackColor = false;
-            this.btnLancarProduto.Click += new System.EventHandler(this.btnLancarProduto_Click);
             // 
             // Produtos
             // 
@@ -318,11 +307,35 @@
             this.PrecoUnitario.MinimumWidth = 6;
             this.PrecoUnitario.Name = "PrecoUnitario";
             // 
-            // valorTotal
+            // valorUnit
             // 
-            this.valorTotal.HeaderText = "Valor Total";
-            this.valorTotal.MinimumWidth = 6;
-            this.valorTotal.Name = "valorTotal";
+            this.valorUnit.HeaderText = "Valor";
+            this.valorUnit.MinimumWidth = 6;
+            this.valorUnit.Name = "valorUnit";
+            // 
+            // valorTotalFinal
+            // 
+            this.valorTotalFinal.HeaderText = "Valor Total";
+            this.valorTotalFinal.MinimumWidth = 6;
+            this.valorTotalFinal.Name = "valorTotalFinal";
+            this.valorTotalFinal.ReadOnly = true;
+            // 
+            // btnLancarProduto
+            // 
+            this.btnLancarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnLancarProduto.FlatAppearance.BorderSize = 0;
+            this.btnLancarProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnLancarProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnLancarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLancarProduto.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLancarProduto.ForeColor = System.Drawing.Color.White;
+            this.btnLancarProduto.Location = new System.Drawing.Point(870, 300);
+            this.btnLancarProduto.Name = "btnLancarProduto";
+            this.btnLancarProduto.Size = new System.Drawing.Size(128, 30);
+            this.btnLancarProduto.TabIndex = 33;
+            this.btnLancarProduto.Text = "Lançar";
+            this.btnLancarProduto.UseVisualStyleBackColor = false;
+            this.btnLancarProduto.Click += new System.EventHandler(this.btnLancarProduto_Click);
             // 
             // button1
             // 
@@ -333,7 +346,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(724, 651);
+            this.button1.Location = new System.Drawing.Point(722, 723);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 48);
             this.button1.TabIndex = 34;
@@ -341,11 +354,44 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // mtbDataEntrega
+            // 
+            this.mtbDataEntrega.Location = new System.Drawing.Point(550, 308);
+            this.mtbDataEntrega.Mask = "00/00/0000";
+            this.mtbDataEntrega.Name = "mtbDataEntrega";
+            this.mtbDataEntrega.Size = new System.Drawing.Size(151, 22);
+            this.mtbDataEntrega.TabIndex = 35;
+            this.mtbDataEntrega.ValidatingType = typeof(System.DateTime);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(546, 281);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 24);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Data de entrega";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txbValorTotal
+            // 
+            this.txbValorTotal.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbValorTotal.Location = new System.Drawing.Point(870, 650);
+            this.txbValorTotal.Multiline = true;
+            this.txbValorTotal.Name = "txbValorTotal";
+            this.txbValorTotal.Size = new System.Drawing.Size(128, 48);
+            this.txbValorTotal.TabIndex = 37;
+            this.txbValorTotal.TextChanged += new System.EventHandler(this.txbValorTotal_TextChanged);
+            // 
             // Venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 720);
+            this.ClientSize = new System.Drawing.Size(1101, 783);
+            this.Controls.Add(this.txbValorTotal);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.mtbDataEntrega);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLancarProduto);
             this.Controls.Add(this.dgvProdutosVenda);
@@ -405,10 +451,14 @@
         public System.Windows.Forms.TextBox txbProduto;
         private System.Windows.Forms.DataGridView dgvProdutosVenda;
         private System.Windows.Forms.Button btnLancarProduto;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox mtbDataEntrega;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Produtos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecoUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorTotal;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorTotalFinal;
+        private System.Windows.Forms.TextBox txbValorTotal;
     }
 }

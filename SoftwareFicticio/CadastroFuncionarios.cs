@@ -29,13 +29,11 @@ namespace SoftwareFicticio
             this.funcionarioTableAdapter.Fill(this.dataSet1.funcionario);
 
         }
-        int i;
-        int id;
         private void dgvConsultaFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                id = Convert.ToInt32(dgvConsultaFuncionario.Rows[e.RowIndex].Cells[0].Value);
+                int id = Convert.ToInt32(dgvConsultaFuncionario.Rows[e.RowIndex].Cells[0].Value);
             }
             catch (Exception ex)
             {
