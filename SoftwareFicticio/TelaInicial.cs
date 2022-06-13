@@ -40,6 +40,7 @@ namespace SoftwareFicticio
         private void btnProdutos_Click(object sender, EventArgs e)
         {
             CadastroProdutos cadastroProdutos = new CadastroProdutos();
+            cadastroProdutos.Owner = this;
             cadastroProdutos.ShowDialog();
         }
 

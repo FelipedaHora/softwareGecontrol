@@ -66,6 +66,11 @@ namespace SoftwareFicticio
 
                 MessageBox.Show("Cadastro criado com sucesso!");
 
+                if (this.Owner.Name == "CadastroProdutos")
+                {
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -95,22 +100,12 @@ namespace SoftwareFicticio
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DataSet2TableAdapters.produtosTableAdapter dropProduct = new DataSet2TableAdapters.produtosTableAdapter();
-                dropProduct.DeleteQuery(idAuxiliar);
-                MessageBox.Show("Produto excluído com sucesso!");
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -118,6 +113,16 @@ namespace SoftwareFicticio
             CadastroProdutos cadastroProdutos = new CadastroProdutos();
             cadastroProdutos.Owner = this;
             cadastroProdutos.ShowDialog();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxUnidadeVenda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

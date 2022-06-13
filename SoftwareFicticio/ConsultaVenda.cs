@@ -22,6 +22,7 @@ namespace SoftwareFicticio
         {
             //Instanciando a tela de venda para cadastrar uma nova venda
             Venda venda = new Venda();
+            venda.Owner = this;
             venda.ShowDialog();
         }
 

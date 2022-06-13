@@ -30,10 +30,11 @@ namespace SoftwareFicticio
         {
            //Metodo para ser instanciado na tela de Terceiros e coletar NOME para preencher o textbox
            txbCliente.Text = nome;
-          // DateTime datacadastro = DateTime.Now;
-           //mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
+           DateTime datacadastro = DateTime.Now;
+           mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
            id = Convert.ToInt32(id);
            getId = Convert.ToInt32(id);
+           
         }
         decimal precoProduto;
         public void getDataProduto(string produto,decimal preco)
@@ -82,7 +83,7 @@ namespace SoftwareFicticio
 
         private void mtbData_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-           
+            
         }
 
         private void btnPesquisarProduto_Click(object sender, EventArgs e)
@@ -96,46 +97,35 @@ namespace SoftwareFicticio
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
-
+        private void totalMethod()
+        {
+          /* 
+           txbValorTotal.Text = "0";
+           foreach (DataGridViewRow item in dgvProdutosVenda.Rows)
+           {
+               int n = item.Index;
+               txbValorTotal.Text = (Double.Parse(txbValorTotal.Text.ToString())
+                                   + Double.Parse(dgvProdutosVenda.Rows[n].Cells[3].Value.ToString())).ToString();
+           */
+        }
         //Lança o produto no DataGridView, e limpa os campos já preenchidos para que seja possível lançar outro produto
         private void btnLancarProduto_Click(object sender, EventArgs e)
         {
-            try
-            {
-                double precoUnitario = ((double)precoProduto * int.Parse(txbQuantidade.Text));
-                dgvProdutosVenda.Rows.Add(txbProduto.Text, txbQuantidade.Text, txbPreco.Text, precoUnitario);
+            double precoUnitario = ((double)precoProduto * int.Parse(txbQuantidade.Text));
+            dgvProdutosVenda.Rows.Add(txbProduto.Text, txbQuantidade.Text, txbPreco.Text, precoUnitario);
 
-                txbProduto.Clear();
-                txbQuantidade.Clear();
-                txbPreco.Clear();
-                totalMethod();
-                
-                
-            }
-            catch (Exception ex)
+            txbProduto.Clear();
+            txbQuantidade.Clear();
+            txbPreco.Clear();
+
+            double sum = 0;
+            for(int i = 0; i < dgvProdutosVenda.Rows.Count; ++i)
             {
-                MessageBox.Show(ex.Message);
+                sum += Convert.ToDouble(dgvProdutosVenda.Rows[i].Cells[3].Value);
             }
-        }
-        
-        private void totalMethod()
-        {
-            try
-            {
-                txbValorTotal.Text = "0";
-                foreach (DataGridViewRow item in dgvProdutosVenda.Rows)
-                {
-                    int n = item.Index;
-                    txbValorTotal.Text = (Double.Parse(txbValorTotal.Text.ToString())
-                                        + Double.Parse(dgvProdutosVenda.Rows[n].Cells[3].Value.ToString())).ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            txbValorTotal.Text = sum.ToString();
         }
         private void button1_Click(object sender, EventArgs e)
         {//Limpar todos os campos e refazer a venda
@@ -155,7 +145,7 @@ namespace SoftwareFicticio
                 DateTime dataPedido = DateTime.Now;
                 DateTime dataEmissao = DateTime.Now;
                 DataSet2TableAdapters.vendaTableAdapter vendaTableAdapter = new DataSet2TableAdapters.vendaTableAdapter();
-                vendaTableAdapter.InsertQuery(Convert.ToInt32(getId), dataPedido, dataEmissao, DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text));
+                vendaTableAdapter.InsertQuery(getId, dataPedido, dataEmissao, DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text));
             }
             catch(Exception ex)
             {

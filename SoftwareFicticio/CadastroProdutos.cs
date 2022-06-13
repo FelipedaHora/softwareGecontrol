@@ -43,40 +43,7 @@ namespace SoftwareFicticio
         decimal preco;
         DateTime dataCadastro;
         DateTime dataatualizacao;
-        private void dgvCadastroProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            id = Convert.ToInt32(dgvCadastroProd.Rows[e.RowIndex].Cells[0].Value);
-            descricaoProduto = Convert.ToString(dgvCadastroProd.Rows[e.RowIndex].Cells[1].Value);
-            unidadeVenda = Convert.ToString(dgvCadastroProd.Rows[e.RowIndex].Cells[2].Value);
-            preco = Convert.ToDecimal(dgvCadastroProd.Rows[e.RowIndex].Cells[3].Value);
-
-            if (this.Owner.Name == "Venda")
-            {
-                try
-                {
-                    ((Venda)this.Owner).getDataProduto(descricaoProduto,preco);
-                    Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else if(this.Owner.Name == "RegistroProdutos")
-            {
-                try
-                {
-                    ((RegistroProdutos)this.Owner).getProdutos(descricaoProduto, preco, unidadeVenda,id);
-                    Close();
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            
-        }
-
+      
         private void dgvCadastroProd_Click(object sender, EventArgs e)
         {
             
@@ -96,10 +63,10 @@ namespace SoftwareFicticio
         {
             try
             {
-                DataSet2TableAdapters.produtosTableAdapter produtosTableAdapter = new DataSet2TableAdapters.produtosTableAdapter();
-                produtosTableAdapter.DeleteQuery(id);
-
+                DataSet2TableAdapters.produtosTableAdapter dropProduct = new DataSet2TableAdapters.produtosTableAdapter();
+                dropProduct.DeleteQuery(id);
                 MessageBox.Show("Produto excluído com sucesso!");
+                Close();
             }
             catch (Exception ex)
             {
@@ -109,25 +76,106 @@ namespace SoftwareFicticio
         string choiceUnidadeVenda;
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if(cbxUnidadeVenda.SelectedIndex == 0)
+            try
             {
-                choiceUnidadeVenda = "UN";
+                if (cbxUnidadeVenda.SelectedIndex == 0)
+                {
+                    choiceUnidadeVenda = "UN";
+                }
+                else if (cbxUnidadeVenda.SelectedIndex == 1)
+                {
+                    choiceUnidadeVenda = "FD";
+                }
+                else
+                {
+                    choiceUnidadeVenda = "CX";
+                }
+                dataatualizacao = DateTime.Now;
+                DataSet2TableAdapters.produtosTableAdapter produtosTableAdapter = new DataSet2TableAdapters.produtosTableAdapter();
+                produtosTableAdapter.UpdateQuery(txbNome.Text, choiceUnidadeVenda, decimal.Parse(txbPreco.Text),dataatualizacao,id);
+                MessageBox.Show("Cadastro alterado com sucesso!");
             }
-            else if(cbxUnidadeVenda.SelectedIndex == 1)
+            catch(Exception ex)
             {
-                choiceUnidadeVenda = "FD";
+                MessageBox.Show(ex.Message);
             }
-            else
+           
+        }
+
+        private void dgvCadastroProd_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
+
+        private void dgvCadastroProd_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Mostrar nos texts boxes as informaçoes dos produtos quando clicar na linha dele
+            try
             {
-                choiceUnidadeVenda = "CX";
+                if (e.RowIndex != -1)
+                {
+                    DataGridViewRow dgvRow = dgvCadastroProd.Rows[e.RowIndex];
+                    txbPreco.Text = dgvRow.Cells[3].Value.ToString();
+                    txbNome.Text = dgvRow.Cells[1].Value.ToString();
+                    string showUnidadeVenda = dgvRow.Cells[2].Value.ToString();
+                    txbID.Text = dgvRow.Cells[0].Value.ToString();
+
+                    if (showUnidadeVenda == "UN")
+                    {
+                        cbxUnidadeVenda.SelectedIndex = 0;
+                    }
+                    else if (showUnidadeVenda == "FD")
+                    {
+                        cbxUnidadeVenda.SelectedIndex = 1;
+                    }
+                    else
+                    {
+                        cbxUnidadeVenda.SelectedIndex = 2;
+                    }
+
+
+                    id = Convert.ToInt32(dgvCadastroProd.Rows[e.RowIndex].Cells[0].Value);
+                    descricaoProduto = Convert.ToString(dgvCadastroProd.Rows[e.RowIndex].Cells[1].Value);
+                    unidadeVenda = Convert.ToString(dgvCadastroProd.Rows[e.RowIndex].Cells[2].Value);
+                    preco = Convert.ToDecimal(dgvCadastroProd.Rows[e.RowIndex].Cells[3].Value);
+                }
             }
-            dataatualizacao = DateTime.Now;
-            DataSet2TableAdapters.produtosTableAdapter produtosTableAdapter = new DataSet2TableAdapters.produtosTableAdapter();
-            produtosTableAdapter.UpdateQuery(txbNome.Text, choiceUnidadeVenda, decimal.Parse(txbPreco.Text),
-                descricaoProduto,
-                unidadeVenda,
-                preco,
-                dataatualizacao);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
+            if (this.Owner.Name == "Venda")
+            {
+                try
+                {
+                    ((Venda)this.Owner).getDataProduto(descricaoProduto, preco);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (this.Owner.Name == "RegistroProdutos")
+            {
+                try
+                {
+                    ((RegistroProdutos)this.Owner).getProdutos(descricaoProduto, preco, unidadeVenda, id);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dgvCadastroProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
-}
+    }
+
