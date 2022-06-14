@@ -32,16 +32,52 @@ namespace SoftwareFicticio
             this.vendaTableAdapter.Fill(this.dataSet1.venda);
 
         }
-        int id;
-        public void getVendaId(int id)
+
+        /*VARIAVEL AUXILIAR CRIADA PARA O METODO ABAIXO. 
+         
+        OBJETIVO: INSTANCIAR O METODO getIdVenda para acessar o ID da venda que acabara DE SER CRIADA E GERAR O VALOR PARA 
+        O LACO DE REPETICAO QUE VAI PREENCHER O vendaItenTableAdapter
+        */
+        int idSell;
+        public void setVendaId()
         {
-            id = Convert.ToInt32(dgvConsultaVenda.CurrentRow.Cells[0].Value);
+           int numRows = dgvConsultaVenda.Rows.Count;
+           int sizeLoop = numRows - 1;
+          
+           for(int i = 0; i <= sizeLoop; ++i)
+            {
+                idSell = Convert.ToInt32(dgvConsultaVenda.CurrentRow.Cells[0].Value);
+            }
+            Venda venda = new Venda();
+            try
+            {
+                ((Venda)this.Owner).getIdVenda(idSell);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSalvarCadastroFunc_Click(object sender, EventArgs e)
         {
-            DataSet2TableAdapters.vendaTableAdapter vendaTableAdapter = new DataSet2TableAdapters.vendaTableAdapter();
-            vendaTableAdapter.DeleteQuery(id);
+            
+        }
+        
+
+        private void dgvConsultaVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }

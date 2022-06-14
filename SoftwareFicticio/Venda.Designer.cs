@@ -61,6 +61,8 @@
             this.mtbDataEntrega = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txbValorTotal = new System.Windows.Forms.TextBox();
+            this.txbIdCliente = new System.Windows.Forms.TextBox();
+            this.txbIdProduto = new System.Windows.Forms.TextBox();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
@@ -146,11 +148,12 @@
             // 
             // txbProduto
             // 
-            this.txbProduto.Location = new System.Drawing.Point(284, 233);
+            this.txbProduto.Location = new System.Drawing.Point(325, 233);
             this.txbProduto.Name = "txbProduto";
             this.txbProduto.ReadOnly = true;
-            this.txbProduto.Size = new System.Drawing.Size(482, 22);
+            this.txbProduto.Size = new System.Drawing.Size(441, 22);
             this.txbProduto.TabIndex = 20;
+            this.txbProduto.TextChanged += new System.EventHandler(this.txbProduto_TextChanged);
             // 
             // lblCliente
             // 
@@ -262,10 +265,10 @@
             // 
             // txbCliente
             // 
-            this.txbCliente.Location = new System.Drawing.Point(284, 155);
+            this.txbCliente.Location = new System.Drawing.Point(325, 155);
             this.txbCliente.Name = "txbCliente";
             this.txbCliente.ReadOnly = true;
-            this.txbCliente.Size = new System.Drawing.Size(482, 22);
+            this.txbCliente.Size = new System.Drawing.Size(441, 22);
             this.txbCliente.TabIndex = 31;
             this.txbCliente.TextChanged += new System.EventHandler(this.txbCliente_TextChanged);
             // 
@@ -384,11 +387,31 @@
             this.txbValorTotal.TabIndex = 37;
             this.txbValorTotal.TextChanged += new System.EventHandler(this.txbValorTotal_TextChanged);
             // 
+            // txbIdCliente
+            // 
+            this.txbIdCliente.Location = new System.Drawing.Point(284, 155);
+            this.txbIdCliente.Name = "txbIdCliente";
+            this.txbIdCliente.ReadOnly = true;
+            this.txbIdCliente.Size = new System.Drawing.Size(35, 22);
+            this.txbIdCliente.TabIndex = 38;
+            this.txbIdCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txbIdProduto
+            // 
+            this.txbIdProduto.Location = new System.Drawing.Point(284, 233);
+            this.txbIdProduto.Name = "txbIdProduto";
+            this.txbIdProduto.ReadOnly = true;
+            this.txbIdProduto.Size = new System.Drawing.Size(35, 22);
+            this.txbIdProduto.TabIndex = 39;
+            this.txbIdProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 783);
+            this.Controls.Add(this.txbIdProduto);
+            this.Controls.Add(this.txbIdCliente);
             this.Controls.Add(this.txbValorTotal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mtbDataEntrega);
@@ -460,5 +483,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valorUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorTotalFinal;
         private System.Windows.Forms.TextBox txbValorTotal;
+        public System.Windows.Forms.TextBox txbIdCliente;
+        public System.Windows.Forms.TextBox txbIdProduto;
     }
 }

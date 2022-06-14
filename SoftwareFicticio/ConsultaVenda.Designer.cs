@@ -46,6 +46,7 @@
             this.lblAlterar = new System.Windows.Forms.Button();
             this.lblNova = new System.Windows.Forms.Button();
             this.vendaTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.vendaTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaVenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
@@ -100,6 +101,7 @@
             this.dgvConsultaVenda.RowTemplate.Height = 24;
             this.dgvConsultaVenda.Size = new System.Drawing.Size(844, 480);
             this.dgvConsultaVenda.TabIndex = 6;
+            this.dgvConsultaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaVenda_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -214,11 +216,22 @@
             // 
             this.vendaTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(349, 660);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // ConsultaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 720);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblNova);
             this.Controls.Add(this.lblAlterar);
             this.Controls.Add(this.btnExcluirCadastroFunc);
@@ -256,5 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataemissaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataentregarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valortotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

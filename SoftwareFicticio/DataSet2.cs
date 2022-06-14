@@ -22,9 +22,16 @@ namespace SoftwareFicticio
     }
 }
 
-namespace SoftwareFicticio.DataSet2TableAdapters {
-    
-    
+namespace SoftwareFicticio.DataSet2TableAdapters
+{
+    partial class vendaTableAdapter
+    {
+    }
+
+    partial class vendas_itensTableAdapter
+    {
+    }
+
     public partial class produtosTableAdapter {
     }
 }

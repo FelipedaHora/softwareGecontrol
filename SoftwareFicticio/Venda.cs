@@ -34,16 +34,18 @@ namespace SoftwareFicticio
            mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
            id = Convert.ToInt32(id);
            getId = Convert.ToInt32(id);
+           txbIdCliente.Text = id.ToString();
            
         }
         decimal precoProduto;
-        public void getDataProduto(string produto,decimal preco)
+        public void getDataProduto(string produto,decimal preco,int id)
         {
             //Metodo para ser instanciado na tela de Produtos e coletar a DESCRIÇÃO e o preço do produto
             //Para preencher o textbox
             txbProduto.Text = produto;
             txbPreco.Text = preco.ToString();
             precoProduto = preco;
+            txbIdProduto.Text=id.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -85,6 +87,14 @@ namespace SoftwareFicticio
         {
             
         }
+        int getIdVendaIten;
+        public void getIdVenda(int id)
+        {
+            ConsultaVenda consultaVenda = new ConsultaVenda();
+            consultaVenda.Owner = this;
+            getIdVendaIten = id;
+            
+        }
 
         private void btnPesquisarProduto_Click(object sender, EventArgs e)
         {
@@ -99,21 +109,12 @@ namespace SoftwareFicticio
         {
             
         }
-        private void totalMethod()
-        {
-          /* 
-           txbValorTotal.Text = "0";
-           foreach (DataGridViewRow item in dgvProdutosVenda.Rows)
-           {
-               int n = item.Index;
-               txbValorTotal.Text = (Double.Parse(txbValorTotal.Text.ToString())
-                                   + Double.Parse(dgvProdutosVenda.Rows[n].Cells[3].Value.ToString())).ToString();
-           */
-        }
+
         //Lança o produto no DataGridView, e limpa os campos já preenchidos para que seja possível lançar outro produto
+        double precoUnitario;
         private void btnLancarProduto_Click(object sender, EventArgs e)
         {
-            double precoUnitario = ((double)precoProduto * int.Parse(txbQuantidade.Text));
+            precoUnitario = ((double)precoProduto * int.Parse(txbQuantidade.Text));
             dgvProdutosVenda.Rows.Add(txbProduto.Text, txbQuantidade.Text, txbPreco.Text, precoUnitario);
 
             txbProduto.Clear();
@@ -126,6 +127,7 @@ namespace SoftwareFicticio
                 sum += Convert.ToDouble(dgvProdutosVenda.Rows[i].Cells[3].Value);
             }
             txbValorTotal.Text = sum.ToString();
+
         }
         private void button1_Click(object sender, EventArgs e)
         {//Limpar todos os campos e refazer a venda
@@ -137,26 +139,47 @@ namespace SoftwareFicticio
             mtbDataEntrega.Clear();
             txbValorTotal.Clear();
         }
-    
+        int idAuxiliarVenda;
+  
         private void btnSalvarCadastroFunc_Click(object sender, EventArgs e)
         {
             try
             {
+                //Gerando a query de venda com os dados da tela
                 DateTime dataPedido = DateTime.Now;
                 DateTime dataEmissao = DateTime.Now;
                 DataSet2TableAdapters.vendaTableAdapter vendaTableAdapter = new DataSet2TableAdapters.vendaTableAdapter();
                 vendaTableAdapter.InsertQuery(getId, dataPedido, dataEmissao, DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text));
+
+                MessageBox.Show("Venda registrada com sucesso!");
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            if (btnSalvarCadastroFunc.Enabled == true)
+            {
+                //Gerando a query da venda_iten com os dados da tela
+                DataSet2TableAdapters.vendas_itensTableAdapter vendaItenTableAdapter = new DataSet2TableAdapters.vendas_itensTableAdapter();
+                vendaItenTableAdapter.InsertQuery(getIdVendaIten, int.Parse(txbIdProduto.Text), int.Parse(txbQuantidade.Text), (decimal)precoUnitario, decimal.Parse(txbValorTotal.Text));
+            }
+            
             
         }
 
         private void txbValorTotal_TextChanged(object sender, EventArgs e)
         {
          
+        }
+
+        private void txbProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }

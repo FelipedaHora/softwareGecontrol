@@ -150,7 +150,7 @@ namespace SoftwareFicticio
             {
                 try
                 {
-                    ((Venda)this.Owner).getDataProduto(descricaoProduto, preco);
+                    ((Venda)this.Owner).getDataProduto(descricaoProduto, preco,id);
                     Close();
                 }
                 catch (Exception ex)

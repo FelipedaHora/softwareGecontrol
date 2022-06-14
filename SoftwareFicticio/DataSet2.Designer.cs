@@ -5221,60 +5221,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("data_entregar", "data_entregar");
             tableMapping.ColumnMappings.Add("valor_total", "valor_total");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""banco_teste"".""public"".""venda"" WHERE ((""id"" = ?) AND ((? = 1 AND ""id_terceiros"" IS NULL) OR (""id_terceiros"" = ?)) AND ((? = 1 AND ""numero_nf"" IS NULL) OR (""numero_nf"" = ?)) AND ((? = 1 AND ""data_pedido"" IS NULL) OR (""data_pedido"" = ?)) AND ((? = 1 AND ""data_emissao"" IS NULL) OR (""data_emissao"" = ?)) AND ((? = 1 AND ""data_entregar"" IS NULL) OR (""data_entregar"" = ?)) AND ((? = 1 AND ""valor_total"" IS NULL) OR (""valor_total"" = ?)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_id", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_id_terceiros", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_terceiros", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_id_terceiros", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_terceiros", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_numero_nf", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numero_nf", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_numero_nf", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numero_nf", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_data_pedido", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_pedido", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_data_pedido", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_pedido", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_data_emissao", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_emissao", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_data_emissao", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_emissao", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_data_entregar", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_entregar", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_data_entregar", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_entregar", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_valor_total", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_valor_total", global::System.Data.Odbc.OdbcType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"banco_teste\".\"public\".\"venda\" (\"id\", \"id_terceiros\", \"numero_nf\", \"d" +
-                "ata_pedido\", \"data_emissao\", \"data_entregar\", \"valor_total\") VALUES (?, ?, ?, ?," +
-                " ?, ?, ?)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_terceiros", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_terceiros", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("numero_nf", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numero_nf", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_pedido", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_pedido", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_emissao", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_emissao", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_entregar", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_entregar", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("valor_total", global::System.Data.Odbc.OdbcType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""banco_teste"".""public"".""venda"" SET ""id"" = ?, ""id_terceiros"" = ?, ""numero_nf"" = ?, ""data_pedido"" = ?, ""data_emissao"" = ?, ""data_entregar"" = ?, ""valor_total"" = ? WHERE ((""id"" = ?) AND ((? = 1 AND ""id_terceiros"" IS NULL) OR (""id_terceiros"" = ?)) AND ((? = 1 AND ""numero_nf"" IS NULL) OR (""numero_nf"" = ?)) AND ((? = 1 AND ""data_pedido"" IS NULL) OR (""data_pedido"" = ?)) AND ((? = 1 AND ""data_emissao"" IS NULL) OR (""data_emissao"" = ?)) AND ((? = 1 AND ""data_entregar"" IS NULL) OR (""data_entregar"" = ?)) AND ((? = 1 AND ""valor_total"" IS NULL) OR (""valor_total"" = ?)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_terceiros", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_terceiros", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("numero_nf", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numero_nf", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_pedido", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_pedido", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_emissao", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_emissao", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_entregar", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_entregar", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("valor_total", global::System.Data.Odbc.OdbcType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_id", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_id_terceiros", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_terceiros", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_id_terceiros", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_terceiros", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_numero_nf", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numero_nf", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_numero_nf", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "numero_nf", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_data_pedido", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_pedido", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_data_pedido", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_pedido", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_data_emissao", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_emissao", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_data_emissao", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_emissao", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_data_entregar", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_entregar", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_data_entregar", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_entregar", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_valor_total", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_valor_total", global::System.Data.Odbc.OdbcType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5287,7 +5233,7 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[3];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[4];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT \"id\", \"id_terceiros\", \"numero_nf\", \"data_pedido\", \"data_emissao\", \"data_en" +
@@ -5300,14 +5246,18 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id", global::System.Data.Odbc.OdbcType.Int, 19, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[2] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO \"banco_teste\".\"public\".\"venda\" (\"id_terceiros\", \"data_pedido\", \"data_" +
-                "emissao\", \"data_entregar\", \"valor_total\") VALUES (?, ?, ?, ?, ?)";
+            this._commandCollection[2].CommandText = "SELECT id\r\nFROM     \"public\".venda";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_terceiros", global::System.Data.Odbc.OdbcType.Int, 19, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_terceiros", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_pedido", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_pedido", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_emissao", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_emissao", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_entregar", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_entregar", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("valor_total", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(17)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "INSERT INTO \"banco_teste\".\"public\".\"venda\" (\"id_terceiros\", \"data_pedido\", \"data_" +
+                "emissao\", \"data_entregar\", \"valor_total\") VALUES (?, ?, ?, ?, ?)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_terceiros", global::System.Data.Odbc.OdbcType.Int, 19, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_terceiros", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_pedido", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_pedido", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_emissao", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_emissao", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("data_entregar", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data_entregar", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("valor_total", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(17)), ((byte)(0)), "valor_total", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5337,141 +5287,12 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet2.vendaDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet2 dataSet) {
-            return this.Adapter.Update(dataSet, "venda");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_id, long Original_id_terceiros, long Original_numero_nf, System.DateTime Original_data_pedido, System.DateTime Original_data_emissao, System.DateTime Original_data_entregar, double Original_valor_total) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((long)(Original_id_terceiros));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((long)(Original_numero_nf));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_data_pedido));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_data_emissao));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_data_entregar));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((double)(Original_valor_total));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long id, long id_terceiros, long numero_nf, System.DateTime data_pedido, System.DateTime data_emissao, System.DateTime data_entregar, double valor_total) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(id));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((long)(id_terceiros));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((long)(numero_nf));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(data_pedido));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(data_emissao));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(data_entregar));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((double)(valor_total));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long id, long id_terceiros, long numero_nf, System.DateTime data_pedido, System.DateTime data_emissao, System.DateTime data_entregar, double valor_total, long Original_id, long Original_id_terceiros, long Original_numero_nf, System.DateTime Original_data_pedido, System.DateTime Original_data_emissao, System.DateTime Original_data_entregar, double Original_valor_total) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(id));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(id_terceiros));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(numero_nf));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(data_pedido));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(data_emissao));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(data_entregar));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(valor_total));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_id));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_id_terceiros));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Original_numero_nf));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_data_pedido));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_data_emissao));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_data_entregar));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(Original_valor_total));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long id_terceiros, long numero_nf, System.DateTime data_pedido, System.DateTime data_emissao, System.DateTime data_entregar, double valor_total, long Original_id, long Original_id_terceiros, long Original_numero_nf, System.DateTime Original_data_pedido, System.DateTime Original_data_emissao, System.DateTime Original_data_entregar, double Original_valor_total) {
-            return this.Update(Original_id, id_terceiros, numero_nf, data_pedido, data_emissao, data_entregar, valor_total, Original_id, Original_id_terceiros, Original_numero_nf, Original_data_pedido, Original_data_emissao, Original_data_entregar, Original_valor_total);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet2.vendaDataTable GetDataID() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            DataSet2.vendaDataTable dataTable = new DataSet2.vendaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5503,7 +5324,7 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(global::System.Nullable<int> id_terceiros, global::System.Nullable<global::System.DateTime> data_pedido, global::System.Nullable<global::System.DateTime> data_emissao, global::System.Nullable<global::System.DateTime> data_entregar, global::System.Nullable<decimal> valor_total) {
-            global::System.Data.Odbc.OdbcCommand command = this.CommandCollection[2];
+            global::System.Data.Odbc.OdbcCommand command = this.CommandCollection[3];
             if ((id_terceiros.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(id_terceiros.Value));
             }
@@ -5987,8 +5808,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
         
         private terceirosTableAdapter _terceirosTableAdapter;
         
-        private vendaTableAdapter _vendaTableAdapter;
-        
         private vendas_itensTableAdapter _vendas_itensTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
@@ -6053,20 +5872,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public vendaTableAdapter vendaTableAdapter {
-            get {
-                return this._vendaTableAdapter;
-            }
-            set {
-                this._vendaTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public vendas_itensTableAdapter vendas_itensTableAdapter {
             get {
                 return this._vendas_itensTableAdapter;
@@ -6107,10 +5912,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
                             && (this._terceirosTableAdapter.Connection != null))) {
                     return this._terceirosTableAdapter.Connection;
                 }
-                if (((this._vendaTableAdapter != null) 
-                            && (this._vendaTableAdapter.Connection != null))) {
-                    return this._vendaTableAdapter.Connection;
-                }
                 if (((this._vendas_itensTableAdapter != null) 
                             && (this._vendas_itensTableAdapter.Connection != null))) {
                     return this._vendas_itensTableAdapter.Connection;
@@ -6135,9 +5936,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
                     count = (count + 1);
                 }
                 if ((this._terceirosTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._vendaTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._vendas_itensTableAdapter != null)) {
@@ -6178,15 +5976,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._terceirosTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._vendaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.venda.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._vendaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6233,14 +6022,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._vendaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.venda.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._vendaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._vendas_itensTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.vendas_itens.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -6264,14 +6045,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._vendas_itensTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._vendaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.venda.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._vendaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -6353,11 +6126,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
-            if (((this._vendaTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._vendaTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
-                        "cadeia de conexão.");
-            }
             if (((this._vendas_itensTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._vendas_itensTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
@@ -6420,15 +6188,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
                     if (this._terceirosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._terceirosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._terceirosTableAdapter.Adapter);
-                    }
-                }
-                if ((this._vendaTableAdapter != null)) {
-                    revertConnections.Add(this._vendaTableAdapter, this._vendaTableAdapter.Connection);
-                    this._vendaTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
-                    this._vendaTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
-                    if (this._vendaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._vendaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._vendaTableAdapter.Adapter);
                     }
                 }
                 if ((this._vendas_itensTableAdapter != null)) {
@@ -6509,10 +6268,6 @@ namespace SoftwareFicticio.DataSet2TableAdapters {
                 if ((this._terceirosTableAdapter != null)) {
                     this._terceirosTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._terceirosTableAdapter]));
                     this._terceirosTableAdapter.Transaction = null;
-                }
-                if ((this._vendaTableAdapter != null)) {
-                    this._vendaTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._vendaTableAdapter]));
-                    this._vendaTableAdapter.Transaction = null;
                 }
                 if ((this._vendas_itensTableAdapter != null)) {
                     this._vendas_itensTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._vendas_itensTableAdapter]));
