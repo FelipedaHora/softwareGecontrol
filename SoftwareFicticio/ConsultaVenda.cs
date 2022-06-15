@@ -38,25 +38,10 @@ namespace SoftwareFicticio
         OBJETIVO: INSTANCIAR O METODO getIdVenda para acessar o ID da venda que acabara DE SER CRIADA E GERAR O VALOR PARA 
         O LACO DE REPETICAO QUE VAI PREENCHER O vendaItenTableAdapter
         */
-        int idSell;
+   
         public void setVendaId()
         {
-           int numRows = dgvConsultaVenda.Rows.Count;
-           int sizeLoop = numRows - 1;
-          
-           for(int i = 0; i <= sizeLoop; ++i)
-            {
-                idSell = Convert.ToInt32(dgvConsultaVenda.CurrentRow.Cells[0].Value);
-            }
-            Venda venda = new Venda();
-            try
-            {
-                ((Venda)this.Owner).getIdVenda(idSell);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void btnSalvarCadastroFunc_Click(object sender, EventArgs e)

@@ -118,6 +118,12 @@
     <Compile Include="Venda.Designer.cs">
       <DependentUpon>Venda.cs</DependentUpon>
     </Compile>
+    <Compile Include="VendaAuxiliar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendaAuxiliar.Designer.cs">
+      <DependentUpon>VendaAuxiliar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CadastroFuncionarios.resx">
       <DependentUpon>CadastroFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +160,9 @@
     </Compile>
     <EmbeddedResource Include="Venda.resx">
       <DependentUpon>Venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendaAuxiliar.resx">
+      <DependentUpon>VendaAuxiliar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

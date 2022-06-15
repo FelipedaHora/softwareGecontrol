@@ -63,6 +63,7 @@
             this.txbValorTotal = new System.Windows.Forms.TextBox();
             this.txbIdCliente = new System.Windows.Forms.TextBox();
             this.txbIdProduto = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
@@ -405,11 +406,22 @@
             this.txbIdProduto.TabIndex = 39;
             this.txbIdProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1005, 144);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 40;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_2);
+            // 
             // Venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 783);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.txbIdProduto);
             this.Controls.Add(this.txbIdCliente);
             this.Controls.Add(this.txbValorTotal);
@@ -485,5 +497,6 @@
         private System.Windows.Forms.TextBox txbValorTotal;
         public System.Windows.Forms.TextBox txbIdCliente;
         public System.Windows.Forms.TextBox txbIdProduto;
+        private System.Windows.Forms.Button button2;
     }
 }

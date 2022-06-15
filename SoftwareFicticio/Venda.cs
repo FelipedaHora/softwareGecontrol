@@ -16,7 +16,7 @@ namespace SoftwareFicticio
         {
             InitializeComponent();
         }
-        
+
         private void Venda_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.terceiros'. Você pode movê-la ou removê-la conforme necessário.
@@ -26,26 +26,26 @@ namespace SoftwareFicticio
 
         }
         int getId;
-        public void getDataSell(string nome,int id)
+        public void getDataSell(string nome, int id)
         {
-           //Metodo para ser instanciado na tela de Terceiros e coletar NOME para preencher o textbox
-           txbCliente.Text = nome;
-           DateTime datacadastro = DateTime.Now;
-           mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
-           id = Convert.ToInt32(id);
-           getId = Convert.ToInt32(id);
-           txbIdCliente.Text = id.ToString();
-           
+            //Metodo para ser instanciado na tela de Terceiros e coletar NOME para preencher o textbox
+            txbCliente.Text = nome;
+            DateTime datacadastro = DateTime.Now;
+            mtbData.Text = datacadastro.ToString("dd.MM.yyyy");
+            id = Convert.ToInt32(id);
+            getId = Convert.ToInt32(id);
+            txbIdCliente.Text = id.ToString();
+
         }
         decimal precoProduto;
-        public void getDataProduto(string produto,decimal preco,int id)
+        public void getDataProduto(string produto, decimal preco, int id)
         {
             //Metodo para ser instanciado na tela de Produtos e coletar a DESCRIÇÃO e o preço do produto
             //Para preencher o textbox
             txbProduto.Text = produto;
             txbPreco.Text = preco.ToString();
             precoProduto = preco;
-            txbIdProduto.Text=id.ToString();
+            txbIdProduto.Text = id.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace SoftwareFicticio
 
         public void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txbPreco_TextChanged(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace SoftwareFicticio
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void Venda_FormClosing(object sender, FormClosingEventArgs e)
@@ -79,21 +79,20 @@ namespace SoftwareFicticio
 
         public void txbCliente_TextChanged(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void mtbData_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            
+
         }
         int getIdVendaIten;
         public void getIdVenda(int id)
         {
-            ConsultaVenda consultaVenda = new ConsultaVenda();
-            consultaVenda.Owner = this;
+            VendaAuxiliar vendaAuxiliar = new VendaAuxiliar();
+            vendaAuxiliar.Owner = this;
             getIdVendaIten = id;
-            
         }
 
         private void btnPesquisarProduto_Click(object sender, EventArgs e)
@@ -107,13 +106,15 @@ namespace SoftwareFicticio
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         //Lança o produto no DataGridView, e limpa os campos já preenchidos para que seja possível lançar outro produto
         double precoUnitario;
+        int count = 0;
         private void btnLancarProduto_Click(object sender, EventArgs e)
         {
+            count++;
             precoUnitario = ((double)precoProduto * int.Parse(txbQuantidade.Text));
             dgvProdutosVenda.Rows.Add(txbProduto.Text, txbQuantidade.Text, txbPreco.Text, precoUnitario);
 
@@ -122,13 +123,26 @@ namespace SoftwareFicticio
             txbPreco.Clear();
 
             double sum = 0;
-            for(int i = 0; i < dgvProdutosVenda.Rows.Count; ++i)
+            for (int i = 0; i < dgvProdutosVenda.Rows.Count; ++i)
             {
                 sum += Convert.ToDouble(dgvProdutosVenda.Rows[i].Cells[3].Value);
             }
             txbValorTotal.Text = sum.ToString();
 
+
+            for (int i = 0; i <= count; i++)
+            {
+                //Gerando a query da venda_iten com os dados da tela
+                DataSet2TableAdapters.vendas_itensTableAdapter vendas_ItensTableAdapter = new DataSet2TableAdapters.vendas_itensTableAdapter();
+                vendas_ItensTableAdapter.InsertQuery(getIdVendaIten, int.Parse(txbIdProduto.Text), int.Parse(txbQuantidade.Text), (decimal)precoUnitario, decimal.Parse(txbValorTotal.Text));
+            }
         }
+
+        private void gerarVendasItens()
+        {
+            
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {//Limpar todos os campos e refazer a venda
             txbProduto.Clear();
@@ -139,8 +153,6 @@ namespace SoftwareFicticio
             mtbDataEntrega.Clear();
             txbValorTotal.Clear();
         }
-        int idAuxiliarVenda;
-  
         private void btnSalvarCadastroFunc_Click(object sender, EventArgs e)
         {
             try
@@ -153,20 +165,13 @@ namespace SoftwareFicticio
 
                 MessageBox.Show("Venda registrada com sucesso!");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            if (btnSalvarCadastroFunc.Enabled == true)
-            {
-                //Gerando a query da venda_iten com os dados da tela
-                DataSet2TableAdapters.vendas_itensTableAdapter vendaItenTableAdapter = new DataSet2TableAdapters.vendas_itensTableAdapter();
-                vendaItenTableAdapter.InsertQuery(getIdVendaIten, int.Parse(txbIdProduto.Text), int.Parse(txbQuantidade.Text), (decimal)precoUnitario, decimal.Parse(txbValorTotal.Text));
-            }
-            
-            
-        }
+            gerarVendasItens();
 
+        }
         private void txbValorTotal_TextChanged(object sender, EventArgs e)
         {
          
@@ -180,6 +185,12 @@ namespace SoftwareFicticio
         private void button2_Click_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            
+           
         }
     }
 }
