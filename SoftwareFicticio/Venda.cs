@@ -90,9 +90,9 @@ namespace SoftwareFicticio
         int getIdVendaIten;
         public void getIdVenda(int id)
         {
-            VendaAuxiliar vendaAuxiliar = new VendaAuxiliar();
-            vendaAuxiliar.Owner = this;
-            getIdVendaIten = id;
+            
+            id = Convert.ToInt32(id);
+            getIdVendaIten = Convert.ToInt32(id);
         }
 
         private void btnPesquisarProduto_Click(object sender, EventArgs e)
@@ -112,16 +112,20 @@ namespace SoftwareFicticio
         //Lança o produto no DataGridView, e limpa os campos já preenchidos para que seja possível lançar outro produto
         double precoUnitario;
         int count = 0;
+        string[,] informacoesVendasItens = new string[999, 999];
         private void btnLancarProduto_Click(object sender, EventArgs e)
         {
+            
             count++;
             precoUnitario = ((double)precoProduto * int.Parse(txbQuantidade.Text));
             dgvProdutosVenda.Rows.Add(txbProduto.Text, txbQuantidade.Text, txbPreco.Text, precoUnitario);
 
+            //Assim que o método é executado e salvo no banco de dados, os campos são limpos para que seja possível lançar um novo produto
             txbProduto.Clear();
             txbQuantidade.Clear();
             txbPreco.Clear();
-
+            
+            //Aqui é onde são somados os valores de cada produto que é lançado
             double sum = 0;
             for (int i = 0; i < dgvProdutosVenda.Rows.Count; ++i)
             {
@@ -129,13 +133,27 @@ namespace SoftwareFicticio
             }
             txbValorTotal.Text = sum.ToString();
 
-
-            for (int i = 0; i <= count; i++)
+            //Aqui, usarei variáveis para que seja possível armazenar as informações de cada produto e lançá-los individualmente
+            try
             {
-                //Gerando a query da venda_iten com os dados da tela
-                DataSet2TableAdapters.vendas_itensTableAdapter vendas_ItensTableAdapter = new DataSet2TableAdapters.vendas_itensTableAdapter();
-                vendas_ItensTableAdapter.InsertQuery(getIdVendaIten, int.Parse(txbIdProduto.Text), int.Parse(txbQuantidade.Text), (decimal)precoUnitario, decimal.Parse(txbValorTotal.Text));
+                for (int i = 0; i <= 999; i++)
+                {
+                    informacoesVendasItens[i,1] = txbQuantidade.Text;
+                    informacoesVendasItens[i,2] = txbIdProduto.Text;
+                    informacoesVendasItens[i,3] = dgvProdutosVenda.CurrentRow.Cells[3].Value.ToString();
+                    informacoesVendasItens[i,4] = txbValorTotal.Text;
+
+                    for (int j = 0; j <= count; j++)
+                    {
+                        DataSet2TableAdapters.vendas_itensTableAdapter vendas_ItensTableAdapter = new DataSet2TableAdapters.vendas_itensTableAdapter();
+                        //vendas_ItensTableAdapter.InsertQuery();
+                    }
+                }
             }
+            catch(Exception ex) { 
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void gerarVendasItens()
@@ -144,7 +162,8 @@ namespace SoftwareFicticio
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {//Limpar todos os campos e refazer a venda
+        {
+            //Limpar todos os campos e refazer a venda
             txbProduto.Clear();
             txbQuantidade.Clear();
             txbPreco.Clear();
@@ -189,8 +208,25 @@ namespace SoftwareFicticio
 
         private void button2_Click_2(object sender, EventArgs e)
         {
+            VendaAuxiliar vendaAux = new VendaAuxiliar();
+            vendaAux.Owner = this;
+            vendaAux.ShowDialog();
             
-           
+        }
+
+        private void txbIdProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button2_Click_3(object sender, EventArgs e)
+        {
+            
         }
     }
 }

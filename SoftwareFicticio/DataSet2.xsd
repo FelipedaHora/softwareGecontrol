@@ -428,7 +428,16 @@ FROM     "public".venda</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="banco_testeConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="banco_testeConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetIdMax" Modifier="Public" Name="GetIdMax" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetIdMax">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MAX("id") AS idMax
+FROM "public"."venda"</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="banco_testeConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO "banco_teste"."public"."venda" ("id_terceiros", "data_pedido", "data_emissao", "data_entregar", "valor_total") VALUES (?, ?, ?, ?, ?)</CommandText>
@@ -649,15 +658,15 @@ FROM     "public".venda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vendas_itens" msprop:Generator_RowEvHandlerName="vendas_itensRowChangeEventHandler" msprop:Generator_RowDeletedName="vendas_itensRowDeleted" msprop:Generator_RowDeletingName="vendas_itensRowDeleting" msprop:Generator_RowEvArgName="vendas_itensRowChangeEvent" msprop:Generator_TablePropName="vendas_itens" msprop:Generator_RowChangedName="vendas_itensRowChanged" msprop:Generator_RowChangingName="vendas_itensRowChanging" msprop:Generator_TableClassName="vendas_itensDataTable" msprop:Generator_RowClassName="vendas_itensRow" msprop:Generator_TableVarName="tablevendas_itens" msprop:Generator_UserTableName="vendas_itens">
+        <xs:element name="vendas_itens" msprop:Generator_RowEvHandlerName="vendas_itensRowChangeEventHandler" msprop:Generator_RowDeletedName="vendas_itensRowDeleted" msprop:Generator_RowDeletingName="vendas_itensRowDeleting" msprop:Generator_RowEvArgName="vendas_itensRowChangeEvent" msprop:Generator_TablePropName="vendas_itens" msprop:Generator_RowChangedName="vendas_itensRowChanged" msprop:Generator_UserTableName="vendas_itens" msprop:Generator_RowChangingName="vendas_itensRowChanging" msprop:Generator_RowClassName="vendas_itensRow" msprop:Generator_TableClassName="vendas_itensDataTable" msprop:Generator_TableVarName="tablevendas_itens">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:long" />
-              <xs:element name="id_venda" msprop:Generator_ColumnPropNameInRow="id_venda" msprop:Generator_ColumnPropNameInTable="id_vendaColumn" msprop:Generator_ColumnVarNameInTable="columnid_venda" msprop:Generator_UserColumnName="id_venda" type="xs:long" minOccurs="0" />
-              <xs:element name="id_produto" msprop:Generator_ColumnPropNameInRow="id_produto" msprop:Generator_ColumnPropNameInTable="id_produtoColumn" msprop:Generator_ColumnVarNameInTable="columnid_produto" msprop:Generator_UserColumnName="id_produto" type="xs:long" minOccurs="0" />
-              <xs:element name="quantidade" msprop:Generator_ColumnPropNameInRow="quantidade" msprop:Generator_ColumnPropNameInTable="quantidadeColumn" msprop:Generator_ColumnVarNameInTable="columnquantidade" msprop:Generator_UserColumnName="quantidade" type="xs:int" minOccurs="0" />
-              <xs:element name="valor_unit" msprop:Generator_ColumnPropNameInRow="valor_unit" msprop:Generator_ColumnPropNameInTable="valor_unitColumn" msprop:Generator_ColumnVarNameInTable="columnvalor_unit" msprop:Generator_UserColumnName="valor_unit" type="xs:double" minOccurs="0" />
-              <xs:element name="valor_total" msprop:Generator_ColumnPropNameInRow="valor_total" msprop:Generator_ColumnPropNameInTable="valor_totalColumn" msprop:Generator_ColumnVarNameInTable="columnvalor_total" msprop:Generator_UserColumnName="valor_total" type="xs:double" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:long" />
+              <xs:element name="id_venda" msprop:Generator_ColumnPropNameInTable="id_vendaColumn" msprop:Generator_ColumnPropNameInRow="id_venda" msprop:Generator_UserColumnName="id_venda" msprop:Generator_ColumnVarNameInTable="columnid_venda" type="xs:long" minOccurs="0" />
+              <xs:element name="id_produto" msprop:Generator_ColumnPropNameInTable="id_produtoColumn" msprop:Generator_ColumnPropNameInRow="id_produto" msprop:Generator_UserColumnName="id_produto" msprop:Generator_ColumnVarNameInTable="columnid_produto" type="xs:long" minOccurs="0" />
+              <xs:element name="quantidade" msprop:Generator_ColumnPropNameInTable="quantidadeColumn" msprop:Generator_ColumnPropNameInRow="quantidade" msprop:Generator_UserColumnName="quantidade" msprop:Generator_ColumnVarNameInTable="columnquantidade" type="xs:int" minOccurs="0" />
+              <xs:element name="valor_unit" msprop:Generator_ColumnPropNameInTable="valor_unitColumn" msprop:Generator_ColumnPropNameInRow="valor_unit" msprop:Generator_UserColumnName="valor_unit" msprop:Generator_ColumnVarNameInTable="columnvalor_unit" type="xs:double" minOccurs="0" />
+              <xs:element name="valor_total" msprop:Generator_ColumnPropNameInTable="valor_totalColumn" msprop:Generator_ColumnPropNameInRow="valor_total" msprop:Generator_UserColumnName="valor_total" msprop:Generator_ColumnVarNameInTable="columnvalor_total" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

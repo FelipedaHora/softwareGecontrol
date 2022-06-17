@@ -37,5 +37,28 @@ namespace SoftwareFicticio
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(txbID.Text);
+            Close();
+        }
+
+        private void vendaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbIdVenda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbID_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }

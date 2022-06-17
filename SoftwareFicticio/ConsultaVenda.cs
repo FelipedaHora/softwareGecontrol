@@ -32,16 +32,23 @@ namespace SoftwareFicticio
             this.vendaTableAdapter.Fill(this.dataSet1.venda);
 
         }
-
-        /*VARIAVEL AUXILIAR CRIADA PARA O METODO ABAIXO. 
-         
-        OBJETIVO: INSTANCIAR O METODO getIdVenda para acessar o ID da venda que acabara DE SER CRIADA E GERAR O VALOR PARA 
-        O LACO DE REPETICAO QUE VAI PREENCHER O vendaItenTableAdapter
-        */
-   
         public void setVendaId()
         {
-           
+            if (this.Owner.Name == "Venda")
+            {
+                try
+                {
+                    for(int i = 0; i <= dgvConsultaVenda.Rows.Count -2; i++)
+                    {
+                        ((Venda)this.Owner).getIdVenda(int.Parse(dgvConsultaVenda.CurrentRow.Cells[0].Value.ToString()));
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
         }
 
         private void btnSalvarCadastroFunc_Click(object sender, EventArgs e)
