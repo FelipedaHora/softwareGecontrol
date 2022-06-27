@@ -104,6 +104,12 @@
     <Compile Include="RegistroTerceiros.Designer.cs">
       <DependentUpon>RegistroTerceiros.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroVendas.Designer.cs">
+      <DependentUpon>RegistroVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroTerceiros.resx">
       <DependentUpon>RegistroTerceiros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroVendas.resx">
+      <DependentUpon>RegistroVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>

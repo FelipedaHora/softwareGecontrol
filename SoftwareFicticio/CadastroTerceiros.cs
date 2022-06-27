@@ -67,13 +67,12 @@ namespace SoftwareFicticio
             telefone = this.dgvCadastroTerceiros.CurrentRow.Cells[4].Value.ToString();
             registro = this.dgvCadastroTerceiros.CurrentRow.Cells[2].Value.ToString();
             id = int.Parse(this.dgvCadastroTerceiros.CurrentRow.Cells[0].Value.ToString());
-            if (this.Owner.Name == "Venda")
+            if (this.Owner.Name == "RegistroVendas")
             {
                 try
                 {
-                    ((Venda)this.Owner).getDataSell(nome,id);
+                    ((RegistroVendas)this.Owner).getDataClient(nome,id);
                     Close();
-
                 }
                 catch (Exception ex)
                 {
@@ -86,6 +85,17 @@ namespace SoftwareFicticio
                 {
                     ((RegistroTerceiros)this.Owner).getData(nome,email,telefone,registro);
                     Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if(this.Owner.Name == "Venda")
+            {
+                try
+                {
+                    ((Venda)this.Owner).getDataSell(nome, id);
                 }
                 catch(Exception ex)
                 {

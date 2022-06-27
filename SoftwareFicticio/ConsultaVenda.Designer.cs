@@ -43,10 +43,12 @@
             this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new SoftwareFicticio.DataSet1();
             this.btnExcluirCadastroFunc = new System.Windows.Forms.Button();
-            this.lblAlterar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.lblNova = new System.Windows.Forms.Button();
             this.vendaTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.vendaTableAdapter();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.textBoxTest = new System.Windows.Forms.TextBox();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaVenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
@@ -83,6 +85,8 @@
             // 
             // dgvConsultaVenda
             // 
+            this.dgvConsultaVenda.AllowUserToAddRows = false;
+            this.dgvConsultaVenda.AllowUserToDeleteRows = false;
             this.dgvConsultaVenda.AutoGenerateColumns = false;
             this.dgvConsultaVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConsultaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -97,8 +101,10 @@
             this.dgvConsultaVenda.DataSource = this.vendaBindingSource;
             this.dgvConsultaVenda.Location = new System.Drawing.Point(226, 131);
             this.dgvConsultaVenda.Name = "dgvConsultaVenda";
+            this.dgvConsultaVenda.ReadOnly = true;
             this.dgvConsultaVenda.RowHeadersWidth = 51;
             this.dgvConsultaVenda.RowTemplate.Height = 24;
+            this.dgvConsultaVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultaVenda.Size = new System.Drawing.Size(844, 480);
             this.dgvConsultaVenda.TabIndex = 6;
             this.dgvConsultaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaVenda_CellContentClick);
@@ -109,48 +115,55 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // idterceirosDataGridViewTextBoxColumn
             // 
             this.idterceirosDataGridViewTextBoxColumn.DataPropertyName = "id_terceiros";
-            this.idterceirosDataGridViewTextBoxColumn.HeaderText = "id_terceiros";
+            this.idterceirosDataGridViewTextBoxColumn.HeaderText = "Código do cliente";
             this.idterceirosDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idterceirosDataGridViewTextBoxColumn.Name = "idterceirosDataGridViewTextBoxColumn";
+            this.idterceirosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // numeronfDataGridViewTextBoxColumn
             // 
             this.numeronfDataGridViewTextBoxColumn.DataPropertyName = "numero_nf";
-            this.numeronfDataGridViewTextBoxColumn.HeaderText = "numero_nf";
+            this.numeronfDataGridViewTextBoxColumn.HeaderText = "Numero NF-E";
             this.numeronfDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.numeronfDataGridViewTextBoxColumn.Name = "numeronfDataGridViewTextBoxColumn";
+            this.numeronfDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // datapedidoDataGridViewTextBoxColumn
             // 
             this.datapedidoDataGridViewTextBoxColumn.DataPropertyName = "data_pedido";
-            this.datapedidoDataGridViewTextBoxColumn.HeaderText = "data_pedido";
+            this.datapedidoDataGridViewTextBoxColumn.HeaderText = "data do pedido";
             this.datapedidoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.datapedidoDataGridViewTextBoxColumn.Name = "datapedidoDataGridViewTextBoxColumn";
+            this.datapedidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataemissaoDataGridViewTextBoxColumn
             // 
             this.dataemissaoDataGridViewTextBoxColumn.DataPropertyName = "data_emissao";
-            this.dataemissaoDataGridViewTextBoxColumn.HeaderText = "data_emissao";
+            this.dataemissaoDataGridViewTextBoxColumn.HeaderText = "data de emissão";
             this.dataemissaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dataemissaoDataGridViewTextBoxColumn.Name = "dataemissaoDataGridViewTextBoxColumn";
+            this.dataemissaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataentregarDataGridViewTextBoxColumn
             // 
             this.dataentregarDataGridViewTextBoxColumn.DataPropertyName = "data_entregar";
-            this.dataentregarDataGridViewTextBoxColumn.HeaderText = "data_entregar";
+            this.dataentregarDataGridViewTextBoxColumn.HeaderText = "data de entrega";
             this.dataentregarDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dataentregarDataGridViewTextBoxColumn.Name = "dataentregarDataGridViewTextBoxColumn";
+            this.dataentregarDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // valortotalDataGridViewTextBoxColumn
             // 
             this.valortotalDataGridViewTextBoxColumn.DataPropertyName = "valor_total";
-            this.valortotalDataGridViewTextBoxColumn.HeaderText = "valor_total";
+            this.valortotalDataGridViewTextBoxColumn.HeaderText = "valor total";
             this.valortotalDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.valortotalDataGridViewTextBoxColumn.Name = "valortotalDataGridViewTextBoxColumn";
+            this.valortotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // vendaBindingSource
             // 
@@ -179,21 +192,22 @@
             this.btnExcluirCadastroFunc.UseVisualStyleBackColor = false;
             this.btnExcluirCadastroFunc.Click += new System.EventHandler(this.btnSalvarCadastroFunc_Click);
             // 
-            // lblAlterar
+            // btnAlterar
             // 
-            this.lblAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
-            this.lblAlterar.FlatAppearance.BorderSize = 0;
-            this.lblAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.lblAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.lblAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblAlterar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlterar.ForeColor = System.Drawing.Color.White;
-            this.lblAlterar.Location = new System.Drawing.Point(634, 642);
-            this.lblAlterar.Name = "lblAlterar";
-            this.lblAlterar.Size = new System.Drawing.Size(128, 48);
-            this.lblAlterar.TabIndex = 18;
-            this.lblAlterar.Text = "Alterar";
-            this.lblAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.Color.White;
+            this.btnAlterar.Location = new System.Drawing.Point(634, 642);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(128, 48);
+            this.btnAlterar.TabIndex = 18;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.lblAlterar_Click);
             // 
             // lblNova
             // 
@@ -208,7 +222,7 @@
             this.lblNova.Name = "lblNova";
             this.lblNova.Size = new System.Drawing.Size(128, 48);
             this.lblNova.TabIndex = 19;
-            this.lblNova.Text = "Nova";
+            this.lblNova.Text = "Inserir";
             this.lblNova.UseVisualStyleBackColor = false;
             this.lblNova.Click += new System.EventHandler(this.lblNova_Click);
             // 
@@ -216,24 +230,38 @@
             // 
             this.vendaTableAdapter.ClearBeforeFill = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(349, 660);
+            this.button1.Location = new System.Drawing.Point(432, 658);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // textBoxTest
+            // 
+            this.textBoxTest.Location = new System.Drawing.Point(273, 659);
+            this.textBoxTest.Name = "textBoxTest";
+            this.textBoxTest.Size = new System.Drawing.Size(100, 22);
+            this.textBoxTest.TabIndex = 21;
             // 
             // ConsultaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 720);
+            this.Controls.Add(this.textBoxTest);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblNova);
-            this.Controls.Add(this.lblAlterar);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluirCadastroFunc);
             this.Controls.Add(this.dgvConsultaVenda);
             this.Controls.Add(this.pnlTop);
@@ -247,6 +275,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -257,11 +286,13 @@
         private System.Windows.Forms.Label lblConsultaVenda;
         private System.Windows.Forms.DataGridView dgvConsultaVenda;
         private System.Windows.Forms.Button btnExcluirCadastroFunc;
-        private System.Windows.Forms.Button lblAlterar;
         private System.Windows.Forms.Button lblNova;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource vendaBindingSource;
         private DataSet1TableAdapters.vendaTableAdapter vendaTableAdapter;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idterceirosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeronfDataGridViewTextBoxColumn;
@@ -269,6 +300,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataemissaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataentregarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valortotalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxTest;
     }
 }

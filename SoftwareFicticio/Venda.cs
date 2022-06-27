@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,18 +13,27 @@ namespace SoftwareFicticio
 {
     public partial class Venda : Form
     {
+        int id;
+
         public Venda()
         {
             InitializeComponent();
         }
 
+        public Venda(int idVenda)
+        {
+            this.id = idVenda;
+        }
+
         private void Venda_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'dataSet2.terceiros'. Você pode movê-la ou removê-la conforme necessário.
+            this.terceirosTableAdapter1.Fill(this.dataSet2.terceiros);
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.terceiros'. Você pode movê-la ou removê-la conforme necessário.
             this.terceirosTableAdapter.Fill(this.dataSet1.terceiros);
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter.Fill(this.dataSet1.produtos);
-
+            
         }
         int getId;
         public void getDataSell(string nome, int id)
@@ -50,11 +60,9 @@ namespace SoftwareFicticio
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Instanciando a tela de cadastros de TERCEIROS e já informando que o Owner é esta tela aqui
-            //Para que seja possível trazer as informações e preencher os textbox
-            CadastroTerceiros cadastroTerc = new CadastroTerceiros();
-            cadastroTerc.Owner = this;
-            cadastroTerc.ShowDialog();
+            CadastroTerceiros cadastroTerceiros = new CadastroTerceiros();
+            cadastroTerceiros.Owner = this;
+            cadastroTerceiros.ShowDialog();
         }
 
         public void textBox1_TextChanged(object sender, EventArgs e)
@@ -90,11 +98,12 @@ namespace SoftwareFicticio
         int getIdVendaIten;
         public void getIdVenda(int id)
         {
-            
+            ConsultaVenda consultaVenda = new ConsultaVenda();
+            consultaVenda.Owner = this;
             id = Convert.ToInt32(id);
             getIdVendaIten = Convert.ToInt32(id);
         }
-
+        
         private void btnPesquisarProduto_Click(object sender, EventArgs e)
         {
             //Instanciando a tela de cadastros de produtos e já informando que o Owner é esta tela aqui
@@ -103,61 +112,65 @@ namespace SoftwareFicticio
             cadastroProdutos.Owner = this;
             cadastroProdutos.ShowDialog();
         }
-
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-        //Lança o produto no DataGridView, e limpa os campos já preenchidos para que seja possível lançar outro produto
+        public void pegarProdutosVendasItens(int idVenda, int idProduto, int quantidade, decimal valorUnitario, decimal valorTotal)
+        {
+           //Método para gerar a Query ao banco, para gerar o insert na tabela vendas_itens de acordo com cada produto lançado na venda
+            DataSet2TableAdapters.vendas_itensTableAdapter vendas_ItensTableAdapter = new DataSet2TableAdapters.vendas_itensTableAdapter();
+            vendas_ItensTableAdapter.InsertQuery(idVenda,idProduto,quantidade,valorUnitario,valorTotal);
+        }
         double precoUnitario;
         int count = 0;
-        string[,] informacoesVendasItens = new string[999, 999];
         private void btnLancarProduto_Click(object sender, EventArgs e)
         {
-            
             count++;
-            precoUnitario = ((double)precoProduto * int.Parse(txbQuantidade.Text));
-            dgvProdutosVenda.Rows.Add(txbProduto.Text, txbQuantidade.Text, txbPreco.Text, precoUnitario);
 
-            //Assim que o método é executado e salvo no banco de dados, os campos são limpos para que seja possível lançar um novo produto
+            //Lança o produto no DataGridView, e limpa os campos já preenchidos para que seja possível lançar outro produto
+            int mult;
+            mult = int.Parse(txbQuantidade.Text);
+            precoUnitario = ((double)precoProduto * mult);
+            dgvProdutosVenda.Rows.Add(txbIdProduto.Text, txbProduto.Text, txbQuantidade.Text, txbPreco.Text, precoUnitario);
+
+            //Assim que lançados no datagridview os campos são limpos automaticamente para que seja possível lançar um novo produto
             txbProduto.Clear();
             txbQuantidade.Clear();
             txbPreco.Clear();
-            
-            //Aqui é onde são somados os valores de cada produto que é lançado
+            txbIdProduto.Clear();
+
+            //Loop para somar os valores dos produtos
             double sum = 0;
             for (int i = 0; i < dgvProdutosVenda.Rows.Count; ++i)
             {
-                sum += Convert.ToDouble(dgvProdutosVenda.Rows[i].Cells[3].Value);
+                sum += Convert.ToDouble(dgvProdutosVenda.Rows[i].Cells[4].Value);
             }
-            txbValorTotal.Text = sum.ToString();
-
-            //Aqui, usarei variáveis para que seja possível armazenar as informações de cada produto e lançá-los individualmente
-            try
+            txbValorTotal.Text = sum.ToString() + ",00";
+        }
+        public void armazenarProdutosVendasItens()
+        {
+            foreach(DataGridViewRow row in dgvProdutosVenda.Rows)
             {
-                for (int i = 0; i <= 999; i++)
-                {
-                    informacoesVendasItens[i,1] = txbQuantidade.Text;
-                    informacoesVendasItens[i,2] = txbIdProduto.Text;
-                    informacoesVendasItens[i,3] = dgvProdutosVenda.CurrentRow.Cells[3].Value.ToString();
-                    informacoesVendasItens[i,4] = txbValorTotal.Text;
-
-                    for (int j = 0; j <= count; j++)
-                    {
-                        DataSet2TableAdapters.vendas_itensTableAdapter vendas_ItensTableAdapter = new DataSet2TableAdapters.vendas_itensTableAdapter();
-                        //vendas_ItensTableAdapter.InsertQuery();
-                    }
-                }
+                int idVenda = int.Parse(txbIdVenda.Text);
+                int idProduto = int.Parse(row.Cells[0].Value.ToString());
+                int quantidade = int.Parse(row.Cells[2].Value.ToString());
+                decimal valorUnitario = decimal.Parse(row.Cells[3].Value.ToString());
+                decimal valorTotal = decimal.Parse(row.Cells[4].Value.ToString());
+                pegarProdutosVendasItens(idVenda,idProduto,quantidade,valorUnitario,valorTotal);
             }
-            catch(Exception ex) { 
-                MessageBox.Show(ex.Message);
+        }
+        
+        public void pegarInformacoesDaVenda(int idCliente, DateTime dataRegistroVenda, int idVenda)
+        {
+            if (txbIdCliente.Text == null)
+            {
+                idCliente = 0;
             }
             
-        }
-
-        private void gerarVendasItens()
-        {
+            txbIdCliente.Text = idCliente.ToString();
+            mtbData.Text = dataRegistroVenda.ToString();
+            txbIdVenda.Text = idVenda.ToString();
             
         }
 
@@ -176,24 +189,18 @@ namespace SoftwareFicticio
         {
             try
             {
-                //Gerando a query de venda com os dados da tela
-                DateTime dataPedido = DateTime.Now;
-                DateTime dataEmissao = DateTime.Now;
-                DataSet2TableAdapters.vendaTableAdapter vendaTableAdapter = new DataSet2TableAdapters.vendaTableAdapter();
-                vendaTableAdapter.InsertQuery(getId, dataPedido, dataEmissao, DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text));
-
-                MessageBox.Show("Venda registrada com sucesso!");
+                armazenarProdutosVendasItens();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            gerarVendasItens();
-
+            
         }
+        
         private void txbValorTotal_TextChanged(object sender, EventArgs e)
         {
-         
+
         }
 
         private void txbProduto_TextChanged(object sender, EventArgs e)
@@ -203,7 +210,7 @@ namespace SoftwareFicticio
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click_2(object sender, EventArgs e)
@@ -211,7 +218,7 @@ namespace SoftwareFicticio
             VendaAuxiliar vendaAux = new VendaAuxiliar();
             vendaAux.Owner = this;
             vendaAux.ShowDialog();
-            
+
         }
 
         private void txbIdProduto_TextChanged(object sender, EventArgs e)
@@ -221,10 +228,50 @@ namespace SoftwareFicticio
 
         private void button3_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void button2_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_4(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+              
+        }
+
+        private void button2_Click_5(object sender, EventArgs e)
+        {
+            ConsultaVenda consultaVenda = new ConsultaVenda();
+            consultaVenda.Owner = this;
+            consultaVenda.ShowDialog();
+        }
+
+        private void btnSalvarAlterarVenda_Click(object sender, EventArgs e)
+        {   
+             try
+             {
+                 DataSet2TableAdapters.vendaTableAdapter vendaUpdateQuery = new DataSet2TableAdapters.vendaTableAdapter();
+                 vendaUpdateQuery.UpdateQuery(int.Parse(txbCliente.Text), DateTime.Parse(mtbData.Text), DateTime.Parse(mtbData.Text), DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text), int.Parse(txbIdVenda.Text));
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show(ex.Message);
+             }
+        }
+
+        private void button2_Click_6(object sender, EventArgs e)
         {
             
         }

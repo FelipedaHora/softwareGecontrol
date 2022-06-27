@@ -36,3 +36,4 @@ C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFict
 C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFicticio\obj\Debug\SoftwareFicticio.pdb
 C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFicticio\obj\Debug\SoftwareFicticio.ConsultaVenda.resources
 C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFicticio\obj\Debug\SoftwareFicticio.VendaAuxiliar.resources
+C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFicticio\obj\Debug\SoftwareFicticio.RegistroVendas.resources
