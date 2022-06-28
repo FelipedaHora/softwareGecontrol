@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTelaInicial));
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.btnRelatorios = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnVenda = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
@@ -36,6 +39,11 @@
             this.btnChoiceFuncionarios = new System.Windows.Forms.Button();
             this.btnChoiceProdutos = new System.Windows.Forms.Button();
             this.btnChoiceTerceiros = new System.Windows.Forms.Button();
+            this.btnRelatorioFunc = new System.Windows.Forms.Button();
+            this.btnRelatorioProd = new System.Windows.Forms.Button();
+            this.btnRelatorioTerc = new System.Windows.Forms.Button();
+            this.btnRelatorioVendas = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlLeft.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
@@ -43,12 +51,32 @@
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.pnlLeft.Controls.Add(this.btnRelatorios);
             this.pnlLeft.Controls.Add(this.btnCadastrar);
             this.pnlLeft.Controls.Add(this.btnVenda);
             this.pnlLeft.Location = new System.Drawing.Point(1, 1);
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(200, 559);
             this.pnlLeft.TabIndex = 0;
+            // 
+            // btnRelatorios
+            // 
+            this.btnRelatorios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRelatorios.FlatAppearance.BorderSize = 0;
+            this.btnRelatorios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnRelatorios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorios.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorios.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorios.Location = new System.Drawing.Point(-3, 278);
+            this.btnRelatorios.Name = "btnRelatorios";
+            this.btnRelatorios.Size = new System.Drawing.Size(200, 72);
+            this.btnRelatorios.TabIndex = 4;
+            this.btnRelatorios.Text = "Relatórios";
+            this.btnRelatorios.UseVisualStyleBackColor = false;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
+            this.btnRelatorios.MouseEnter += new System.EventHandler(this.btnRelatorios_MouseEnter);
             // 
             // btnCadastrar
             // 
@@ -67,6 +95,9 @@
             this.btnCadastrar.Text = "Cadastro";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnCadastrar_MouseClick);
+            this.btnCadastrar.MouseEnter += new System.EventHandler(this.btnCadastrar_MouseEnter);
+            this.btnCadastrar.MouseLeave += new System.EventHandler(this.btnCadastrar_MouseLeave);
             // 
             // btnVenda
             // 
@@ -78,6 +109,7 @@
             this.btnVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVenda.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVenda.ForeColor = System.Drawing.Color.White;
+            this.btnVenda.ImageList = this.imageList1;
             this.btnVenda.Location = new System.Drawing.Point(0, 122);
             this.btnVenda.Name = "btnVenda";
             this.btnVenda.Size = new System.Drawing.Size(200, 72);
@@ -151,6 +183,71 @@
             this.btnChoiceTerceiros.UseVisualStyleBackColor = false;
             this.btnChoiceTerceiros.Click += new System.EventHandler(this.button4_Click);
             // 
+            // btnRelatorioFunc
+            // 
+            this.btnRelatorioFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnRelatorioFunc.FlatAppearance.BorderSize = 0;
+            this.btnRelatorioFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorioFunc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorioFunc.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorioFunc.Location = new System.Drawing.Point(319, 181);
+            this.btnRelatorioFunc.Name = "btnRelatorioFunc";
+            this.btnRelatorioFunc.Size = new System.Drawing.Size(173, 118);
+            this.btnRelatorioFunc.TabIndex = 5;
+            this.btnRelatorioFunc.Text = "Funcionários";
+            this.btnRelatorioFunc.UseVisualStyleBackColor = false;
+            // 
+            // btnRelatorioProd
+            // 
+            this.btnRelatorioProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnRelatorioProd.FlatAppearance.BorderSize = 0;
+            this.btnRelatorioProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorioProd.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorioProd.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorioProd.Location = new System.Drawing.Point(591, 181);
+            this.btnRelatorioProd.Name = "btnRelatorioProd";
+            this.btnRelatorioProd.Size = new System.Drawing.Size(173, 118);
+            this.btnRelatorioProd.TabIndex = 6;
+            this.btnRelatorioProd.Text = "Produtos";
+            this.btnRelatorioProd.UseVisualStyleBackColor = false;
+            // 
+            // btnRelatorioTerc
+            // 
+            this.btnRelatorioTerc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnRelatorioTerc.FlatAppearance.BorderSize = 0;
+            this.btnRelatorioTerc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorioTerc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorioTerc.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorioTerc.Location = new System.Drawing.Point(858, 181);
+            this.btnRelatorioTerc.Name = "btnRelatorioTerc";
+            this.btnRelatorioTerc.Size = new System.Drawing.Size(173, 118);
+            this.btnRelatorioTerc.TabIndex = 7;
+            this.btnRelatorioTerc.Text = "Terceiros";
+            this.btnRelatorioTerc.UseVisualStyleBackColor = false;
+            // 
+            // btnRelatorioVendas
+            // 
+            this.btnRelatorioVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnRelatorioVendas.FlatAppearance.BorderSize = 0;
+            this.btnRelatorioVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorioVendas.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorioVendas.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorioVendas.Location = new System.Drawing.Point(319, 324);
+            this.btnRelatorioVendas.Name = "btnRelatorioVendas";
+            this.btnRelatorioVendas.Size = new System.Drawing.Size(173, 118);
+            this.btnRelatorioVendas.TabIndex = 8;
+            this.btnRelatorioVendas.Text = "Vendas";
+            this.btnRelatorioVendas.UseVisualStyleBackColor = false;
+            this.btnRelatorioVendas.Click += new System.EventHandler(this.btnRelatorioVendas_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "venda-rapida.png");
+            this.imageList1.Images.SetKeyName(1, "compartilhar.png");
+            this.imageList1.Images.SetKeyName(2, "calendario.png");
+            // 
             // frmTelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,6 +255,10 @@
             this.BackgroundImage = global::SoftwareFicticio.Properties.Resources.wallpaperSoftware;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1139, 558);
+            this.Controls.Add(this.btnRelatorioVendas);
+            this.Controls.Add(this.btnRelatorioTerc);
+            this.Controls.Add(this.btnRelatorioProd);
+            this.Controls.Add(this.btnRelatorioFunc);
             this.Controls.Add(this.btnChoiceTerceiros);
             this.Controls.Add(this.btnChoiceProdutos);
             this.Controls.Add(this.btnChoiceFuncionarios);
@@ -187,6 +288,12 @@
         private System.Windows.Forms.Button btnChoiceProdutos;
         private System.Windows.Forms.Button btnChoiceTerceiros;
         private System.Windows.Forms.Label lblHome;
+        private System.Windows.Forms.Button btnRelatorios;
+        private System.Windows.Forms.Button btnRelatorioFunc;
+        private System.Windows.Forms.Button btnRelatorioProd;
+        private System.Windows.Forms.Button btnRelatorioTerc;
+        private System.Windows.Forms.Button btnRelatorioVendas;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

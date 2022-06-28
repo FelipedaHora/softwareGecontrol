@@ -33,9 +33,6 @@
             this.lblVenda = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.btnSalvarVenda = new System.Windows.Forms.Button();
-            this.dataSet1 = new SoftwareFicticio.DataSet1();
-            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.produtosTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.produtosTableAdapter();
             this.btnPesquisarCliente = new System.Windows.Forms.Button();
             this.txbProduto = new System.Windows.Forms.TextBox();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -47,8 +44,6 @@
             this.mtbData = new System.Windows.Forms.MaskedTextBox();
             this.txbQuantidade = new System.Windows.Forms.TextBox();
             this.lblQuantidade = new System.Windows.Forms.Label();
-            this.terceirosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.terceirosTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.terceirosTableAdapter();
             this.txbCliente = new System.Windows.Forms.TextBox();
             this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
             this.idProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,11 +64,7 @@
             this.terceirosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.terceirosTableAdapter1 = new SoftwareFicticio.DataSet2TableAdapters.terceirosTableAdapter();
             this.btnSalvarAlterarVenda = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.terceirosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.terceirosBindingSource1)).BeginInit();
@@ -123,20 +114,6 @@
             this.btnSalvarVenda.Text = "Salvar";
             this.btnSalvarVenda.UseVisualStyleBackColor = false;
             this.btnSalvarVenda.Click += new System.EventHandler(this.btnSalvarCadastroFunc_Click);
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // produtosBindingSource
-            // 
-            this.produtosBindingSource.DataMember = "produtos";
-            this.produtosBindingSource.DataSource = this.dataSet1;
-            // 
-            // produtosTableAdapter
-            // 
-            this.produtosTableAdapter.ClearBeforeFill = true;
             // 
             // btnPesquisarCliente
             // 
@@ -263,15 +240,6 @@
             this.lblQuantidade.Text = "Quantidade";
             this.lblQuantidade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // terceirosBindingSource
-            // 
-            this.terceirosBindingSource.DataMember = "terceiros";
-            this.terceirosBindingSource.DataSource = this.dataSet1;
-            // 
-            // terceirosTableAdapter
-            // 
-            this.terceirosTableAdapter.ClearBeforeFill = true;
-            // 
             // txbCliente
             // 
             this.txbCliente.Location = new System.Drawing.Point(327, 169);
@@ -283,6 +251,7 @@
             // 
             // dgvProdutosVenda
             // 
+            this.dgvProdutosVenda.AllowUserToAddRows = false;
             this.dgvProdutosVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProdutosVenda.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutosVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -388,7 +357,7 @@
             // 
             // txbValorTotal
             // 
-            this.txbValorTotal.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbValorTotal.Font = new System.Drawing.Font("Bahnschrift SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbValorTotal.Location = new System.Drawing.Point(284, 703);
             this.txbValorTotal.Multiline = true;
             this.txbValorTotal.Name = "txbValorTotal";
@@ -467,22 +436,11 @@
             this.btnSalvarAlterarVenda.UseVisualStyleBackColor = false;
             this.btnSalvarAlterarVenda.Click += new System.EventHandler(this.btnSalvarAlterarVenda_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1004, 663);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_6);
-            // 
             // Venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 783);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSalvarAlterarVenda);
             this.Controls.Add(this.lblIdVenda);
             this.Controls.Add(this.txbIdVenda);
@@ -516,9 +474,6 @@
             this.Load += new System.EventHandler(this.Venda_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.terceirosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.terceirosBindingSource1)).EndInit();
@@ -532,9 +487,6 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label lblVenda;
         private System.Windows.Forms.Panel pnlLeft;
-        private DataSet1 dataSet1;
-        private System.Windows.Forms.BindingSource produtosBindingSource;
-        private DataSet1TableAdapters.produtosTableAdapter produtosTableAdapter;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label lblProduto;
         private System.Windows.Forms.Label lblPreco;
@@ -543,8 +495,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbQuantidade;
         private System.Windows.Forms.Label lblQuantidade;
-        private System.Windows.Forms.BindingSource terceirosBindingSource;
-        private DataSet1TableAdapters.terceirosTableAdapter terceirosTableAdapter;
         public System.Windows.Forms.TextBox txbCliente;
         public System.Windows.Forms.TextBox txbProduto;
         private System.Windows.Forms.DataGridView dgvProdutosVenda;
@@ -569,6 +519,5 @@
         public System.Windows.Forms.MaskedTextBox mtbDataEntrega;
         public System.Windows.Forms.Button btnSalvarAlterarVenda;
         public System.Windows.Forms.Button btnSalvarVenda;
-        private System.Windows.Forms.Button button2;
     }
 }

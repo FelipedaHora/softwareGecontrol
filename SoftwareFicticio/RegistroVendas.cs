@@ -58,12 +58,13 @@ namespace SoftwareFicticio
             DataSet2TableAdapters.vendaTableAdapter vendaTableAdapter = new DataSet2TableAdapters.vendaTableAdapter();
             vendaTableAdapter.InsertInicial(dataRegistroIdVenda, dataEntregar, getId);
 
+            
             DataSet2TableAdapters.QueriesTableAdapter queriesTableAdapter = new DataSet2TableAdapters.QueriesTableAdapter();
             object idReceiver = queriesTableAdapter.getIdSequence("seq_venda");
             int idConvertVenda = Convert.ToInt32(idReceiver);
             int idConvertido = idConvertVenda - 1;
-
-
+            
+            
 
             //Instanciando a tela de venda para cadastrar uma nova venda
             Venda venda = new Venda();

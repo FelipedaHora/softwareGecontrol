@@ -21,14 +21,18 @@ namespace SoftwareFicticio
             btnChoiceFuncionarios.Visible = false;
             btnChoiceProdutos.Visible = false;
             btnChoiceTerceiros.Visible = false;
+            btnRelatorioFunc.Visible = false;
+            btnRelatorioProd.Visible = false;
+            btnRelatorioTerc.Visible = false;
+            btnRelatorioVendas.Visible = false;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-             
             btnChoiceFuncionarios.Visible = true;
             btnChoiceProdutos.Visible = true;
             btnChoiceTerceiros.Visible = true;
+
         }
 
         private void btnChoiceFuncionarios_Click(object sender, EventArgs e)
@@ -69,6 +73,61 @@ namespace SoftwareFicticio
         {
             ConsultaVenda consultaVenda = new ConsultaVenda();
             consultaVenda.ShowDialog();
+        }
+
+        private void btnCadastrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnChoiceFuncionarios.Visible = true;
+            btnChoiceProdutos.Visible = true;
+            btnChoiceTerceiros.Visible = true;
+
+            btnRelatorioFunc.Visible = false;
+            btnRelatorioProd.Visible = false;
+            btnRelatorioTerc.Visible = false;
+            btnRelatorioVendas.Visible = false;
+        }
+
+        private void btnCadastrar_DragLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnCadastrar_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnCadastrar_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnChoiceFuncionarios.Visible = false;
+            btnChoiceProdutos.Visible = false;
+            btnChoiceTerceiros.Visible = false;
+        }
+
+        private void btnRelatorios_MouseEnter(object sender, EventArgs e)
+        {
+            btnRelatorioFunc.Visible = true;
+            btnRelatorioProd.Visible = true;
+            btnRelatorioTerc.Visible = true;
+            btnRelatorioVendas.Visible = true;
+
+            btnChoiceFuncionarios.Visible = false;
+            btnChoiceProdutos.Visible = false;
+            btnChoiceTerceiros.Visible = false;
+        }
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            btnRelatorioFunc.Visible = false;
+            btnRelatorioProd.Visible = false;
+            btnRelatorioTerc.Visible = false;
+            btnRelatorioVendas.Visible = false;
+        }
+
+        private void btnRelatorioVendas_Click(object sender, EventArgs e)
+        {
+            RelatorioVendas relatorioVendas = new RelatorioVendas();
+            relatorioVendas.ShowDialog();
         }
     }
 }

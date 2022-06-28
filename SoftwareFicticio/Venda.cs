@@ -30,9 +30,7 @@ namespace SoftwareFicticio
             // TODO: esta linha de código carrega dados na tabela 'dataSet2.terceiros'. Você pode movê-la ou removê-la conforme necessário.
             this.terceirosTableAdapter1.Fill(this.dataSet2.terceiros);
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.terceiros'. Você pode movê-la ou removê-la conforme necessário.
-            this.terceirosTableAdapter.Fill(this.dataSet1.terceiros);
-            // TODO: esta linha de código carrega dados na tabela 'dataSet1.produtos'. Você pode movê-la ou removê-la conforme necessário.
-            this.produtosTableAdapter.Fill(this.dataSet1.produtos);
+            
             
         }
         int getId;
