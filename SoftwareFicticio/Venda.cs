@@ -188,6 +188,7 @@ namespace SoftwareFicticio
             try
             {
                 armazenarProdutosVendasItens();
+                MessageBox.Show("Venda feita com sucesso!");
             }
             catch (Exception ex)
             {
