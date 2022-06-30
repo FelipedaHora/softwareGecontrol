@@ -129,5 +129,13 @@ namespace SoftwareFicticio
             RelatorioVendas relatorioVendas = new RelatorioVendas();
             relatorioVendas.ShowDialog();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TelaLogin telaLogin = new TelaLogin();
+            telaLogin.Closed += (s, args) => this.Close();
+            telaLogin.Show();
+        }
     }
 }

@@ -34,6 +34,7 @@
             this.btnRelatorios = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnVenda = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblHome = new System.Windows.Forms.Label();
             this.btnChoiceFuncionarios = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@
             this.btnRelatorioProd = new System.Windows.Forms.Button();
             this.btnRelatorioTerc = new System.Windows.Forms.Button();
             this.btnRelatorioVendas = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnSair = new System.Windows.Forms.Button();
             this.pnlLeft.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.pnlLeft.Controls.Add(this.btnSair);
             this.pnlLeft.Controls.Add(this.btnRelatorios);
             this.pnlLeft.Controls.Add(this.btnCadastrar);
             this.pnlLeft.Controls.Add(this.btnVenda);
@@ -117,6 +119,14 @@
             this.btnVenda.Text = "Venda";
             this.btnVenda.UseVisualStyleBackColor = false;
             this.btnVenda.Click += new System.EventHandler(this.btnVenda_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "venda-rapida.png");
+            this.imageList1.Images.SetKeyName(1, "compartilhar.png");
+            this.imageList1.Images.SetKeyName(2, "calendario.png");
             // 
             // pnlTop
             // 
@@ -240,13 +250,23 @@
             this.btnRelatorioVendas.UseVisualStyleBackColor = false;
             this.btnRelatorioVendas.Click += new System.EventHandler(this.btnRelatorioVendas_Click);
             // 
-            // imageList1
+            // btnSair
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "venda-rapida.png");
-            this.imageList1.Images.SetKeyName(1, "compartilhar.png");
-            this.imageList1.Images.SetKeyName(2, "calendario.png");
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Location = new System.Drawing.Point(0, 484);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(200, 72);
+            this.btnSair.TabIndex = 5;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // frmTelaInicial
             // 
@@ -294,6 +314,7 @@
         private System.Windows.Forms.Button btnRelatorioTerc;
         private System.Windows.Forms.Button btnRelatorioVendas;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btnSair;
     }
 }
 

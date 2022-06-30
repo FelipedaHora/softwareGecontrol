@@ -16,7 +16,7 @@ namespace SoftwareFicticio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTelaInicial());
+            Application.Run(new TelaLogin());
         }
     }
 }

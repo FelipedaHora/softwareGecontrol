@@ -259,15 +259,10 @@ namespace SoftwareFicticio
 
         private void btnSalvarAlterarVenda_Click(object sender, EventArgs e)
         {   
-             try
-             {
-                 DataSet2TableAdapters.vendaTableAdapter vendaUpdateQuery = new DataSet2TableAdapters.vendaTableAdapter();
-                 vendaUpdateQuery.UpdateQuery(int.Parse(txbCliente.Text), DateTime.Parse(mtbData.Text), DateTime.Parse(mtbData.Text), DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text), int.Parse(txbIdVenda.Text));
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message);
-             }
+             
+             DataSet2TableAdapters.vendaTableAdapter vendaUpdateQuery = new DataSet2TableAdapters.vendaTableAdapter();
+             vendaUpdateQuery.UpdateQuery(int.Parse(txbCliente.Text), DateTime.Parse(mtbData.Text), DateTime.Parse(mtbData.Text), DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text), int.Parse(txbIdVenda.Text));
+             
         }
 
         private void button2_Click_6(object sender, EventArgs e)

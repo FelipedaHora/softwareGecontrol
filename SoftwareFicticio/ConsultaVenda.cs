@@ -32,14 +32,23 @@ namespace SoftwareFicticio
 
         }
         
-        public void setVendaId()
-        {
-            
-        }
+        
 
         private void btnSalvarCadastroFunc_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                int idVenda = int.Parse(this.dgvConsultaVenda.CurrentRow.Cells[0].Value.ToString());
+                DataSet2TableAdapters.vendaTableAdapter vendaTableAdapter = new DataSet2TableAdapters.vendaTableAdapter();
+                vendaTableAdapter.DeleteQuery(idVenda);
+                MessageBox.Show("Venda excluída com sucesso!");
+                dgvConsultaVenda.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         int getIdVenda;

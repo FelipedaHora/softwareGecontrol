@@ -19,6 +19,10 @@ namespace SoftwareFicticio
 
     partial class DataSet2
     {
+        partial class funcionarioDataTable
+        {
+        }
+
         partial class vendas_itensDataTable
         {
         }

@@ -91,3 +91,4 @@ C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFict
 C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFicticio\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFicticio\obj\Debug\SoftwareFicticio.RelatorioVendas.resources
 C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFicticio\obj\Debug\SoftwareFicticio.csproj.CopyComplete
+C:\Users\liped\OneDrive\Documentos\ProjetoSoftware\SoftwareFicticio\SoftwareFicticio\obj\Debug\SoftwareFicticio.TelaLogin.resources
