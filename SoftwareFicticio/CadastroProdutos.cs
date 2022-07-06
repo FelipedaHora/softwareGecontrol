@@ -31,6 +31,12 @@ namespace SoftwareFicticio
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter.Fill(this.dataSet1.produtos);
+            dgvCadastroProd.EnableHeadersVisualStyles = false;
+
+            dgvCadastroProd.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(00, 25, 45);
+            dgvCadastroProd.ColumnHeadersDefaultCellStyle.Font = new Font("Bahnschrift", 8, FontStyle.Bold);
+            dgvCadastroProd.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCadastroProd.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
         private void CadastroProdutos_FormClosing(object sender, FormClosingEventArgs e)

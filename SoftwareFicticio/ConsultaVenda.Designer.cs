@@ -32,14 +32,6 @@
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblConsultaVenda = new System.Windows.Forms.Label();
-            this.dgvConsultaVenda = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idterceirosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeronfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datapedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataemissaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataentregarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valortotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new SoftwareFicticio.DataSet1();
             this.btnExcluirCadastroFunc = new System.Windows.Forms.Button();
@@ -47,12 +39,32 @@
             this.lblNova = new System.Windows.Forms.Button();
             this.vendaTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.vendaTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBoxTest = new System.Windows.Forms.TextBox();
+            this.dataSet2 = new SoftwareFicticio.DataSet2();
+            this.vendapadraoviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendapadraoviewTableAdapter = new SoftwareFicticio.DataSet2TableAdapters.vendapadraoviewTableAdapter();
+            this.vendapadraoviewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vendapadraoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendapadraoTableAdapter = new SoftwareFicticio.DataSet2TableAdapters.vendapadraoTableAdapter();
+            this.vendapadraoview2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendapadraoview2TableAdapter = new SoftwareFicticio.DataSet2TableAdapters.vendapadraoview2TableAdapter();
+            this.dgvConsultaVenda = new System.Windows.Forms.DataGridView();
+            this.idvendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idterceirosDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpfcnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeronfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valortotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datapedidoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataentregarDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaVenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendapadraoviewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendapadraoviewBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendapadraoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendapadraoview2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeft
@@ -82,88 +94,6 @@
             this.lblConsultaVenda.Size = new System.Drawing.Size(159, 45);
             this.lblConsultaVenda.TabIndex = 0;
             this.lblConsultaVenda.Text = "VENDAS";
-            // 
-            // dgvConsultaVenda
-            // 
-            this.dgvConsultaVenda.AllowUserToAddRows = false;
-            this.dgvConsultaVenda.AllowUserToDeleteRows = false;
-            this.dgvConsultaVenda.AutoGenerateColumns = false;
-            this.dgvConsultaVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvConsultaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultaVenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.idterceirosDataGridViewTextBoxColumn,
-            this.numeronfDataGridViewTextBoxColumn,
-            this.datapedidoDataGridViewTextBoxColumn,
-            this.dataemissaoDataGridViewTextBoxColumn,
-            this.dataentregarDataGridViewTextBoxColumn,
-            this.valortotalDataGridViewTextBoxColumn});
-            this.dgvConsultaVenda.DataSource = this.vendaBindingSource;
-            this.dgvConsultaVenda.Location = new System.Drawing.Point(226, 131);
-            this.dgvConsultaVenda.Name = "dgvConsultaVenda";
-            this.dgvConsultaVenda.ReadOnly = true;
-            this.dgvConsultaVenda.RowHeadersWidth = 51;
-            this.dgvConsultaVenda.RowTemplate.Height = 24;
-            this.dgvConsultaVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConsultaVenda.Size = new System.Drawing.Size(844, 480);
-            this.dgvConsultaVenda.TabIndex = 6;
-            this.dgvConsultaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaVenda_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idterceirosDataGridViewTextBoxColumn
-            // 
-            this.idterceirosDataGridViewTextBoxColumn.DataPropertyName = "id_terceiros";
-            this.idterceirosDataGridViewTextBoxColumn.HeaderText = "Código do cliente";
-            this.idterceirosDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idterceirosDataGridViewTextBoxColumn.Name = "idterceirosDataGridViewTextBoxColumn";
-            this.idterceirosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeronfDataGridViewTextBoxColumn
-            // 
-            this.numeronfDataGridViewTextBoxColumn.DataPropertyName = "numero_nf";
-            this.numeronfDataGridViewTextBoxColumn.HeaderText = "Numero NF-E";
-            this.numeronfDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numeronfDataGridViewTextBoxColumn.Name = "numeronfDataGridViewTextBoxColumn";
-            this.numeronfDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // datapedidoDataGridViewTextBoxColumn
-            // 
-            this.datapedidoDataGridViewTextBoxColumn.DataPropertyName = "data_pedido";
-            this.datapedidoDataGridViewTextBoxColumn.HeaderText = "data do pedido";
-            this.datapedidoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.datapedidoDataGridViewTextBoxColumn.Name = "datapedidoDataGridViewTextBoxColumn";
-            this.datapedidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataemissaoDataGridViewTextBoxColumn
-            // 
-            this.dataemissaoDataGridViewTextBoxColumn.DataPropertyName = "data_emissao";
-            this.dataemissaoDataGridViewTextBoxColumn.HeaderText = "data de emissão";
-            this.dataemissaoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataemissaoDataGridViewTextBoxColumn.Name = "dataemissaoDataGridViewTextBoxColumn";
-            this.dataemissaoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataentregarDataGridViewTextBoxColumn
-            // 
-            this.dataentregarDataGridViewTextBoxColumn.DataPropertyName = "data_entregar";
-            this.dataentregarDataGridViewTextBoxColumn.HeaderText = "data de entrega";
-            this.dataentregarDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataentregarDataGridViewTextBoxColumn.Name = "dataentregarDataGridViewTextBoxColumn";
-            this.dataentregarDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valortotalDataGridViewTextBoxColumn
-            // 
-            this.valortotalDataGridViewTextBoxColumn.DataPropertyName = "valor_total";
-            this.valortotalDataGridViewTextBoxColumn.HeaderText = "valor total";
-            this.valortotalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valortotalDataGridViewTextBoxColumn.Name = "valortotalDataGridViewTextBoxColumn";
-            this.valortotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // vendaBindingSource
             // 
@@ -236,34 +166,143 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // button1
+            // dataSet2
             // 
-            this.button1.Location = new System.Drawing.Point(432, 658);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBoxTest
+            // vendapadraoviewBindingSource
             // 
-            this.textBoxTest.Location = new System.Drawing.Point(273, 659);
-            this.textBoxTest.Name = "textBoxTest";
-            this.textBoxTest.Size = new System.Drawing.Size(100, 22);
-            this.textBoxTest.TabIndex = 21;
+            this.vendapadraoviewBindingSource.DataMember = "vendapadraoview";
+            this.vendapadraoviewBindingSource.DataSource = this.dataSet2;
+            // 
+            // vendapadraoviewTableAdapter
+            // 
+            this.vendapadraoviewTableAdapter.ClearBeforeFill = true;
+            // 
+            // vendapadraoviewBindingSource1
+            // 
+            this.vendapadraoviewBindingSource1.DataMember = "vendapadraoview";
+            this.vendapadraoviewBindingSource1.DataSource = this.dataSet2;
+            // 
+            // vendapadraoBindingSource
+            // 
+            this.vendapadraoBindingSource.DataMember = "vendapadrao";
+            this.vendapadraoBindingSource.DataSource = this.dataSet2;
+            // 
+            // vendapadraoTableAdapter
+            // 
+            this.vendapadraoTableAdapter.ClearBeforeFill = true;
+            // 
+            // vendapadraoview2BindingSource
+            // 
+            this.vendapadraoview2BindingSource.DataMember = "vendapadraoview2";
+            this.vendapadraoview2BindingSource.DataSource = this.dataSet2;
+            // 
+            // vendapadraoview2TableAdapter
+            // 
+            this.vendapadraoview2TableAdapter.ClearBeforeFill = true;
+            // 
+            // dgvConsultaVenda
+            // 
+            this.dgvConsultaVenda.AllowUserToAddRows = false;
+            this.dgvConsultaVenda.AllowUserToDeleteRows = false;
+            this.dgvConsultaVenda.AutoGenerateColumns = false;
+            this.dgvConsultaVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvConsultaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultaVenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idvendaDataGridViewTextBoxColumn,
+            this.idterceirosDataGridViewTextBoxColumn1,
+            this.nomeDataGridViewTextBoxColumn,
+            this.cpfcnpjDataGridViewTextBoxColumn,
+            this.numeronfDataGridViewTextBoxColumn,
+            this.valortotalDataGridViewTextBoxColumn,
+            this.datapedidoDataGridViewTextBoxColumn1,
+            this.dataentregarDataGridViewTextBoxColumn1});
+            this.dgvConsultaVenda.DataSource = this.vendapadraoviewBindingSource;
+            this.dgvConsultaVenda.Location = new System.Drawing.Point(232, 129);
+            this.dgvConsultaVenda.Name = "dgvConsultaVenda";
+            this.dgvConsultaVenda.ReadOnly = true;
+            this.dgvConsultaVenda.RowHeadersWidth = 51;
+            this.dgvConsultaVenda.RowTemplate.Height = 24;
+            this.dgvConsultaVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvConsultaVenda.Size = new System.Drawing.Size(838, 478);
+            this.dgvConsultaVenda.TabIndex = 22;
+            this.dgvConsultaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaVenda_CellContentClick_1);
+            // 
+            // idvendaDataGridViewTextBoxColumn
+            // 
+            this.idvendaDataGridViewTextBoxColumn.DataPropertyName = "idvenda";
+            this.idvendaDataGridViewTextBoxColumn.HeaderText = "Código Venda";
+            this.idvendaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idvendaDataGridViewTextBoxColumn.Name = "idvendaDataGridViewTextBoxColumn";
+            this.idvendaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idterceirosDataGridViewTextBoxColumn1
+            // 
+            this.idterceirosDataGridViewTextBoxColumn1.DataPropertyName = "id_terceiros";
+            this.idterceirosDataGridViewTextBoxColumn1.HeaderText = "Código Cliente";
+            this.idterceirosDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.idterceirosDataGridViewTextBoxColumn1.Name = "idterceirosDataGridViewTextBoxColumn1";
+            this.idterceirosDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cpfcnpjDataGridViewTextBoxColumn
+            // 
+            this.cpfcnpjDataGridViewTextBoxColumn.DataPropertyName = "cpf_cnpj";
+            this.cpfcnpjDataGridViewTextBoxColumn.HeaderText = "CPF/CPNJ";
+            this.cpfcnpjDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cpfcnpjDataGridViewTextBoxColumn.Name = "cpfcnpjDataGridViewTextBoxColumn";
+            this.cpfcnpjDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numeronfDataGridViewTextBoxColumn
+            // 
+            this.numeronfDataGridViewTextBoxColumn.DataPropertyName = "numero_nf";
+            this.numeronfDataGridViewTextBoxColumn.HeaderText = "Número NF-E";
+            this.numeronfDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.numeronfDataGridViewTextBoxColumn.Name = "numeronfDataGridViewTextBoxColumn";
+            this.numeronfDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valortotalDataGridViewTextBoxColumn
+            // 
+            this.valortotalDataGridViewTextBoxColumn.DataPropertyName = "valor_total";
+            this.valortotalDataGridViewTextBoxColumn.HeaderText = "Valor Total";
+            this.valortotalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.valortotalDataGridViewTextBoxColumn.Name = "valortotalDataGridViewTextBoxColumn";
+            this.valortotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datapedidoDataGridViewTextBoxColumn1
+            // 
+            this.datapedidoDataGridViewTextBoxColumn1.DataPropertyName = "data_pedido";
+            this.datapedidoDataGridViewTextBoxColumn1.HeaderText = "Data do Pedido";
+            this.datapedidoDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.datapedidoDataGridViewTextBoxColumn1.Name = "datapedidoDataGridViewTextBoxColumn1";
+            this.datapedidoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataentregarDataGridViewTextBoxColumn1
+            // 
+            this.dataentregarDataGridViewTextBoxColumn1.DataPropertyName = "data_entregar";
+            this.dataentregarDataGridViewTextBoxColumn1.HeaderText = "Data de Entrega";
+            this.dataentregarDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataentregarDataGridViewTextBoxColumn1.Name = "dataentregarDataGridViewTextBoxColumn1";
+            this.dataentregarDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // ConsultaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 720);
-            this.Controls.Add(this.textBoxTest);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgvConsultaVenda);
             this.Controls.Add(this.lblNova);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluirCadastroFunc);
-            this.Controls.Add(this.dgvConsultaVenda);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlLeft);
             this.Name = "ConsultaVenda";
@@ -271,11 +310,15 @@
             this.Load += new System.EventHandler(this.ConsultaVenda_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaVenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendapadraoviewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendapadraoviewBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendapadraoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendapadraoview2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaVenda)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -284,7 +327,6 @@
         private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label lblConsultaVenda;
-        private System.Windows.Forms.DataGridView dgvConsultaVenda;
         private System.Windows.Forms.Button btnExcluirCadastroFunc;
         private System.Windows.Forms.Button lblNova;
         private DataSet1 dataSet1;
@@ -292,14 +334,22 @@
         private DataSet1TableAdapters.vendaTableAdapter vendaTableAdapter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         public System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idterceirosDataGridViewTextBoxColumn;
+        private DataSet2 dataSet2;
+        private System.Windows.Forms.BindingSource vendapadraoviewBindingSource;
+        private DataSet2TableAdapters.vendapadraoviewTableAdapter vendapadraoviewTableAdapter;
+        private System.Windows.Forms.BindingSource vendapadraoviewBindingSource1;
+        private System.Windows.Forms.BindingSource vendapadraoBindingSource;
+        private DataSet2TableAdapters.vendapadraoTableAdapter vendapadraoTableAdapter;
+        private System.Windows.Forms.BindingSource vendapadraoview2BindingSource;
+        private DataSet2TableAdapters.vendapadraoview2TableAdapter vendapadraoview2TableAdapter;
+        private System.Windows.Forms.DataGridView dgvConsultaVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idvendaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idterceirosDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpfcnpjDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeronfDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datapedidoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataemissaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataentregarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valortotalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox textBoxTest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datapedidoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataentregarDataGridViewTextBoxColumn1;
     }
 }

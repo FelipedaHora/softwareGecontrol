@@ -30,8 +30,13 @@ namespace SoftwareFicticio
             // TODO: esta linha de código carrega dados na tabela 'dataSet2.terceiros'. Você pode movê-la ou removê-la conforme necessário.
             this.terceirosTableAdapter1.Fill(this.dataSet2.terceiros);
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.terceiros'. Você pode movê-la ou removê-la conforme necessário.
-            
-            
+            dgvProdutosVenda.EnableHeadersVisualStyles = false;
+
+            dgvProdutosVenda.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(00, 25, 45);
+            dgvProdutosVenda.ColumnHeadersDefaultCellStyle.Font = new Font("Bahnschrift", 8, FontStyle.Bold);
+            dgvProdutosVenda.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvProdutosVenda.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
         }
         int getId;
         public void getDataSell(string nome, int id)
@@ -258,10 +263,11 @@ namespace SoftwareFicticio
         }
 
         private void btnSalvarAlterarVenda_Click(object sender, EventArgs e)
-        {   
-             
-             DataSet2TableAdapters.vendaTableAdapter vendaUpdateQuery = new DataSet2TableAdapters.vendaTableAdapter();
-             vendaUpdateQuery.UpdateQuery(int.Parse(txbCliente.Text), DateTime.Parse(mtbData.Text), DateTime.Parse(mtbData.Text), DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text), int.Parse(txbIdVenda.Text));
+        {
+            armazenarProdutosVendasItens(); 
+            DataSet2TableAdapters.vendaTableAdapter vendaUpdateQuery = new DataSet2TableAdapters.vendaTableAdapter();
+            vendaUpdateQuery.UpdateQuery(int.Parse(txbIdCliente.Text), DateTime.Parse(mtbData.Text), DateTime.Parse(mtbData.Text), 
+                 DateTime.Parse(mtbDataEntrega.Text), decimal.Parse(txbValorTotal.Text), int.Parse(txbIdVenda.Text));
              
         }
 

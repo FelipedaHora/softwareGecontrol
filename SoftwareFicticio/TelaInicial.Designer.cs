@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTelaInicial));
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.btnSair = new System.Windows.Forms.Button();
             this.btnRelatorios = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnVenda = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             this.btnRelatorioProd = new System.Windows.Forms.Button();
             this.btnRelatorioTerc = new System.Windows.Forms.Button();
             this.btnRelatorioVendas = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
+            this.btnCadastrarLogin = new System.Windows.Forms.Button();
             this.pnlLeft.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,24 @@
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(200, 559);
             this.pnlLeft.TabIndex = 0;
+            // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Location = new System.Drawing.Point(0, 484);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(200, 72);
+            this.btnSair.TabIndex = 5;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnRelatorios
             // 
@@ -206,6 +225,7 @@
             this.btnRelatorioFunc.TabIndex = 5;
             this.btnRelatorioFunc.Text = "Funcionários";
             this.btnRelatorioFunc.UseVisualStyleBackColor = false;
+            this.btnRelatorioFunc.Click += new System.EventHandler(this.btnRelatorioFunc_Click);
             // 
             // btnRelatorioProd
             // 
@@ -220,6 +240,7 @@
             this.btnRelatorioProd.TabIndex = 6;
             this.btnRelatorioProd.Text = "Produtos";
             this.btnRelatorioProd.UseVisualStyleBackColor = false;
+            this.btnRelatorioProd.Click += new System.EventHandler(this.btnRelatorioProd_Click);
             // 
             // btnRelatorioTerc
             // 
@@ -234,6 +255,7 @@
             this.btnRelatorioTerc.TabIndex = 7;
             this.btnRelatorioTerc.Text = "Terceiros";
             this.btnRelatorioTerc.UseVisualStyleBackColor = false;
+            this.btnRelatorioTerc.Click += new System.EventHandler(this.btnRelatorioTerc_Click);
             // 
             // btnRelatorioVendas
             // 
@@ -250,23 +272,20 @@
             this.btnRelatorioVendas.UseVisualStyleBackColor = false;
             this.btnRelatorioVendas.Click += new System.EventHandler(this.btnRelatorioVendas_Click);
             // 
-            // btnSair
+            // btnCadastrarLogin
             // 
-            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
-            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(0, 484);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(200, 72);
-            this.btnSair.TabIndex = 5;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.btnCadastrarLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnCadastrarLogin.FlatAppearance.BorderSize = 0;
+            this.btnCadastrarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarLogin.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarLogin.ForeColor = System.Drawing.Color.White;
+            this.btnCadastrarLogin.Location = new System.Drawing.Point(319, 324);
+            this.btnCadastrarLogin.Name = "btnCadastrarLogin";
+            this.btnCadastrarLogin.Size = new System.Drawing.Size(173, 118);
+            this.btnCadastrarLogin.TabIndex = 10;
+            this.btnCadastrarLogin.Text = "Acesso do Usuário";
+            this.btnCadastrarLogin.UseVisualStyleBackColor = false;
+            this.btnCadastrarLogin.Click += new System.EventHandler(this.btnCadastrarLogin_Click);
             // 
             // frmTelaInicial
             // 
@@ -275,6 +294,7 @@
             this.BackgroundImage = global::SoftwareFicticio.Properties.Resources.wallpaperSoftware;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1139, 558);
+            this.Controls.Add(this.btnCadastrarLogin);
             this.Controls.Add(this.btnRelatorioVendas);
             this.Controls.Add(this.btnRelatorioTerc);
             this.Controls.Add(this.btnRelatorioProd);
@@ -315,6 +335,7 @@
         private System.Windows.Forms.Button btnRelatorioVendas;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnCadastrarLogin;
     }
 }
 

@@ -34,14 +34,6 @@
             this.pnlLeftSIDE = new System.Windows.Forms.Panel();
             this.btnSalvarCadastroFunc = new System.Windows.Forms.Button();
             this.dgvConsultaFuncionario = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipocontratoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datacadastroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataatualizacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new SoftwareFicticio.DataSet1();
             this.funcionarioTableAdapter = new SoftwareFicticio.DataSet1TableAdapters.funcionarioTableAdapter();
@@ -57,6 +49,14 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipocontratoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datacadastroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataatualizacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTopSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
@@ -128,76 +128,13 @@
             this.dgvConsultaFuncionario.Location = new System.Drawing.Point(229, 213);
             this.dgvConsultaFuncionario.Name = "dgvConsultaFuncionario";
             this.dgvConsultaFuncionario.ReadOnly = true;
+            this.dgvConsultaFuncionario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvConsultaFuncionario.RowHeadersWidth = 51;
             this.dgvConsultaFuncionario.RowTemplate.Height = 24;
             this.dgvConsultaFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultaFuncionario.Size = new System.Drawing.Size(811, 341);
             this.dgvConsultaFuncionario.TabIndex = 15;
             this.dgvConsultaFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaFuncionario_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // salarioDataGridViewTextBoxColumn
-            // 
-            this.salarioDataGridViewTextBoxColumn.DataPropertyName = "salario";
-            this.salarioDataGridViewTextBoxColumn.HeaderText = "salario";
-            this.salarioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.salarioDataGridViewTextBoxColumn.Name = "salarioDataGridViewTextBoxColumn";
-            this.salarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sexoDataGridViewTextBoxColumn
-            // 
-            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "sexo";
-            this.sexoDataGridViewTextBoxColumn.HeaderText = "sexo";
-            this.sexoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
-            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipocontratoDataGridViewTextBoxColumn
-            // 
-            this.tipocontratoDataGridViewTextBoxColumn.DataPropertyName = "tipo_contrato";
-            this.tipocontratoDataGridViewTextBoxColumn.HeaderText = "tipo_contrato";
-            this.tipocontratoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tipocontratoDataGridViewTextBoxColumn.Name = "tipocontratoDataGridViewTextBoxColumn";
-            this.tipocontratoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // datacadastroDataGridViewTextBoxColumn
-            // 
-            this.datacadastroDataGridViewTextBoxColumn.DataPropertyName = "data_cadastro";
-            this.datacadastroDataGridViewTextBoxColumn.HeaderText = "data_cadastro";
-            this.datacadastroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.datacadastroDataGridViewTextBoxColumn.Name = "datacadastroDataGridViewTextBoxColumn";
-            this.datacadastroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataatualizacaoDataGridViewTextBoxColumn
-            // 
-            this.dataatualizacaoDataGridViewTextBoxColumn.DataPropertyName = "data_atualizacao";
-            this.dataatualizacaoDataGridViewTextBoxColumn.HeaderText = "data_atualizacao";
-            this.dataatualizacaoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataatualizacaoDataGridViewTextBoxColumn.Name = "dataatualizacaoDataGridViewTextBoxColumn";
-            this.dataatualizacaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // funcionarioBindingSource
             // 
@@ -342,6 +279,70 @@
             this.lblNome.TabIndex = 6;
             this.lblNome.Text = "Nome:";
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Código Funcionário";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salarioDataGridViewTextBoxColumn
+            // 
+            this.salarioDataGridViewTextBoxColumn.DataPropertyName = "salario";
+            this.salarioDataGridViewTextBoxColumn.HeaderText = "Salário";
+            this.salarioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.salarioDataGridViewTextBoxColumn.Name = "salarioDataGridViewTextBoxColumn";
+            this.salarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sexoDataGridViewTextBoxColumn
+            // 
+            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "sexo";
+            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipocontratoDataGridViewTextBoxColumn
+            // 
+            this.tipocontratoDataGridViewTextBoxColumn.DataPropertyName = "tipo_contrato";
+            this.tipocontratoDataGridViewTextBoxColumn.HeaderText = "Tipo de Contrato";
+            this.tipocontratoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tipocontratoDataGridViewTextBoxColumn.Name = "tipocontratoDataGridViewTextBoxColumn";
+            this.tipocontratoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datacadastroDataGridViewTextBoxColumn
+            // 
+            this.datacadastroDataGridViewTextBoxColumn.DataPropertyName = "data_cadastro";
+            this.datacadastroDataGridViewTextBoxColumn.HeaderText = "Data de Cadastro";
+            this.datacadastroDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datacadastroDataGridViewTextBoxColumn.Name = "datacadastroDataGridViewTextBoxColumn";
+            this.datacadastroDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataatualizacaoDataGridViewTextBoxColumn
+            // 
+            this.dataatualizacaoDataGridViewTextBoxColumn.DataPropertyName = "data_atualizacao";
+            this.dataatualizacaoDataGridViewTextBoxColumn.HeaderText = "Data de Atualização";
+            this.dataatualizacaoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataatualizacaoDataGridViewTextBoxColumn.Name = "dataatualizacaoDataGridViewTextBoxColumn";
+            this.dataatualizacaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // CadastroFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -387,14 +388,6 @@
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource funcionarioBindingSource;
         private DataSet1TableAdapters.funcionarioTableAdapter funcionarioTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipocontratoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datacadastroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataatualizacaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.ComboBox cbxTipoContrato;
@@ -407,5 +400,13 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipocontratoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datacadastroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataatualizacaoDataGridViewTextBoxColumn;
     }
 }

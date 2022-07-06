@@ -27,6 +27,12 @@ namespace SoftwareFicticio
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.funcionario'. Você pode movê-la ou removê-la conforme necessário.
             this.funcionarioTableAdapter.Fill(this.dataSet1.funcionario);
+            dgvConsultaFuncionario.EnableHeadersVisualStyles = false;
+
+            dgvConsultaFuncionario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(00, 25, 45);
+            dgvConsultaFuncionario.ColumnHeadersDefaultCellStyle.Font = new Font("Bahnschrift", 8, FontStyle.Bold);
+            dgvConsultaFuncionario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvConsultaFuncionario.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
         private void dgvConsultaFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -50,13 +56,22 @@ namespace SoftwareFicticio
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             //PEGANDO AS INFORMAÇÕES DO DATAGRIDVIEW E ARMAZENANDO EM VARIÁVEIS PARA ATUALIZAR CADASTRO
-            int id = int.Parse(dgvConsultaFuncionario.SelectedRows[0].Cells[0].Value.ToString());
-            string nome = dgvConsultaFuncionario.SelectedRows[0].Cells[1].Value.ToString();
-            string email = dgvConsultaFuncionario.SelectedRows[0].Cells[2].Value.ToString();
-            decimal salario = decimal.Parse(dgvConsultaFuncionario.SelectedRows[0].Cells[3].Value.ToString());
-            string sexo = dgvConsultaFuncionario.SelectedRows[0].Cells[4].Value.ToString();
-            string tipo_contrato = dgvConsultaFuncionario.SelectedRows[0].Cells[5].Value.ToString();
-            DateTime data_cadastro = DateTime.Parse(dgvConsultaFuncionario.SelectedRows[0].Cells[6].Value.ToString());
+            int id = int.Parse(dgvConsultaFuncionario.CurrentRow.Cells[0].Value.ToString());
+            string nome = dgvConsultaFuncionario.CurrentRow.Cells[1].Value.ToString();
+            string email = dgvConsultaFuncionario.CurrentRow.Cells[2].Value.ToString();
+            decimal salario;
+            if (dgvConsultaFuncionario.CurrentRow.Cells[3].Value.ToString() == "")
+            {
+                salario = 0.0m;
+            }
+            else
+            {
+                salario = decimal.Parse(dgvConsultaFuncionario.CurrentRow.Cells[3].Value.ToString());
+            }
+            
+            string sexo = dgvConsultaFuncionario.CurrentRow.Cells[4].Value.ToString();
+            string tipo_contrato = dgvConsultaFuncionario.CurrentRow.Cells[5].Value.ToString();
+            DateTime data_cadastro = DateTime.Parse(dgvConsultaFuncionario.CurrentRow.Cells[6].Value.ToString());
 
             DateTime dataAtualizacao = DateTime.Now;
 
@@ -84,11 +99,7 @@ namespace SoftwareFicticio
                 // Preenchendo o DataSet para atualizar os cadastros, os parametros que estão um AO LADO DO OUTRO são os novos a serem inseridos
                 // Os que estão um acima do outro, sao os antigos que foram selecionados do DataGridView
              DataSet2TableAdapters.funcionarioTableAdapter funcionarioTableAdapter = new DataSet2TableAdapters.funcionarioTableAdapter();
-             funcionarioTableAdapter.UpdateQuery(txbNome.Text, txbEmail.Text, tipoContratoAlteracao, dataAtualizacao, decimal.Parse(txbSalario.Text),
-                    nome,
-                    email,
-                    tipo_contrato,
-                    salario
+             funcionarioTableAdapter.UpdateQuery(txbNome.Text, txbEmail.Text, tipoContratoAlteracao, dataAtualizacao, decimal.Parse(txbSalario.Text), sexo,id
                     );
 
                 MessageBox.Show("Cadastro atualizado com sucesso!");

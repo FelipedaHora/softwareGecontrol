@@ -19,6 +19,10 @@ namespace SoftwareFicticio
 
         private void RelatorioVendas_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'dataSet2.vendapadraoview'. Você pode movê-la ou removê-la conforme necessário.
+            this.vendapadraoviewTableAdapter.Fill(this.dataSet2.vendapadraoview);
+            // TODO: esta linha de código carrega dados na tabela 'dataSet2.vendaterceiros'. Você pode movê-la ou removê-la conforme necessário.
+            this.vendaterceirosTableAdapter.Fill(this.dataSet2.vendaterceiros);
             // TODO: esta linha de código carrega dados na tabela 'dataSet2.venda'. Você pode movê-la ou removê-la conforme necessário.
             this.vendaTableAdapter.Fill(this.dataSet2.venda);
 

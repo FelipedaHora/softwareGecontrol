@@ -31,6 +31,18 @@ namespace SoftwareFicticio
 
 namespace SoftwareFicticio.DataSet2TableAdapters
 {
+    partial class funcionarioTableAdapter
+    {
+    }
+
+    partial class DataTable1TableAdapter
+    {
+    }
+
+    partial class vendapadraoview2TableAdapter
+    {
+    }
+
     partial class vendaTableAdapter
     {
     }

@@ -33,6 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.1994.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.PostgreSql, Version=7.11.1202.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -53,6 +55,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -104,6 +107,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RegistroAcessoSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroAcessoSistema.Designer.cs">
+      <DependentUpon>RegistroAcessoSistema.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +136,18 @@
     </Compile>
     <Compile Include="RegistroVendas.Designer.cs">
       <DependentUpon>RegistroVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioFuncionarios.Designer.cs">
+      <DependentUpon>RelatorioFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioProdutos.Designer.cs">
+      <DependentUpon>RelatorioProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="RelatorioVendas.cs">
       <SubType>Form</SubType>
@@ -173,6 +194,9 @@
     <EmbeddedResource Include="ConsultaVenda.resx">
       <DependentUpon>ConsultaVenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistroAcessoSistema.resx">
+      <DependentUpon>RegistroAcessoSistema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistroFuncionarios.resx">
       <DependentUpon>RegistroFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,7 +209,15 @@
     <EmbeddedResource Include="RegistroVendas.resx">
       <DependentUpon>RegistroVendas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioTerceiros.rdlc" />
+    <EmbeddedResource Include="RelatorioProdutos .rdlc" />
     <EmbeddedResource Include="RelatorioFuncionarios.rdlc" />
+    <EmbeddedResource Include="RelatorioFuncionarios.resx">
+      <DependentUpon>RelatorioFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioProdutos.resx">
+      <DependentUpon>RelatorioProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RelatorioVendas.rdlc" />
     <EmbeddedResource Include="RelatorioVendas.resx">
       <DependentUpon>RelatorioVendas.cs</DependentUpon>

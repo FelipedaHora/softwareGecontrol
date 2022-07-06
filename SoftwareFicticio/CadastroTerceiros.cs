@@ -38,6 +38,12 @@ namespace SoftwareFicticio
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSet1.terceiros'. Você pode movê-la ou removê-la conforme necessário.
             this.terceirosTableAdapter.Fill(this.dataSet1.terceiros);
+            dgvCadastroTerceiros.EnableHeadersVisualStyles = false;
+            
+            dgvCadastroTerceiros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(00, 25, 45);
+            dgvCadastroTerceiros.ColumnHeadersDefaultCellStyle.Font = new Font("Bahnschrift", 8, FontStyle.Bold);
+            dgvCadastroTerceiros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCadastroTerceiros.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
 

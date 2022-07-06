@@ -25,6 +25,7 @@ namespace SoftwareFicticio
             btnRelatorioProd.Visible = false;
             btnRelatorioTerc.Visible = false;
             btnRelatorioVendas.Visible = false;
+            btnCadastrarLogin.Visible = false;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -32,6 +33,7 @@ namespace SoftwareFicticio
             btnChoiceFuncionarios.Visible = true;
             btnChoiceProdutos.Visible = true;
             btnChoiceTerceiros.Visible = true;
+            btnCadastrarLogin.Visible = true;
 
         }
 
@@ -80,6 +82,7 @@ namespace SoftwareFicticio
             btnChoiceFuncionarios.Visible = true;
             btnChoiceProdutos.Visible = true;
             btnChoiceTerceiros.Visible = true;
+            btnCadastrarLogin.Visible = true;
 
             btnRelatorioFunc.Visible = false;
             btnRelatorioProd.Visible = false;
@@ -102,6 +105,7 @@ namespace SoftwareFicticio
             btnChoiceFuncionarios.Visible = false;
             btnChoiceProdutos.Visible = false;
             btnChoiceTerceiros.Visible = false;
+            btnCadastrarLogin.Visible = false;
         }
 
         private void btnRelatorios_MouseEnter(object sender, EventArgs e)
@@ -114,6 +118,7 @@ namespace SoftwareFicticio
             btnChoiceFuncionarios.Visible = false;
             btnChoiceProdutos.Visible = false;
             btnChoiceTerceiros.Visible = false;
+            btnCadastrarLogin.Visible = false;
         }
 
         private void btnRelatorios_Click(object sender, EventArgs e)
@@ -122,6 +127,7 @@ namespace SoftwareFicticio
             btnRelatorioProd.Visible = false;
             btnRelatorioTerc.Visible = false;
             btnRelatorioVendas.Visible = false;
+           
         }
 
         private void btnRelatorioVendas_Click(object sender, EventArgs e)
@@ -136,6 +142,34 @@ namespace SoftwareFicticio
             TelaLogin telaLogin = new TelaLogin();
             telaLogin.Closed += (s, args) => this.Close();
             telaLogin.Show();
+        }
+
+        private void btnRelatorioFunc_Click(object sender, EventArgs e)
+        {
+            RelatorioFuncionarios relatorioFuncionarios = new RelatorioFuncionarios();
+            relatorioFuncionarios.ShowDialog();
+        }
+
+        private void btnRelatorioProd_Click(object sender, EventArgs e)
+        {
+            RelatorioProdutos relatorioProdutos = new RelatorioProdutos();
+            relatorioProdutos.ShowDialog();
+        }
+
+        private void btnCadastrarLogin_Click(object sender, EventArgs e)
+        {
+            RegistroAcessoSistema registroAcessoSistema = new RegistroAcessoSistema();
+            registroAcessoSistema.ShowDialog();
+        }
+
+        private void btnRelatorioTerc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

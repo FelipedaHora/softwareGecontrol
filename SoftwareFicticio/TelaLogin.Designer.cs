@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLogin));
             this.txbLogin = new System.Windows.Forms.TextBox();
-            this.txbSenha = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.txbSenha = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,13 +46,6 @@
             this.txbLogin.Size = new System.Drawing.Size(307, 22);
             this.txbLogin.TabIndex = 0;
             this.txbLogin.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txbSenha
-            // 
-            this.txbSenha.Location = new System.Drawing.Point(340, 314);
-            this.txbSenha.Name = "txbSenha";
-            this.txbSenha.Size = new System.Drawing.Size(307, 22);
-            this.txbSenha.TabIndex = 1;
             // 
             // lblUsuario
             // 
@@ -107,18 +100,25 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // txbSenha
+            // 
+            this.txbSenha.Location = new System.Drawing.Point(340, 314);
+            this.txbSenha.Name = "txbSenha";
+            this.txbSenha.Size = new System.Drawing.Size(307, 22);
+            this.txbSenha.TabIndex = 8;
+            // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(997, 569);
+            this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.txbLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TelaLogin";
@@ -132,11 +132,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox txbLogin;
-        private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.TextBox txbSenha;
     }
 }

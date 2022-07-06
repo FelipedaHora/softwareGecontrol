@@ -100,7 +100,7 @@
             this.dgvCadastroTerceiros.RowHeadersWidth = 51;
             this.dgvCadastroTerceiros.RowTemplate.Height = 24;
             this.dgvCadastroTerceiros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCadastroTerceiros.Size = new System.Drawing.Size(793, 452);
+            this.dgvCadastroTerceiros.Size = new System.Drawing.Size(835, 452);
             this.dgvCadastroTerceiros.TabIndex = 17;
             this.dgvCadastroTerceiros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCadastroTerceiros_CellContentClick);
             this.dgvCadastroTerceiros.Click += new System.EventHandler(this.dgvCadastroTerceiros_Click);

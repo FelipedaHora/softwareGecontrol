@@ -43,10 +43,10 @@ namespace SoftwareFicticio
                 DateTime dataCadastro = DateTime.Now;
 
                 DataSet2TableAdapters.funcionarioTableAdapter insertFuncDataSet = new DataSet2TableAdapters.funcionarioTableAdapter();
-                //insertFuncDataSet.InsertQuery(txbNome.Text, txbEmail.Text, sexo, tipoContrato, dataCadastro,decimal.Parse(txbSalario.Text));
+                insertFuncDataSet.InsertQuery(txbNome.Text, txbEmail.Text, sexo, tipoContrato, dataCadastro,decimal.Parse(txbSalario.Text));
 
                 MessageBox.Show("Cadastro criado com sucesso!");
-                Application.Exit();
+                this.Close();
 
             }
             catch (Exception ex)
