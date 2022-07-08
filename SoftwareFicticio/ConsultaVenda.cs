@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data.Odbc;
 
 namespace SoftwareFicticio
 {
@@ -43,11 +45,22 @@ namespace SoftwareFicticio
             dgvConsultaVenda.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvConsultaVenda.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            /*
+            string conn = ConfigurationManager.ConnectionStrings["MyConn"].ConnectionString;
+            OdbcConnection sqlconn = new OdbcConnection(conn);
+            string sqlQuery = "SELECT * FROM vendapadrao";
+            sqlconn.Open();
+            OdbcCommand sqlComm = new OdbcCommand(sqlQuery, sqlconn);
+            OdbcDataAdapter sdr = new OdbcDataAdapter(sqlComm);
+            DataTable dataTable = new DataTable();
+            sdr.Fill(dataTable);
+            dgvConsultaVenda.DataSource = dataTable;
+            sqlconn.Close();
+            */
+
 
         }
         
-        
-
         private void btnSalvarCadastroFunc_Click(object sender, EventArgs e)
         {
             try
@@ -138,6 +151,87 @@ namespace SoftwareFicticio
         private void dgvConsultaVenda_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_4(object sender, EventArgs e)
+        {
+            if (txtCliente.Text.Trim() != "")
+            {
+                searchByName();
+            }
+            /*
+            if (mtbDataEmissaoDe.Text != "")
+            {
+                procurarPorDataFixa(); 
+            }
+            if(mtbDataEmissaoDe.Text != "" && mtbDataEmissaoAte.Text.Trim() != "")
+            {
+                searchByDate();
+            } */
+
+        }
+        public void searchByName()
+        {
+            string conn = ConfigurationManager.ConnectionStrings["MyConn"].ConnectionString;
+            OdbcConnection sqlconn = new OdbcConnection(conn);
+            string sqlquery = "SELECT * FROM vendapadrao WHERE nome ilike '%" + txtCliente.Text + "%'";
+            sqlconn.Open();
+            OdbcCommand sqlComm = new OdbcCommand(sqlquery, sqlconn);
+            OdbcDataAdapter sdr = new OdbcDataAdapter(sqlComm);
+            DataTable dataTable = new DataTable();
+            sdr.Fill(dataTable);
+            dgvConsultaVenda.DataSource = dataTable;
+            sqlconn.Close();
+        }
+
+        public void procurarPorDataFixa()
+        {
+            string conn = ConfigurationManager.ConnectionStrings["MyConn"].ConnectionString;
+            OdbcConnection sqlconn = new OdbcConnection(conn);
+            string sqlquery = "SELECT * FROM vendapadrao WHERE data_pedido::date ='" + txtCliente.Text + "'";
+            sqlconn.Open();
+            OdbcCommand sqlComm = new OdbcCommand(sqlquery, sqlconn);
+            OdbcDataAdapter sdr = new OdbcDataAdapter(sqlComm);
+            DataTable dataTable = new DataTable();
+            sdr.Fill(dataTable);
+            dgvConsultaVenda.DataSource = dataTable;
+            sqlconn.Close();
+        }
+
+        public void searchByDate()
+        {
+            string conn = ConfigurationManager.ConnectionStrings["MyConn"].ConnectionString;
+            OdbcConnection sqlconn = new OdbcConnection(conn);
+            string sqlquery = "SELECT * FROM vendapadrao WHERE data_pedido BETWEEN '" + mtbDataEmissaoDe.Text + "' AND '"+mtbDataEmissaoAte.Text+"'" ;
+            sqlconn.Open();
+            OdbcCommand sqlComm = new OdbcCommand(sqlquery, sqlconn);
+            OdbcDataAdapter sdr = new OdbcDataAdapter(sqlComm);
+            DataTable dataTable = new DataTable();
+            sdr.Fill(dataTable);
+            dgvConsultaVenda.DataSource = dataTable;
+            sqlconn.Close();
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+        public void filtrarPorDataEntrega()
+        {
+            string conn = ConfigurationManager.ConnectionStrings["MyConn"].ConnectionString;
+            OdbcConnection sqlconn = new OdbcConnection(conn);
+            string sqlquery = "SELECT * FROM vendapadrao WHERE data_entregar BETWEEN '" + mtbDataEntregaDe.Text + "' AND '" + mtbDataEntregaAte.Text + "'";
+            sqlconn.Open();
+            OdbcCommand sqlComm = new OdbcCommand(sqlquery, sqlconn);
+            OdbcDataAdapter sdr = new OdbcDataAdapter(sqlComm);
+            DataTable dataTable = new DataTable();
+            sdr.Fill(dataTable);
+            dgvConsultaVenda.DataSource = dataTable;
+            sqlconn.Close();
         }
     }
 }

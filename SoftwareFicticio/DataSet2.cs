@@ -31,6 +31,11 @@ namespace SoftwareFicticio
 
 namespace SoftwareFicticio.DataSet2TableAdapters
 {
+    partial class vendaterceirosTableAdapter
+    {
+
+    }
+    
     partial class funcionarioTableAdapter
     {
     }
@@ -50,7 +55,9 @@ namespace SoftwareFicticio.DataSet2TableAdapters
     partial class vendas_itensTableAdapter
     {
     }
+    
 
     public partial class produtosTableAdapter {
     }
+
 }

@@ -363,6 +363,7 @@
             this.txbValorTotal.Name = "txbValorTotal";
             this.txbValorTotal.Size = new System.Drawing.Size(174, 68);
             this.txbValorTotal.TabIndex = 37;
+            this.txbValorTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbValorTotal.TextChanged += new System.EventHandler(this.txbValorTotal_TextChanged);
             // 
             // txbIdCliente

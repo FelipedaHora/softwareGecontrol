@@ -48,14 +48,22 @@
             this.vendapadraoview2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendapadraoview2TableAdapter = new SoftwareFicticio.DataSet2TableAdapters.vendapadraoview2TableAdapter();
             this.dgvConsultaVenda = new System.Windows.Forms.DataGridView();
-            this.idvendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idterceirosDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpfcnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeronfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valortotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datapedidoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataentregarDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.mtbDataEmissaoDe = new System.Windows.Forms.MaskedTextBox();
+            this.mtbDataEmissaoAte = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.mtbDataEntregaDe = new System.Windows.Forms.MaskedTextBox();
+            this.mtbDataEntregaAte = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.gpbxPesquisa = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -65,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vendapadraoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendapadraoview2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaVenda)).BeginInit();
+            this.gpbxPesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLeft
@@ -72,16 +81,16 @@
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.pnlLeft.Location = new System.Drawing.Point(1, 1);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(200, 722);
+            this.pnlLeft.Size = new System.Drawing.Size(200, 784);
             this.pnlLeft.TabIndex = 4;
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.pnlTop.Controls.Add(this.lblConsultaVenda);
-            this.pnlTop.Location = new System.Drawing.Point(163, 1);
+            this.pnlTop.Location = new System.Drawing.Point(201, 1);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(940, 100);
+            this.pnlTop.Size = new System.Drawing.Size(902, 100);
             this.pnlTop.TabIndex = 5;
             // 
             // lblConsultaVenda
@@ -89,11 +98,11 @@
             this.lblConsultaVenda.AutoSize = true;
             this.lblConsultaVenda.Font = new System.Drawing.Font("Bahnschrift SemiBold", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConsultaVenda.ForeColor = System.Drawing.Color.White;
-            this.lblConsultaVenda.Location = new System.Drawing.Point(711, 27);
+            this.lblConsultaVenda.Location = new System.Drawing.Point(521, 26);
             this.lblConsultaVenda.Name = "lblConsultaVenda";
-            this.lblConsultaVenda.Size = new System.Drawing.Size(159, 45);
+            this.lblConsultaVenda.Size = new System.Drawing.Size(348, 45);
             this.lblConsultaVenda.TabIndex = 0;
-            this.lblConsultaVenda.Text = "VENDAS";
+            this.lblConsultaVenda.Text = "CONSULTA VENDAS";
             // 
             // vendaBindingSource
             // 
@@ -114,7 +123,7 @@
             this.btnExcluirCadastroFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirCadastroFunc.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluirCadastroFunc.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirCadastroFunc.Location = new System.Drawing.Point(789, 642);
+            this.btnExcluirCadastroFunc.Location = new System.Drawing.Point(789, 723);
             this.btnExcluirCadastroFunc.Name = "btnExcluirCadastroFunc";
             this.btnExcluirCadastroFunc.Size = new System.Drawing.Size(128, 48);
             this.btnExcluirCadastroFunc.TabIndex = 17;
@@ -131,7 +140,7 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.ForeColor = System.Drawing.Color.White;
-            this.btnAlterar.Location = new System.Drawing.Point(634, 642);
+            this.btnAlterar.Location = new System.Drawing.Point(634, 723);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(128, 48);
             this.btnAlterar.TabIndex = 18;
@@ -148,7 +157,7 @@
             this.lblNova.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNova.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNova.ForeColor = System.Drawing.Color.White;
-            this.lblNova.Location = new System.Drawing.Point(942, 642);
+            this.lblNova.Location = new System.Drawing.Point(942, 723);
             this.lblNova.Name = "lblNova";
             this.lblNova.Size = new System.Drawing.Size(128, 48);
             this.lblNova.TabIndex = 19;
@@ -207,98 +216,203 @@
             // 
             this.dgvConsultaVenda.AllowUserToAddRows = false;
             this.dgvConsultaVenda.AllowUserToDeleteRows = false;
-            this.dgvConsultaVenda.AutoGenerateColumns = false;
             this.dgvConsultaVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConsultaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultaVenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idvendaDataGridViewTextBoxColumn,
-            this.idterceirosDataGridViewTextBoxColumn1,
-            this.nomeDataGridViewTextBoxColumn,
-            this.cpfcnpjDataGridViewTextBoxColumn,
-            this.numeronfDataGridViewTextBoxColumn,
-            this.valortotalDataGridViewTextBoxColumn,
-            this.datapedidoDataGridViewTextBoxColumn1,
-            this.dataentregarDataGridViewTextBoxColumn1});
-            this.dgvConsultaVenda.DataSource = this.vendapadraoviewBindingSource;
-            this.dgvConsultaVenda.Location = new System.Drawing.Point(232, 129);
+            this.dgvConsultaVenda.Location = new System.Drawing.Point(232, 385);
             this.dgvConsultaVenda.Name = "dgvConsultaVenda";
             this.dgvConsultaVenda.ReadOnly = true;
             this.dgvConsultaVenda.RowHeadersWidth = 51;
             this.dgvConsultaVenda.RowTemplate.Height = 24;
             this.dgvConsultaVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConsultaVenda.Size = new System.Drawing.Size(838, 478);
+            this.dgvConsultaVenda.Size = new System.Drawing.Size(838, 317);
             this.dgvConsultaVenda.TabIndex = 22;
             this.dgvConsultaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaVenda_CellContentClick_1);
             // 
-            // idvendaDataGridViewTextBoxColumn
+            // txtCliente
             // 
-            this.idvendaDataGridViewTextBoxColumn.DataPropertyName = "idvenda";
-            this.idvendaDataGridViewTextBoxColumn.HeaderText = "Código Venda";
-            this.idvendaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idvendaDataGridViewTextBoxColumn.Name = "idvendaDataGridViewTextBoxColumn";
-            this.idvendaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.txtCliente.Location = new System.Drawing.Point(365, 79);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(446, 29);
+            this.txtCliente.TabIndex = 0;
+            this.txtCliente.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // idterceirosDataGridViewTextBoxColumn1
+            // mtbDataEmissaoDe
             // 
-            this.idterceirosDataGridViewTextBoxColumn1.DataPropertyName = "id_terceiros";
-            this.idterceirosDataGridViewTextBoxColumn1.HeaderText = "Código Cliente";
-            this.idterceirosDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.idterceirosDataGridViewTextBoxColumn1.Name = "idterceirosDataGridViewTextBoxColumn1";
-            this.idterceirosDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.mtbDataEmissaoDe.Location = new System.Drawing.Point(46, 79);
+            this.mtbDataEmissaoDe.Mask = "00/00/0000";
+            this.mtbDataEmissaoDe.Name = "mtbDataEmissaoDe";
+            this.mtbDataEmissaoDe.Size = new System.Drawing.Size(98, 29);
+            this.mtbDataEmissaoDe.TabIndex = 1;
+            this.mtbDataEmissaoDe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mtbDataEmissaoDe.ValidatingType = typeof(System.DateTime);
             // 
-            // nomeDataGridViewTextBoxColumn
+            // mtbDataEmissaoAte
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mtbDataEmissaoAte.Location = new System.Drawing.Point(46, 147);
+            this.mtbDataEmissaoAte.Mask = "00/00/0000";
+            this.mtbDataEmissaoAte.Name = "mtbDataEmissaoAte";
+            this.mtbDataEmissaoAte.Size = new System.Drawing.Size(98, 29);
+            this.mtbDataEmissaoAte.TabIndex = 2;
+            this.mtbDataEmissaoAte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mtbDataEmissaoAte.ValidatingType = typeof(System.DateTime);
             // 
-            // cpfcnpjDataGridViewTextBoxColumn
+            // label1
             // 
-            this.cpfcnpjDataGridViewTextBoxColumn.DataPropertyName = "cpf_cnpj";
-            this.cpfcnpjDataGridViewTextBoxColumn.HeaderText = "CPF/CPNJ";
-            this.cpfcnpjDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cpfcnpjDataGridViewTextBoxColumn.Name = "cpfcnpjDataGridViewTextBoxColumn";
-            this.cpfcnpjDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(361, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 22);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Cliente";
             // 
-            // numeronfDataGridViewTextBoxColumn
+            // label2
             // 
-            this.numeronfDataGridViewTextBoxColumn.DataPropertyName = "numero_nf";
-            this.numeronfDataGridViewTextBoxColumn.HeaderText = "Número NF-E";
-            this.numeronfDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numeronfDataGridViewTextBoxColumn.Name = "numeronfDataGridViewTextBoxColumn";
-            this.numeronfDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "De:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // valortotalDataGridViewTextBoxColumn
+            // label3
             // 
-            this.valortotalDataGridViewTextBoxColumn.DataPropertyName = "valor_total";
-            this.valortotalDataGridViewTextBoxColumn.HeaderText = "Valor Total";
-            this.valortotalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valortotalDataGridViewTextBoxColumn.Name = "valortotalDataGridViewTextBoxColumn";
-            this.valortotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(7, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Até:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // datapedidoDataGridViewTextBoxColumn1
+            // mtbDataEntregaDe
             // 
-            this.datapedidoDataGridViewTextBoxColumn1.DataPropertyName = "data_pedido";
-            this.datapedidoDataGridViewTextBoxColumn1.HeaderText = "Data do Pedido";
-            this.datapedidoDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.datapedidoDataGridViewTextBoxColumn1.Name = "datapedidoDataGridViewTextBoxColumn1";
-            this.datapedidoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.mtbDataEntregaDe.Location = new System.Drawing.Point(230, 79);
+            this.mtbDataEntregaDe.Mask = "00/00/0000";
+            this.mtbDataEntregaDe.Name = "mtbDataEntregaDe";
+            this.mtbDataEntregaDe.Size = new System.Drawing.Size(98, 29);
+            this.mtbDataEntregaDe.TabIndex = 6;
+            this.mtbDataEntregaDe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mtbDataEntregaDe.ValidatingType = typeof(System.DateTime);
             // 
-            // dataentregarDataGridViewTextBoxColumn1
+            // mtbDataEntregaAte
             // 
-            this.dataentregarDataGridViewTextBoxColumn1.DataPropertyName = "data_entregar";
-            this.dataentregarDataGridViewTextBoxColumn1.HeaderText = "Data de Entrega";
-            this.dataentregarDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataentregarDataGridViewTextBoxColumn1.Name = "dataentregarDataGridViewTextBoxColumn1";
-            this.dataentregarDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.mtbDataEntregaAte.Location = new System.Drawing.Point(230, 147);
+            this.mtbDataEntregaAte.Mask = "00/00/0000";
+            this.mtbDataEntregaAte.Name = "mtbDataEntregaAte";
+            this.mtbDataEntregaAte.Size = new System.Drawing.Size(98, 29);
+            this.mtbDataEntregaAte.TabIndex = 7;
+            this.mtbDataEntregaAte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mtbDataEntregaAte.ValidatingType = typeof(System.DateTime);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(197, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "De:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(197, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Até:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 21);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Data de Emissão";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(196, 44);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(132, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Data de Entrega";
+            // 
+            // gpbxPesquisa
+            // 
+            this.gpbxPesquisa.Controls.Add(this.label8);
+            this.gpbxPesquisa.Controls.Add(this.textBox2);
+            this.gpbxPesquisa.Controls.Add(this.btnPesquisar);
+            this.gpbxPesquisa.Controls.Add(this.label7);
+            this.gpbxPesquisa.Controls.Add(this.label6);
+            this.gpbxPesquisa.Controls.Add(this.label4);
+            this.gpbxPesquisa.Controls.Add(this.label5);
+            this.gpbxPesquisa.Controls.Add(this.mtbDataEntregaAte);
+            this.gpbxPesquisa.Controls.Add(this.mtbDataEntregaDe);
+            this.gpbxPesquisa.Controls.Add(this.label3);
+            this.gpbxPesquisa.Controls.Add(this.label2);
+            this.gpbxPesquisa.Controls.Add(this.label1);
+            this.gpbxPesquisa.Controls.Add(this.mtbDataEmissaoAte);
+            this.gpbxPesquisa.Controls.Add(this.mtbDataEmissaoDe);
+            this.gpbxPesquisa.Controls.Add(this.txtCliente);
+            this.gpbxPesquisa.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbxPesquisa.Location = new System.Drawing.Point(232, 107);
+            this.gpbxPesquisa.Name = "gpbxPesquisa";
+            this.gpbxPesquisa.Size = new System.Drawing.Size(838, 262);
+            this.gpbxPesquisa.TabIndex = 23;
+            this.gpbxPesquisa.TabStop = false;
+            this.gpbxPesquisa.Text = "Pesquisar por :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(361, 122);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 22);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Produto";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(365, 147);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(446, 29);
+            this.textBox2.TabIndex = 25;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisar.Location = new System.Drawing.Point(683, 198);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(128, 48);
+            this.btnPesquisar.TabIndex = 24;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.button1_Click_4);
             // 
             // ConsultaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 720);
+            this.ClientSize = new System.Drawing.Size(1101, 783);
+            this.Controls.Add(this.gpbxPesquisa);
             this.Controls.Add(this.dgvConsultaVenda);
             this.Controls.Add(this.lblNova);
             this.Controls.Add(this.btnAlterar);
@@ -318,6 +432,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vendapadraoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendapadraoview2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaVenda)).EndInit();
+            this.gpbxPesquisa.ResumeLayout(false);
+            this.gpbxPesquisa.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -343,13 +459,21 @@
         private System.Windows.Forms.BindingSource vendapadraoview2BindingSource;
         private DataSet2TableAdapters.vendapadraoview2TableAdapter vendapadraoview2TableAdapter;
         private System.Windows.Forms.DataGridView dgvConsultaVenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idvendaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idterceirosDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpfcnpjDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeronfDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valortotalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datapedidoDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataentregarDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.MaskedTextBox mtbDataEmissaoDe;
+        private System.Windows.Forms.MaskedTextBox mtbDataEmissaoAte;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox mtbDataEntregaDe;
+        private System.Windows.Forms.MaskedTextBox mtbDataEntregaAte;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox gpbxPesquisa;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

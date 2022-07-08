@@ -57,13 +57,15 @@
             this.pnlLeft.Controls.Add(this.btnRelatorios);
             this.pnlLeft.Controls.Add(this.btnCadastrar);
             this.pnlLeft.Controls.Add(this.btnVenda);
-            this.pnlLeft.Location = new System.Drawing.Point(1, 1);
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(200, 559);
             this.pnlLeft.TabIndex = 0;
             // 
             // btnSair
             // 
+            this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.FlatAppearance.BorderSize = 0;
@@ -82,6 +84,7 @@
             // 
             // btnRelatorios
             // 
+            this.btnRelatorios.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnRelatorios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.btnRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRelatorios.FlatAppearance.BorderSize = 0;
@@ -101,6 +104,7 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrar.FlatAppearance.BorderSize = 0;
@@ -122,6 +126,7 @@
             // 
             // btnVenda
             // 
+            this.btnVenda.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.btnVenda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVenda.FlatAppearance.BorderSize = 0;
@@ -149,19 +154,23 @@
             // 
             // pnlTop
             // 
-            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnlTop.Controls.Add(this.lblHome);
-            this.pnlTop.Location = new System.Drawing.Point(200, 1);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(200, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(940, 100);
+            this.pnlTop.Size = new System.Drawing.Size(939, 100);
             this.pnlTop.TabIndex = 1;
             // 
             // lblHome
             // 
+            this.lblHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHome.AutoSize = true;
             this.lblHome.Font = new System.Drawing.Font("Bahnschrift SemiBold", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHome.ForeColor = System.Drawing.Color.White;
-            this.lblHome.Location = new System.Drawing.Point(711, 27);
+            this.lblHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
+            this.lblHome.Location = new System.Drawing.Point(28, 27);
             this.lblHome.Name = "lblHome";
             this.lblHome.Size = new System.Drawing.Size(120, 45);
             this.lblHome.TabIndex = 0;
@@ -169,6 +178,7 @@
             // 
             // btnChoiceFuncionarios
             // 
+            this.btnChoiceFuncionarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnChoiceFuncionarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.btnChoiceFuncionarios.FlatAppearance.BorderSize = 0;
             this.btnChoiceFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -259,6 +269,7 @@
             // 
             // btnRelatorioVendas
             // 
+            this.btnRelatorioVendas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRelatorioVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(45)))));
             this.btnRelatorioVendas.FlatAppearance.BorderSize = 0;
             this.btnRelatorioVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -293,7 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SoftwareFicticio.Properties.Resources.wallpaperSoftware;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1139, 558);
+            this.ClientSize = new System.Drawing.Size(1139, 559);
             this.Controls.Add(this.btnCadastrarLogin);
             this.Controls.Add(this.btnRelatorioVendas);
             this.Controls.Add(this.btnRelatorioTerc);
@@ -305,7 +316,6 @@
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlLeft);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmTelaInicial";
             this.ShowInTaskbar = false;

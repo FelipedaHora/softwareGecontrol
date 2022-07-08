@@ -54,6 +54,7 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Device" />
     <Reference Include="System.Xml.Linq" />
@@ -155,6 +156,12 @@
     <Compile Include="RelatorioVendas.Designer.cs">
       <DependentUpon>RelatorioVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="RelatorioVendaTerceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioVendaTerceiro.Designer.cs">
+      <DependentUpon>RelatorioVendaTerceiro.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TelaInicial.cs">
       <SubType>Form</SubType>
@@ -218,6 +225,7 @@
     <EmbeddedResource Include="RelatorioProdutos.resx">
       <DependentUpon>RelatorioProdutos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioVendasTerceiros.rdlc" />
     <EmbeddedResource Include="RelatorioVendas.rdlc" />
     <EmbeddedResource Include="RelatorioVendas.resx">
       <DependentUpon>RelatorioVendas.cs</DependentUpon>
